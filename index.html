@@ -185,16 +185,28 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
 /* FIX 2: smaller boxes that fit on one screen */
 .use-split{display:grid;grid-template-columns:1fr 1fr;gap:20px;height:320px;}
 .use-pane{border:2px dashed var(--dashed);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;}
-.use-pane-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);padding:10px 14px;border-bottom:1px solid var(--border);font-weight:600;}
+.use-pane-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);padding:10px 14px;border-bottom:1px solid var(--border);font-weight:600;display:flex;justify-content:space-between;align-items:center;}
 .use-pane textarea{flex:1;border:none;resize:none;padding:14px;font-family:'NAMU',sans-serif;font-size:13px;line-height:1.6;outline:none;background:transparent;}
 .use-pane textarea::placeholder{color:#bbb;}
 .use-output{flex:1;padding:14px;font-size:13px;line-height:1.6;color:var(--gray);overflow-y:auto;}
+.use-summary{font-size:11px;color:var(--gray);font-style:italic;margin-top:8px;padding:0 14px 10px;}
+.use-enrich-btn{background:var(--black);color:var(--white);border:none;border-radius:20px;padding:4px 12px;font-size:10px;font-family:'NAMU',sans-serif;cursor:pointer;letter-spacing:.05em;transition:opacity .2s;}
+.use-enrich-btn:hover{opacity:.7;} .use-enrich-btn:disabled{opacity:.3;cursor:not-allowed;}
+.enriched-term{background:rgba(139,115,85,.12);border-bottom:1px solid #8B7355;cursor:help;position:relative;}
+.enriched-term:hover::after{content:attr(data-tip);position:absolute;bottom:100%;left:0;background:var(--black);color:var(--white);padding:6px 10px;border-radius:6px;font-size:11px;line-height:1.4;white-space:normal;width:220px;z-index:99;margin-bottom:4px;}
 .highlighted{background:rgba(139,115,85,.15);border-bottom:1px solid #8B7355;cursor:help;}
 .img-gen{max-width:640px;}
-.img-gen textarea{width:100%;height:110px;border:2px dashed var(--dashed);border-radius:10px;padding:18px;font-family:'NAMU',sans-serif;font-size:13px;line-height:1.6;resize:none;outline:none;background:transparent;transition:border-color .2s;}
+.img-gen-row{display:flex;gap:12px;align-items:flex-start;margin-top:16px;}
+.img-gen textarea{flex:1;height:100px;border:2px dashed var(--dashed);border-radius:10px;padding:16px;font-family:'NAMU',sans-serif;font-size:13px;line-height:1.6;resize:none;outline:none;background:transparent;transition:border-color .2s;}
 .img-gen textarea:focus{border-color:var(--black);}
 .img-gen textarea::placeholder{color:#bbb;}
-.model-badge{font-size:10px;color:var(--gray);margin-top:10px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--border);display:inline-block;padding:3px 10px;border-radius:4px;}
+.gen-btn{background:var(--black);color:var(--white);border:none;border-radius:10px;padding:12px 20px;font-family:'NAMU',sans-serif;font-size:12px;letter-spacing:.05em;cursor:pointer;white-space:nowrap;transition:opacity .2s;align-self:stretch;}
+.gen-btn:hover{opacity:.7;} .gen-btn:disabled{opacity:.3;cursor:not-allowed;}
+.gen-spinner{display:none;font-size:12px;color:var(--gray);margin-top:16px;} .gen-spinner.show{display:block;}
+.gen-output{margin-top:20px;display:none;} .gen-output img{width:100%;max-width:560px;border-radius:8px;display:block;} .gen-output.show{display:block;}
+.api-status{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--gray);margin-left:8px;}
+.api-dot{width:6px;height:6px;border-radius:50%;background:#ccc;} .api-dot.live{background:#1a6b1a;} .api-dot.off{background:#ccc;}
+.model-badge{font-size:10px;color:var(--gray);letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--border);display:inline-block;padding:3px 10px;border-radius:4px;}
 </style>
 </head>
 <body>
@@ -385,22 +397,37 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
       <button class="use-tab" onclick="useTab('gen',this)">IMAGE GENERATION</button>
     </div>
     <div id="u-enrich" class="use-panel active">
-      <div class="use-split" style="height: 20px">
-        <div class="use-pane" style="height: 200px">
-          <div class="use-pane-label">Paste Text</div>
-          <textarea id="enrichIn" placeholder="paste any Ukrainian text on vernacular architecture..." oninput="enrichText()"></textarea>
+      <div class="use-split">
+        <div class="use-pane">
+          <div class="use-pane-label">
+            Paste Text
+            <button class="use-enrich-btn" id="enrichBtn" onclick="runEnrich()">Enrich →</button>
+          </div>
+          <textarea id="enrichIn" placeholder="paste any Ukrainian text on vernacular architecture..."></textarea>
         </div>
-        <div class="use-pane" style="height: 20px">
-          <div class="use-pane-label">Enriched</div>
+        <div class="use-pane">
+          <div class="use-pane-label">
+            Enriched
+            <span class="api-status"><span class="api-dot" id="enrichDot"></span><span id="enrichStatus">checking...</span></span>
+          </div>
           <div class="use-output" id="enrichOut"><span style="color:#bbb;">enriched text will appear here...</span></div>
         </div>
       </div>
+      <div class="use-summary" id="enrichSummary"></div>
     </div>
     <div id="u-gen" class="use-panel">
       <div class="img-gen">
-        <div class="model-badge">IMAGE GENERATION — fal.ai FLUX + LoRA</div>
-        <br>
-        <textarea placeholder="Paste your prompt text..."></textarea>
+        <div class="model-badge">fal-ai/flux-lora
+          <span class="api-status"><span class="api-dot" id="genDot"></span><span id="genStatus">checking...</span></span>
+        </div>
+        <div class="img-gen-row">
+          <textarea id="genPrompt" placeholder="Describe the scene — e.g. 'Ukrainian khata interior with whitewashed walls and decorated pich, natural light, ethnographic photograph style'"></textarea>
+          <button class="gen-btn" id="genBtn" onclick="runGenerate()">Generate</button>
+        </div>
+        <div class="gen-spinner" id="genSpinner">Generating image...</div>
+        <div class="gen-output" id="genOutput">
+          <img id="genImg" src="" alt="Generated image">
+        </div>
       </div>
     </div>
   </div>
@@ -458,7 +485,7 @@ function centerActive(el){
   const eW=parseInt(el.style.width)||270;
   track.style.transform=`translateX(${wW/2-eL-eW/2}px)`;
 }
-window.addEventListener('load',()=>{
+window.addEventListener('load',()=>{checkApis();
   const items=document.querySelectorAll('.carousel-item');
   items.forEach(it=>{it.style.width=it.dataset.w+'px';it.style.height=it.dataset.h+'px';});
   const active=document.querySelector('.carousel-item.active');
@@ -518,6 +545,66 @@ const terms={
   'лавка':'built-in bench along walls',
   'груба':'variant name for the stove structure'
 };
+async function runEnrich(){
+  const text=document.getElementById('enrichIn').value.trim();
+  if(!text) return;
+  const btn=document.getElementById('enrichBtn');
+  const out=document.getElementById('enrichOut');
+  btn.disabled=true; btn.textContent='...';
+  out.innerHTML='<span style="color:#bbb;">Enriching...</span>';
+  try {
+    const res=await fetch('/api/enrich',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});
+    const data=await res.json();
+    if(data.error){out.innerHTML=`<span style="color:#c0392b;">${data.error}</span>`;return;}
+    let html=escHtml(text);
+    const terms=(data.enriched||[]).sort((a,b)=>b.start-a.start);
+    terms.forEach(t=>{
+      const tip=escAttr(t.annotation+' ['+t.category+']');
+      html=html.substring(0,t.start)+`<span class="enriched-term" data-tip="${tip}">${escHtml(t.term)}</span>`+html.substring(t.end);
+    });
+    out.innerHTML=html||'<span style="color:#bbb;">No terms found.</span>';
+    const s=document.getElementById('enrichSummary');
+    if(s) s.textContent=data.summary||'';
+  } catch(e){
+    offlineEnrich(text);
+  } finally {
+    btn.disabled=false; btn.textContent='Enrich →';
+  }
+}
+async function runGenerate(){
+  const prompt=document.getElementById('genPrompt').value.trim();
+  if(!prompt) return;
+  const btn=document.getElementById('genBtn');
+  const spinner=document.getElementById('genSpinner');
+  const output=document.getElementById('genOutput');
+  btn.disabled=true; spinner.classList.add('show'); output.classList.remove('show');
+  spinner.textContent='Generating image...';
+  try {
+    const res=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt})});
+    const data=await res.json();
+    if(data.error){spinner.textContent='Error: '+data.error;return;}
+    document.getElementById('genImg').src=data.url;
+    output.classList.add('show'); spinner.classList.remove('show');
+  } catch(e){spinner.textContent='Error: '+e.message;}
+  finally{btn.disabled=false;}
+}
+async function checkApis(){
+  try{const r=await fetch('/api/enrich',{method:'OPTIONS'});setDot('enrichDot','enrichStatus',r.ok);}catch{setDot('enrichDot','enrichStatus',false);}
+  try{const r=await fetch('/api/generate',{method:'OPTIONS'});setDot('genDot','genStatus',r.ok);}catch{setDot('genDot','genStatus',false);}
+}
+function setDot(dotId,lblId,live){
+  const d=document.getElementById(dotId); const l=document.getElementById(lblId);
+  if(!d||!l) return;
+  d.className='api-dot '+(live?'live':'off'); l.textContent=live?'live':'offline';
+}
+const offlineTerms={'піч':'central clay-and-brick stove; ritual heart of the khata [structural]','сволок':'main ceiling beam; cosmologically aligned with the Milky Way [structural]','долівка':'clay-beaten floor; protective against malevolent forces [material]','побілка':'lime wash on interior and exterior walls [material]','сіни':'unheated entrance vestibule; thermal buffer [spatial]','покуть':'sacred corner with icon shelf; opposite the stove [ritual]','комин':'chimney; clay-plastered framework [structural]','розпис':'ornamental painting on walls, stove, and beams [decorative]','хата':'traditional Ukrainian vernacular dwelling [spatial]','лавка':'built-in bench along walls [structural]','груба':'variant name for the stove structure [structural]'};
+function offlineEnrich(text){
+  let out=escHtml(text);
+  for(const[t,d] of Object.entries(offlineTerms)){out=out.replace(new RegExp(`(${t})`,'gi'),`<span class="enriched-term" data-tip="${d}">$1</span>`);}
+  document.getElementById('enrichOut').innerHTML=out;
+}
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function escAttr(s){return s.replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 function enrichText(){
   const v=document.getElementById('enrichIn').value;
   if(!v.trim()){document.getElementById('enrichOut').innerHTML='<span style="color:#bbb;">enriched text will appear here...</span>';return;}
