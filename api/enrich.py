@@ -4,87 +4,42 @@ from http.server import BaseHTTPRequestHandler
 
 import anthropic
 
-# ── VALIDATED TRUE TRIPLES FROM A3.PDF ───────────────────────────────────────
-# Only KEPT triples with human_tag = TRUE
-VALIDATED_KB = """
-VALIDATED KNOWLEDGE BASE — Ukrainian Vernacular Architecture (B4 Masnenko 2012)
-All entries below are human-validated as TRUE from the ПОРІГ extraction pipeline.
 
-ПICH (Stove):
-- ПІЧ — MADE_OF — глина та цегла | "Піч виліплена з глини, обмащена й побілена крейдою." p.32
-- ПІЧ — DECORATED_WITH — розпис | "Піч прикрашена квітковим розписом з геометричними елементами." p.38
-- ПІЧ — DECORATED_WITH — орнаментальне розмалювання | "В українській хаті пильну увагу приділяли орнаментальному розмалюванню печі." 
-- ПІЧ — IS_ASSOCIATED_WITH — центр житла | "Піч (раніше відкрите вогнище) була центром житла. Вся інша площа – своєрідною добудовою до неї."
-- ПІЧ — IS_ASSOCIATED_WITH — KHATA_HOUSE | "При вході в хату стоїть піч."
-- ПІЧ — ADJACENT_TO — TABLE | "Охоплює піл (місце для спання), який прилягає до печі, та стіл." p.62
-- ПІЧ — ADJACENT_TO — BENCH_LAVA | "Біля печі ставили невелику лавку." p.128
-- ПІЧ — OPPOSITE — BENCH_LAVA | "Навпроти печі, на лаві." p.55
+def build_system_prompt(rules):
+    rules_text = ""
+    for r in rules:
+        page = f"p.{r['page_number']}" if r.get('page_number') else r.get('source_ref', '')
+        rules_text += f"- [{r['id']}] {r['subject']} — {r['relation']} — {r['object']} | \"{r['evidence']}\" | {page}\n"
 
-СВОЛОК (Main ceiling beam):
-- СВОЛОК — IS_COSMOLOGICALLY_IDENTIFIED_AS — небесна ясная зоря | "Чумацький Шлях, а покуть – небесна ясная зоря." p.4
-- СВОЛОК — MADE_OF — дерев'яних балок | "Перекриття робили з дерев'яних балок." p.151
-- СВОЛОК — IS_ANIMATE — розпис рослинного походження | "Подовжній сволок із чільного боку має розпис рослинного походження." p.115
+    return f"""You are a rewriter for Ukrainian vernacular architecture descriptions.
 
-ДОЛІВКА (Clay floor):
-- ДОЛІВКА — SURFACE_FINISH — бита, глиняна чи земляна | "Долівка – бита, глиняна чи земляна."
-- ДОЛІВКА — MADE_OF — дерев'яна підлога з тесаних або різаних дощок | p.128
-- ДОЛІВКА — MADE_OF — дерев'яна підлога з колотих дощок | p.20
-- ДОЛІВКА — IS_PROTECTIVE_AGAINST — нечистих сил | "Вище долівки – для охорони від нечистих сил." p.5
+You will receive a short English text describing elements of a Ukrainian khata interior.
+Rewrite the text by expanding each element using ONLY the rules provided below.
+Do not add any knowledge not present in the rules. Do not invent details.
+Keep the sentence structure close to the original — expand inline, do not restructure.
 
-ПОБІЛКА (Lime wash):
-- ПОБІЛКА — MADE_OF — й побілена крейдою | "Зовні й усередині стіни обмащені глиною й побілені крейдою." p.49
-- ПОБІЛКА — DECORATED_WITH — яскраво синім зеленим червоним | "Птахи й квіти розписані яскраво – синім, зеленим, червоним, блакитним, білим." p.76
-- ПОБІЛКА — MADE_OF — і побілка мазанка | "хмизом – обмазка глиною і побілка (мазанка)." p.38
-
-СТІНИ (Walls):
-- WALL — DECORATED_WITH — геометричним орнаментом | "Застосовувалось різнокольорове мащення стін з невеликим додатком простенького геометричного орнаменту."
-- WALL — DECORATED_WITH — настінний розпис | "декоративний настінний розпис виконувався на зовнішніх і внутрішніх стінах хати."
-- WALL — MADE_OF — дерев'яні зрубні або каркасно стовпового типа | p.17
-- WALL — IS_ANIMATE — видовжені стіни й високий дах | "Фасад завжди має видовжені стіни й високий дах." p.4
-- WALL — IS_ORIENTED_COSMOLOGICALLY — Поділля Галичина | p.17
-- WALL — IS_GENDERED — вкладали в стіни чоловіки | "розподіляли так: вальки крутили жінки, а вкладали в стіни чоловіки." p.121
-
-СТІЛ (Table):
-- TABLE — HAS_WIDTH — 70–90 см | "Стіл-скриню виготовляли з бука або клена | Ширина 70–90 см"
-- TABLE — IS_PROTECTIVE_AGAINST — не можна сідати | "Не можна сідати на стіл, бо коли буде весілля, то коровай трісне наполовину."
-- TABLE — MADE_OF — масивної стільниці | "Основа стола складалася з масивної стільниці."
-
-КОМИН (Chimney):
-- KOMYN — MADE_OF — з каркаса й обмащений глиною | "Комин зроблений з каркаса й обмащений глиною." p.49
-- KOMYN — MADE_OF — з двох частин | "складається з двох частин: комина і спеціального пристрою для спалення скалки." p.110
-- KOMYN — LOCATED_AT — PICH_STOVE
-
-ОРНАМЕНТ (Ornamental frieze):
-- ORNAMENTAL_FRIEZE — IS_ASSOCIATED_WITH — з освітленням хати | "Внутрішній розпис пов'язаний з освітленням хати." p.77
-- ORNAMENTAL_FRIEZE — DECORATED_WITH — різьбою надто в Карпатах | "використовувалися орнаменти різьбою (надто в Карпатах)." p.5
-- ORNAMENTAL_FRIEZE — IS_ANIMATE — оригінальні | "Декоративний настінний розпис у кожному селі має не схожий на інші, свої оригінальні." p.115
-"""
-
-SYSTEM_PROMPT = f"""You are an expert in Ukrainian vernacular architecture working with a validated knowledge base extracted from B4 Masnenko 2012, a Ukrainian ethnographic monograph on the Podillia khata.
-
-Your task: given a user's text, annotate it using ONLY facts from the validated knowledge base below. Do not invent or add knowledge not in the KB.
-
-{VALIDATED_KB}
+RULES (human-validated from B4 Masnenko 2012):
+{rules_text}
 
 Return ONLY valid JSON, no markdown, no preamble:
 {{
-  "enriched": [
+  "enriched_text": "the full rewritten sentence with expansions inline",
+  "additions": [
     {{
-      "term": "exact substring from the user text that matches a KB concept",
-      "start": <integer character index where term starts in original text>,
-      "end": <integer character index where term ends>,
-      "annotation": "The validated KB fact that applies, with source page if available. 1-2 sentences.",
-      "category": "one of: material | spatial | ritual | structural | decorative | cosmological"
+      "phrase": "exact phrase you added (not in the original text)",
+      "rule_id": "the rule ID this came from e.g. REV045",
+      "source_ref": "the source_ref field from the rule",
+      "page_number": 38
     }}
-  ],
-  "summary": "One sentence summarising what validated knowledge applies to this text."
+  ]
 }}
 
 Rules:
-- Only annotate terms that genuinely match KB entries
-- start/end must be exact character positions in the original text
-- If nothing in the text matches the KB, return {{"enriched": [], "summary": "No validated knowledge found for this text."}}
-- Never fabricate facts not in the KB above"""
+- Every addition must map to exactly one rule entry above
+- If a term in the input has no matching rule, leave it unexpanded
+- additions array contains only NEW phrases you added, not original words
+- page_number should be null if not available
+- If nothing can be expanded, return the original text unchanged with empty additions array"""
 
 
 class handler(BaseHTTPRequestHandler):
@@ -99,11 +54,11 @@ class handler(BaseHTTPRequestHandler):
             length = int(self.headers.get("Content-Length", 0))
             body = json.loads(self.rfile.read(length))
             text = body.get("text", "").strip()
+            rules = body.get("rules", [])
 
             if not text:
                 self._json(400, {"error": "text is required"})
                 return
-
             if len(text) > 3000:
                 self._json(400, {"error": "text too long (max 3000 characters)"})
                 return
@@ -114,11 +69,13 @@ class handler(BaseHTTPRequestHandler):
                 return
 
             client = anthropic.Anthropic(api_key=api_key)
+            system = build_system_prompt(rules)
+
             message = client.messages.create(
                 model="claude-haiku-4-5-20251001",
                 max_tokens=2048,
-                system=SYSTEM_PROMPT,
-                messages=[{"role": "user", "content": f"Annotate this text using the validated KB:\n\n{text}"}],
+                system=system,
+                messages=[{"role": "user", "content": f"Rewrite this text using the rules:\n\n{text}"}],
             )
 
             block = message.content[0]
