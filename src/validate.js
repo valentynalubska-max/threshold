@@ -18,7 +18,7 @@ export async function loadTriples() {
     const pending = all.filter(r => r.status === 'KEPT' && !r.human_tag);
     triples = (pending.length ? pending : all.filter(r => r.status === 'KEPT').slice(0, 20))
       .map(r => ({
-        src: r.source_ref.replace(/_/g, ' ') + (r.pipeline ? ' · ' + r.pipeline : ''),
+        src: (r.source_ref || '').replace(/_/g, ' ') + (r.pipeline ? ' · ' + r.pipeline : ''),
         tr: `${r.subject} — ${r.relation} — ${r.object}`,
         ev: `«${r.evidence}»`,
       }));

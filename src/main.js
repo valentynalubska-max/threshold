@@ -1,5 +1,5 @@
 import { show, kbTab, useTab, initLangToggle } from './router.js';
-import { setActive, initCarousel } from './carousel.js';
+import { setActive, initCarousel, closeLightbox } from './carousel.js';
 import { vote, nextT } from './validate.js';
 import { runEnrich } from './enrich.js';
 import { runGenerate, checkApis } from './generate.js';
@@ -27,11 +27,41 @@ function handleFile(input) {
   }
 }
 
+function toggleMenu() {
+  const menu = document.getElementById('navPages');
+  if (menu) menu.classList.toggle('open');
+}
+
+function copyEnriched() {
+  const out = document.getElementById('enrichOut');
+  const btn = document.getElementById('copyBtn');
+  if (!out || !out.innerText.trim()) return;
+  navigator.clipboard.writeText(out.innerText).then(() => {
+    if (!btn) return;
+    btn.textContent = 'Copied ✓';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+  });
+}
+
+// Tap-to-toggle tooltips on enriched terms (mobile has no hover)
+function initTapTooltips() {
+  const out = document.getElementById('enrichOut');
+  if (!out) return;
+  out.addEventListener('click', e => {
+    const term = e.target.closest('.enriched-term');
+    document.querySelectorAll('.enriched-term.tip-open').forEach(t => {
+      if (t !== term) t.classList.remove('tip-open');
+    });
+    if (term) term.classList.toggle('tip-open');
+  });
+}
+
 // Expose functions used by inline HTML handlers
-Object.assign(window, { show, kbTab, useTab, setActive, vote, nextT, runEnrich, runGenerate, addTopic, handleFile });
+Object.assign(window, { show, kbTab, useTab, setActive, vote, nextT, runEnrich, runGenerate, addTopic, handleFile, copyEnriched, closeLightbox, toggleMenu });
 
 window.addEventListener('load', () => {
   checkApis();
   initCarousel();
   initLangToggle();
+  initTapTooltips();
 });

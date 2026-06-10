@@ -10,6 +10,14 @@
 <body>
 
 <nav>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+  <div class="nav-pages" id="navPages">
+    <button class="nav-link active" data-page="home" onclick="show('home')">Home</button>
+    <button class="nav-link" data-page="add" onclick="show('add')">Teach</button>
+    <button class="nav-link" data-page="validate" onclick="show('validate')">Validate</button>
+    <button class="nav-link" data-page="use" onclick="show('use')">Explore</button>
+    <button class="nav-link" data-page="about" onclick="show('about')">About</button>
+  </div>
   <div class="nav-search">
     <input type="text" placeholder="Search archive...">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
@@ -19,6 +27,11 @@
     <span>UK</span>
   </div>
 </nav>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-cap" id="lightboxCap"></div>
+</div>
 
 <!-- ═══════ HOME ═══════ -->
 <div id="p-home" class="page active">
@@ -199,7 +212,10 @@
         <div class="use-pane">
           <div class="use-pane-label">
             Enriched
-            <span class="api-status"><span class="api-dot" id="enrichDot"></span><span id="enrichStatus">checking...</span></span>
+            <span style="display:inline-flex;align-items:center;gap:8px;">
+              <button class="copy-btn" id="copyBtn" onclick="copyEnriched()">Copy</button>
+              <span class="api-status"><span class="api-dot" id="enrichDot"></span><span id="enrichStatus">checking...</span></span>
+            </span>
           </div>
           <div class="use-output" id="enrichOut"><span style="color:#bbb;">enriched text will appear here...</span></div>
         </div>
@@ -219,10 +235,28 @@
         <div class="gen-output" id="genOutput">
           <img id="genImg" src="" alt="Generated image">
         </div>
+        <div class="gen-history" id="genHistory"></div>
       </div>
     </div>
   </div>
   <footer ><span>Valentyna Lubska</span><span>Threshold</span><span>MAA02 — Algorithmic Design I</span></footer>
+</div>
+
+<!-- ═══════ ABOUT ═══════ -->
+<div id="p-about" class="page">
+  <div class="page-header">
+    <button class="back-link" onclick="show('home')">← Back to Archive</button>
+    <h1 class="page-title">About</h1>
+    <p class="page-subtitle">Method &amp; Pipeline</p>
+  </div>
+  <div class="about-body">
+    <p>Threshold is a digital archive for Ukrainian vernacular architectural knowledge, built as part of a thesis at IAAC (MAA02 — Algorithmic Design I).</p>
+    <p>The system works as a pipeline. A source — such as an ethnographic monograph — is uploaded and machine-read. Knowledge is extracted as subject–relation–object triples, each anchored to its evidence sentence and page reference. Extraction runs through parallel pipelines (BM25 retrieval and vector RAG), and every extracted rule carries its provenance.</p>
+    <p>Extracted rules then pass through human validation: each triple is reviewed against its source quote and tagged TRUE, FALSE, or CONTESTED. What is confirmed is saved. What is contested stays open.</p>
+    <p>Validated knowledge is put to work in two ways: enriching plain text with sourced architectural detail, and conditioning image generation through a LoRA-trained model — so that generated images of the Ukrainian khata are grounded in documented, human-verified knowledge rather than the model's generic priors.</p>
+    <p><strong>The archive grows.</strong></p>
+  </div>
+  <footer><span>Valentyna Lubska</span><span>Threshold</span><span>MAA02 — Algorithmic Design I</span></footer>
 </div>
 
   <script type="module" src="/src/main.js"></script>

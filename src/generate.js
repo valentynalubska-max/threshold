@@ -13,6 +13,22 @@ export async function checkApis() {
   catch { setDot('genDot', 'genStatus', false); }
 }
 
+function addToHistory(url, prompt) {
+  const hist = document.getElementById('genHistory');
+  if (!hist) return;
+  const thumb = document.createElement('img');
+  thumb.src = url;
+  thumb.className = 'gen-thumb';
+  thumb.title = prompt;
+  thumb.alt = prompt;
+  thumb.onclick = () => {
+    document.getElementById('genImg').src = url;
+    document.getElementById('genOutput').classList.add('show');
+  };
+  hist.prepend(thumb);
+  hist.classList.add('show');
+}
+
 export async function runGenerate() {
   const prompt = document.getElementById('genPrompt').value.trim();
   if (!prompt) return;
@@ -31,6 +47,7 @@ export async function runGenerate() {
     if (data.error) { spinner.textContent = 'Error: ' + data.error; return; }
     document.getElementById('genImg').src = data.url;
     output.classList.add('show'); spinner.classList.remove('show');
+    addToHistory(data.url, prompt);
   } catch (e) {
     spinner.textContent = 'Error: ' + e.message;
   } finally {

@@ -1,11 +1,14 @@
 import { renderVal } from './validate.js';
 
-const pages = { home:'p-home', pich:'p-pich', add:'p-add', validate:'p-validate', use:'p-use' };
+const pages = { home:'p-home', pich:'p-pich', add:'p-add', validate:'p-validate', use:'p-use', about:'p-about' };
 
 export function show(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById(pages[id] || id);
   if (el) el.classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(n => n.classList.toggle('active', n.dataset.page === id));
+  const menu = document.getElementById('navPages');
+  if (menu) menu.classList.remove('open');
   window.scrollTo(0, 0);
   if (id === 'validate') renderVal();
 }

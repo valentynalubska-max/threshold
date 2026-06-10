@@ -15,6 +15,11 @@ def build_system_prompt(rules):
 
 You will receive a short English text describing elements of a Ukrainian khata interior.
 Rewrite the text by expanding each element using ONLY the rules provided below.
+All output must be in clean English prose.
+When using a rule, extract the meaning from the evidence sentence and object field —
+do not copy Ukrainian or Russian words directly into the output unless they are
+proper architectural terms with no English equivalent (e.g. pich, svolok, dolivka).
+Translate and paraphrase rule content naturally into English.
 Do not add any knowledge not present in the rules. Do not invent details.
 Keep the sentence structure close to the original — expand inline, do not restructure.
 
