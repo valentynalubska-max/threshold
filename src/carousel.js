@@ -1,5 +1,9 @@
 export function setActive(el) {
   if (el.classList.contains('active')) { openLightbox(el); return; }
+  activate(el);
+}
+
+function activate(el) {
   const track = document.getElementById('cTrack');
   Array.from(track.querySelectorAll('.carousel-item')).forEach(item => {
     item.classList.remove('active');
@@ -10,6 +14,26 @@ export function setActive(el) {
   el.style.width = '270px';
   el.style.height = '360px';
   centerActive(el);
+}
+
+export function recenter() {
+  const active = document.querySelector('.carousel-item.active');
+  if (active) centerActive(active);
+}
+
+function snapToNearest() {
+  const wrap = document.getElementById('cWrap');
+  if (!wrap) return;
+  const wrapCenter = wrap.getBoundingClientRect().left + wrap.offsetWidth / 2;
+  let best = null, bestDist = Infinity;
+  document.querySelectorAll('.carousel-item').forEach(item => {
+    const r = item.getBoundingClientRect();
+    const d = Math.abs(r.left + r.width / 2 - wrapCenter);
+    if (d < bestDist) { bestDist = d; best = item; }
+  });
+  if (!best) return;
+  if (best.classList.contains('active')) centerActive(best);
+  else activate(best);
 }
 
 export function openLightbox(el) {
@@ -58,17 +82,24 @@ export function initCarousel() {
     startX = e.pageX;
     const m = new DOMMatrix(getComputedStyle(track).transform);
     baseX = m.m41 || 0;
+    track.style.transition = 'none';
   });
   document.addEventListener('pointermove', e => {
     if (!down) return;
     if (Math.abs(e.pageX - startX) > 5) moved = true;
     track.style.transform = `translateX(${baseX + e.pageX - startX}px)`;
   });
-  document.addEventListener('pointerup', () => down = false);
+  document.addEventListener('pointerup', () => {
+    if (!down) return;
+    down = false;
+    track.style.transition = '';
+    if (moved) snapToNearest();
+  });
   track.addEventListener('click', e => {
     if (moved) { e.stopPropagation(); e.preventDefault(); }
   }, true);
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLightbox();
   });
+  window.addEventListener('resize', recenter);
 }

@@ -187,8 +187,8 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
 .use-summary{font-size:11px;color:var(--gray);font-style:italic;margin-top:8px;padding:0 14px 10px;}
 .use-enrich-btn{background:var(--black);color:var(--white);border:none;border-radius:20px;padding:4px 12px;font-size:10px;font-family:'NAMU',sans-serif;cursor:pointer;letter-spacing:.05em;transition:opacity .2s;}
 .use-enrich-btn:hover{opacity:.7;} .use-enrich-btn:disabled{opacity:.3;cursor:not-allowed;}
-.enriched-term{background:rgba(139,115,85,.12);border-bottom:1px solid #8B7355;cursor:help;position:relative;}
-.enriched-term:hover::after{content:attr(data-tip);position:absolute;bottom:100%;left:0;background:var(--black);color:var(--white);padding:6px 10px;border-radius:6px;font-size:11px;line-height:1.4;white-space:normal;width:220px;z-index:99;margin-bottom:4px;}
+.enriched-term{background:rgba(139,115,85,.12);border-bottom:1px solid #8B7355;cursor:help;}
+.shell-tip{display:none;position:fixed;background:var(--black);color:var(--white);padding:6px 10px;border-radius:6px;font-size:11px;line-height:1.4;max-width:240px;z-index:300;pointer-events:none;}
 .highlighted{background:rgba(139,115,85,.15);border-bottom:1px solid #8B7355;cursor:help;}
 .img-gen{max-width:640px;}
 .img-gen-row{display:flex;gap:12px;align-items:flex-start;margin-top:16px;}
@@ -207,8 +207,11 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
 .copy-btn{background:none;border:1px solid var(--border);border-radius:20px;padding:3px 11px;font-size:10px;font-family:'NAMU',sans-serif;cursor:pointer;letter-spacing:.05em;color:var(--black);transition:all .2s;}
 .copy-btn:hover{border-color:var(--black);}
 
-/* TAP TOOLTIP (mobile) - mirrors hover */
-.enriched-term.tip-open::after{content:attr(data-tip);position:absolute;bottom:100%;left:0;background:var(--black);color:var(--white);padding:6px 10px;border-radius:6px;font-size:11px;line-height:1.4;white-space:normal;width:220px;z-index:99;margin-bottom:4px;}
+/* COMING SOON drop zone */
+.drop-zone.disabled{cursor:not-allowed;position:relative;}
+.drop-zone.disabled:hover{border-color:var(--dashed);background:transparent;}
+.drop-zone.disabled p{filter:blur(2px);opacity:.55;}
+.soon-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--black);color:var(--white);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:20px;white-space:nowrap;}
 
 /* GENERATION HISTORY */
 .gen-history{display:none;margin-top:14px;gap:8px;flex-wrap:wrap;}
@@ -258,7 +261,7 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
   .img-gen-row textarea{width:100%;}
   .gen-btn{align-self:stretch;padding:12px;}
   .topics-grid{max-height:none;}
-  .enriched-term:hover::after,.enriched-term.tip-open::after{width:160px;}
+  .shell-tip{max-width:180px;}
   .nav-search{display:none;}
   .nav-burger{display:block;}
   .nav-pages{display:none;position:fixed;top:52px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;padding:16px 20px;gap:14px;z-index:99;margin-right:0;}

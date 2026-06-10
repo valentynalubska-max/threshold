@@ -43,17 +43,47 @@ function copyEnriched() {
   });
 }
 
-// Tap-to-toggle tooltips on enriched terms (mobile has no hover)
-function initTapTooltips() {
-  const out = document.getElementById('enrichOut');
-  if (!out) return;
-  out.addEventListener('click', e => {
+// Floating tooltip rendered on <body> so scroll containers can't clip it.
+// Hover on desktop, tap-to-toggle on touch.
+function initTooltips() {
+  const tip = document.createElement('div');
+  tip.className = 'shell-tip';
+  document.body.appendChild(tip);
+  let current = null;
+
+  function showTip(term) {
+    const text = term.dataset.tip;
+    if (!text) return;
+    tip.textContent = text;
+    tip.style.display = 'block';
+    const r = term.getBoundingClientRect();
+    let left = r.left;
+    if (left + tip.offsetWidth > window.innerWidth - 8) left = window.innerWidth - tip.offsetWidth - 8;
+    if (left < 8) left = 8;
+    let top = r.top - tip.offsetHeight - 6;
+    if (top < 8) top = r.bottom + 6;
+    tip.style.left = left + 'px';
+    tip.style.top = top + 'px';
+  }
+  function hideTip() { tip.style.display = 'none'; current = null; }
+
+  document.addEventListener('mouseover', e => {
     const term = e.target.closest('.enriched-term');
-    document.querySelectorAll('.enriched-term.tip-open').forEach(t => {
-      if (t !== term) t.classList.remove('tip-open');
-    });
-    if (term) term.classList.toggle('tip-open');
+    if (term) showTip(term);
   });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest('.enriched-term')) hideTip();
+  });
+  document.addEventListener('click', e => {
+    const term = e.target.closest('.enriched-term');
+    if (term) {
+      if (current === term) { hideTip(); }
+      else { showTip(term); current = term; }
+    } else {
+      hideTip();
+    }
+  });
+  document.addEventListener('scroll', hideTip, true);
 }
 
 // Expose functions used by inline HTML handlers
@@ -63,5 +93,5 @@ window.addEventListener('load', () => {
   checkApis();
   initCarousel();
   initLangToggle();
-  initTapTooltips();
+  initTooltips();
 });
