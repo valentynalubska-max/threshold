@@ -1,15 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "public/**", "use": "@vercel/static" },
-    { "src": "api/*.py", "use": "@vercel/python" }
-  ],
-  "routes": [
-    { "src": "/api/generate", "dest": "/api/generate.py" },
-    { "src": "/api/enrich",   "dest": "/api/enrich.py"   },
-    { "src": "/api/vote",     "dest": "/api/vote.py"     },
-    { "src": "/NAMU-Pro.ttf", "dest": "/public/NAMU-Pro.ttf" },
-    { "src": "/",             "dest": "/index.html"      }
-  ]
+  "functions": {
+    "api/*.py": { "runtime": "python3.12" }
+  }
 }
