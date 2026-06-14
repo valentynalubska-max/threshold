@@ -2,7 +2,7 @@ import { renderVal } from './validate.js';
 import { recenter } from './carousel.js';
 import { initTranslations } from './translate.js';
 
-const pages = { home:'p-home', pich:'p-pich', khata:'p-khata', pokut:'p-pokut', add:'p-add', validate:'p-validate', use:'p-use', about:'p-about' };
+const pages = { home:'p-home', pich:'p-pich', khata:'p-khata', pokut:'p-pokut', ornament:'p-ornament', porig:'p-porig', vikno:'p-vikno', add:'p-add', validate:'p-validate', use:'p-use', about:'p-about' };
 
 export function show(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -16,6 +16,9 @@ export function show(id) {
   if (id === 'pich') { recenter(); initTranslations('p-pich'); }
   if (id === 'khata') { recenter(); initTranslations('p-khata'); }
   if (id === 'pokut') { recenter(); initTranslations('p-pokut'); }
+  if (id === 'ornament') { recenter(); initTranslations('p-ornament'); }
+  if (id === 'porig') { recenter(); initTranslations('p-porig'); }
+  if (id === 'vikno') { recenter(); initTranslations('p-vikno'); }
 }
 
 export function kbTab(name, btn) {

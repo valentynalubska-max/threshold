@@ -1,19 +1,9 @@
 export function setActive(el) {
-  if (el.classList.contains('active')) { openLightbox(el); return; }
-  activate(el);
-}
-
-function activate(el) {
   const track = el.closest('.carousel-track');
-  Array.from(track.querySelectorAll('.carousel-item')).forEach(item => {
-    item.classList.remove('active');
-    item.style.width = item.dataset.w + 'px';
-    item.style.height = item.dataset.h + 'px';
-  });
+  track.querySelectorAll('.carousel-item').forEach(i => i.classList.remove('active'));
   el.classList.add('active');
-  el.style.width = '270px';
-  el.style.height = '360px';
   centerActive(el);
+  openLightbox(el);
 }
 
 export function recenter() {
@@ -34,8 +24,7 @@ function snapToNearest(track) {
     if (d < bestDist) { bestDist = d; best = item; }
   });
   if (!best) return;
-  if (best.classList.contains('active')) centerActive(best);
-  else activate(best);
+  centerActive(best);
 }
 
 export function openLightbox(el) {
@@ -47,7 +36,7 @@ export function openLightbox(el) {
   if (!box || !boxImg) return;
   boxImg.src = img.src;
   boxImg.alt = img.alt || '';
-  const capEl = el.querySelector('.cap');
+  const capEl = el.querySelector('.carousel-cap');
   cap.textContent = (capEl && capEl.textContent) || img.alt || '';
   box.classList.add('show');
 }
@@ -63,15 +52,11 @@ export function centerActive(el) {
   if (!wrap || !track) return;
   const wW = wrap.offsetWidth;
   const eL = el.offsetLeft;
-  const eW = parseInt(el.style.width) || 270;
+  const eW = el.offsetWidth;
   track.style.transform = `translateX(${wW / 2 - eL - eW / 2}px)`;
 }
 
 export function initCarousel() {
-  document.querySelectorAll('.carousel-item').forEach(it => {
-    it.style.width = it.dataset.w + 'px';
-    it.style.height = it.dataset.h + 'px';
-  });
   const activePage = document.querySelector('.page.active');
   const active = activePage ? activePage.querySelector('.carousel-item.active') : null;
   if (active) centerActive(active);
