@@ -1,5 +1,6 @@
 import { show, kbTab, useTab, initLangToggle } from './router.js';
 import { setActive, initCarousel, closeLightbox } from './carousel.js';
+import { initGallery } from './gallery.js';
 import { vote, nextT } from './validate.js';
 import { runEnrich } from './enrich.js';
 import { runGenerate, checkApis } from './generate.js';
@@ -92,6 +93,7 @@ Object.assign(window, { show, kbTab, useTab, setActive, vote, nextT, runEnrich, 
 window.addEventListener('load', () => {
   checkApis();
   initCarousel();
+  initGallery();
   initLangToggle();
   initTooltips();
 });
