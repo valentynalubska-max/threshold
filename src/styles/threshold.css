@@ -86,6 +86,10 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
 .triple-item:last-child{border-bottom:none;}
 .triple-head{font-size:12px;font-weight:600;margin-bottom:3px;}
 .triple-quote{font-size:11px;color:var(--gray);font-style:italic;line-height:1.5;margin-bottom:4px;}
+.triple-translation{font-size:11px;color:#999;line-height:1.5;margin-bottom:4px;}
+.triple-translation.loading{opacity:0.35;}
+.trans-obj{font-weight:600;color:#777;}
+.trans-sep{color:#ccc;}
 .triple-source{font-size:10px;color:#aaa;margin-bottom:3px;}
 .status{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
 .status-TRUE{color:#1a6b1a;} .status-CONTESTED{color:#8B7355;} .status-FALSE{color:#c0392b;}

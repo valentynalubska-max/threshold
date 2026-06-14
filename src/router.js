@@ -1,5 +1,6 @@
 import { renderVal } from './validate.js';
 import { recenter } from './carousel.js';
+import { initTranslations } from './translate.js';
 
 const pages = { home:'p-home', pich:'p-pich', add:'p-add', validate:'p-validate', use:'p-use', about:'p-about' };
 
@@ -12,7 +13,7 @@ export function show(id) {
   if (menu) menu.classList.remove('open');
   window.scrollTo(0, 0);
   if (id === 'validate') renderVal();
-  if (id === 'pich') recenter();
+  if (id === 'pich') { recenter(); initTranslations('p-pich'); }
 }
 
 export function kbTab(name, btn) {
