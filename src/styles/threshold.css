@@ -131,7 +131,7 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
 .sidebar-nav{margin-top:32px;display:flex;flex-direction:column;gap:6px;}
 
 /* ── ADD KNOWLEDGE ── */
-.page-header{padding:40px 40px 0;}
+.page-header{padding:20px 40px 0;}
 .page-title{font-size:clamp(36px,6.5vw,90px);font-weight:900;line-height:.9;letter-spacing:-.02em;}
 .page-subtitle{font-size:13px;color:var(--gray);margin-top:10px;}
 
@@ -221,7 +221,7 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
 .enriched-term{background:rgba(139,115,85,.12);border-bottom:1px solid #8B7355;cursor:help;}
 .shell-tip{display:none;position:fixed;background:var(--black);color:var(--white);padding:6px 10px;border-radius:6px;font-size:11px;line-height:1.4;max-width:240px;z-index:300;pointer-events:none;}
 .highlighted{background:rgba(139,115,85,.15);border-bottom:1px solid #8B7355;cursor:help;}
-.img-gen{max-width:640px;}
+.img-gen{width:100%;}
 .img-gen-row{display:flex;gap:12px;align-items:flex-start;margin-top:16px;}
 .img-gen textarea{flex:1;height:100px;border:2px dashed var(--dashed);border-radius:10px;padding:16px;font-family:'NAMU',sans-serif;font-size:13px;line-height:1.6;resize:none;outline:none;background:transparent;transition:border-color .2s;}
 .img-gen textarea:focus{border-color:var(--black);}
