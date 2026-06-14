@@ -31,16 +31,17 @@ export async function loadTriples() {
 export function renderVal() {
   if (!triples.length) { loadTriples().then(() => renderVal()); return; }
   const t = triples[cur];
+  const uk = document.body.classList.contains('lang-uk');
   document.getElementById('valBody').innerHTML = `
     <div class="src-ref">${t.src}</div>
     <div class="triple-card"><div class="triple-pill">${t.tr}</div></div>
     <div class="triple-evidence">${t.ev}</div>
     <div class="val-btns">
-      <button class="val-btn t" onclick="vote('t')">TRUE</button>
-      <button class="val-btn f" onclick="vote('f')">FALSE</button>
-      <button class="val-btn c" onclick="vote('c')">CONTESTED</button>
+      <button class="val-btn t" onclick="vote('t')">${uk ? 'ПРАВДА' : 'TRUE'}</button>
+      <button class="val-btn f" onclick="vote('f')">${uk ? 'ФАЛЬШИВИЙ' : 'FALSE'}</button>
+      <button class="val-btn c" onclick="vote('c')">${uk ? 'СПІРНО' : 'CONTESTED'}</button>
     </div>
-    <button id="nBtn" class="val-next" onclick="nextT()">Next →</button>
+    <button id="nBtn" class="val-next" onclick="nextT()">${uk ? 'Далі →' : 'Next →'}</button>
     <div class="val-counter">${cur + 1} / ${triples.length}</div>
   `;
 }

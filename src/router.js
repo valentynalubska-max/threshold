@@ -33,8 +33,33 @@ export function useTab(name, btn) {
 export function initLangToggle() {
   document.querySelectorAll('.lang-toggle span').forEach(s => {
     s.addEventListener('click', () => {
+      const isUk = s.textContent.trim() === 'UK';
       document.querySelectorAll('.lang-toggle span').forEach(x => x.classList.remove('active'));
       s.classList.add('active');
+      document.body.classList.toggle('lang-uk', isUk);
+
+      const ph = isUk ? {
+        search: 'Пошук в архіві...',
+        enrichIn: 'Вставте будь-який текст про народне будівництво...',
+        genPrompt: "Опишіть сцену — напр. 'Інтер’єр хати з побіленими стінами і розписаною піччю, природне освітлення'",
+        topicInput: 'Нова тема...',
+      } : {
+        search: 'Search archive...',
+        enrichIn: 'paste any Ukrainian text on vernacular architecture...',
+        genPrompt: "Describe the scene — e.g. 'Ukrainian khata interior with whitewashed walls and decorated pich, natural light, ethnographic photograph style'",
+        topicInput: 'New topic...',
+      };
+
+      const searchEl = document.querySelector('.nav-search input');
+      if (searchEl) searchEl.placeholder = ph.search;
+      const enrichEl = document.getElementById('enrichIn');
+      if (enrichEl) enrichEl.placeholder = ph.enrichIn;
+      const genEl = document.getElementById('genPrompt');
+      if (genEl) genEl.placeholder = ph.genPrompt;
+      const topicEl = document.getElementById('topicInput');
+      if (topicEl) topicEl.placeholder = ph.topicInput;
+
+      if (document.getElementById('p-validate')?.classList.contains('active')) renderVal();
     });
   });
 }

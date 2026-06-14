@@ -21,6 +21,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);bord
 .lang-toggle{display:flex;gap:12px;font-size:13px;letter-spacing:.03em;}
 .lang-toggle span{cursor:pointer;opacity:.4;transition:opacity .2s;}
 .lang-toggle span.active{opacity:1;text-decoration:underline;text-underline-offset:3px;}
+/* Language switching */
+.ln-uk{display:none;}
+body.lang-uk .ln-uk{display:revert;}
+body.lang-uk .ln-en{display:none;}
 
 /* PAGES */
 .page{display:none;padding-top:52px;min-height:100vh;padding-bottom:0;flex-direction:column;}

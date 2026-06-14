@@ -12,11 +12,11 @@
 <nav>
   <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">☰</button>
   <div class="nav-pages" id="navPages">
-    <button class="nav-link active" data-page="home" onclick="show('home')">Home</button>
-    <button class="nav-link" data-page="add" onclick="show('add')">Teach</button>
-    <button class="nav-link" data-page="validate" onclick="show('validate')">Validate</button>
-    <button class="nav-link" data-page="use" onclick="show('use')">Explore</button>
-    <button class="nav-link" data-page="about" onclick="show('about')">About</button>
+    <button class="nav-link active" data-page="home" onclick="show('home')"><span class="ln-en">Home</span><span class="ln-uk">Головна</span></button>
+    <button class="nav-link" data-page="add" onclick="show('add')"><span class="ln-en">Teach</span><span class="ln-uk">Навчити</span></button>
+    <button class="nav-link" data-page="validate" onclick="show('validate')"><span class="ln-en">Validate</span><span class="ln-uk">Перевірити</span></button>
+    <button class="nav-link" data-page="use" onclick="show('use')"><span class="ln-en">Explore</span><span class="ln-uk">Дослідити</span></button>
+    <button class="nav-link" data-page="about" onclick="show('about')"><span class="ln-en">About</span><span class="ln-uk">Про проєкт</span></button>
   </div>
   <div class="nav-search">
     <input type="text" placeholder="Search archive...">
@@ -42,17 +42,19 @@
     </div>
     <div class="hero-right">
       <h1 class="hero-title">Threshold</h1>
-      <p class="hero-subtitle">Ukrainian Vernacular Knowledge Archive</p>
+      <p class="hero-subtitle"><span class="ln-en">Ukrainian Vernacular Knowledge Archive</span><span class="ln-uk">Архів знань про народне будівництво</span></p>
       <div class="hero-right-bottom">
         <!-- FIX 6: clicking the pich photo goes to pich page -->
         <img class="hero-img-right" src="/assets/images/pich-bw-stove.png" alt="Ukrainian stove — click to explore" onclick="show('pich')" title="Explore the Піч →">
         <div class="hero-desc">
-          <p>A digital archive for Ukrainian vernacular architectural knowledge. Upload a source, extract its rules, validate what the machine found. Use confirmed knowledge to enrich texts and generate culturally grounded images through a LoRA-trained model.</p>
-          <p><strong>What is confirmed is saved.<br>What is contested stays open.<br>The archive grows.</strong></p>
+          <p class="ln-en">A digital archive for Ukrainian vernacular architectural knowledge. Upload a source, extract its rules, validate what the machine found. Use confirmed knowledge to enrich texts and generate culturally grounded images through a LoRA-trained model.</p>
+          <p class="ln-uk">Цифровий архів знань про українське народне архітектурне будівництво. Завантажте джерело, виокремте правила, перевірте те, що знайшла машина. Використовуйте підтверджені знання для збагачення текстів та генерації культурно обґрунтованих зображень через LoRA-навчену модель.</p>
+          <p class="ln-en"><strong>What is confirmed is saved.<br>What is contested stays open.<br>The archive grows.</strong></p>
+          <p class="ln-uk"><strong>Те, що підтверджено, — зберігається.<br>Те, що викликає сумнів, — залишається відкритим.<br>Архів росте.</strong></p>
           <div class="hero-links">
-            <button class="hero-link" onclick="show('add')">Add Knowledge →</button>
-            <button class="hero-link" onclick="show('validate')">Validate Knowledge →</button>
-            <button class="hero-link" onclick="show('use')">Use Knowledge →</button>
+            <button class="hero-link" onclick="show('add')"><span class="ln-en">Add Knowledge →</span><span class="ln-uk">Додати знання →</span></button>
+            <button class="hero-link" onclick="show('validate')"><span class="ln-en">Validate Knowledge →</span><span class="ln-uk">Перевірити знання →</span></button>
+            <button class="hero-link" onclick="show('use')"><span class="ln-en">Use Knowledge →</span><span class="ln-uk">Використати знання →</span></button>
           </div>
         </div>
       </div>
@@ -66,7 +68,7 @@
 <div id="p-pich" class="page">
   <div class="element-header">
     <!-- FIX 5: back to front page -->
-    <button class="back-link" onclick="show('home')">← Back to Archive</button>
+    <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
     <h1 class="element-title">The Pich — Піч</h1>
     <p class="element-variants">піч · піччю · печі · пічці · груба</p>
   </div>
@@ -85,12 +87,12 @@
   </div>
   <div class="kb-section">
     <div>
-      <h2 class="kb-title">Knowledge Base</h2>
+      <h2 class="kb-title"><span class="ln-en">Knowledge Base</span><span class="ln-uk">База знань</span></h2>
       <div class="kb-tabs">
-        <button class="kb-tab active" onclick="kbTab('mat',this)">Material</button>
-        <button class="kb-tab" onclick="kbTab('loc',this)">Location</button>
-        <button class="kb-tab" onclick="kbTab('sea',this)">Seasonal</button>
-        <button class="kb-tab" onclick="kbTab('rit',this)">Ritual</button>
+        <button class="kb-tab active" onclick="kbTab('mat',this)"><span class="ln-en">Material</span><span class="ln-uk">Матеріал</span></button>
+        <button class="kb-tab" onclick="kbTab('loc',this)"><span class="ln-en">Location</span><span class="ln-uk">Розташування</span></button>
+        <button class="kb-tab" onclick="kbTab('sea',this)"><span class="ln-en">Seasonal</span><span class="ln-uk">Сезонне</span></button>
+        <button class="kb-tab" onclick="kbTab('rit',this)"><span class="ln-en">Ritual</span><span class="ln-uk">Ритуальне</span></button>
       </div>
       <div id="t-mat" class="tab-panel active">
         <div class="triple-item TRUE"><div class="triple-head">ПІЧ — MADE_OF — глина та цегла</div><div class="triple-quote">«Піч виліплена з глини, обмащена й побілена крейдою.»</div><div class="triple-source">B4 Masnenko 2012 · p.32</div><div class="status status-TRUE">TRUE</div></div>
@@ -115,7 +117,7 @@
       </div>
     </div>
     <div class="kb-sidebar">
-      <div class="sidebar-label">Other Elements</div>
+      <div class="sidebar-label"><span class="ln-en">Other Elements</span><span class="ln-uk">Інші елементи</span></div>
       <div class="sidebar-links">
         <button class="sidebar-link">Сволок →</button>
         <button class="sidebar-link">Покуть →</button>
@@ -125,9 +127,9 @@
         <button class="sidebar-link">Комин →</button>
       </div>
       <div class="sidebar-nav">
-        <button class="sidebar-link" onclick="show('add')">Add Knowledge →</button>
-        <button class="sidebar-link" onclick="show('validate')">Validate Knowledge →</button>
-        <button class="sidebar-link" onclick="show('use')">Use Knowledge →</button>
+        <button class="sidebar-link" onclick="show('add')"><span class="ln-en">Add Knowledge →</span><span class="ln-uk">Додати знання →</span></button>
+        <button class="sidebar-link" onclick="show('validate')"><span class="ln-en">Validate Knowledge →</span><span class="ln-uk">Перевірити знання →</span></button>
+        <button class="sidebar-link" onclick="show('use')"><span class="ln-en">Use Knowledge →</span><span class="ln-uk">Використати знання →</span></button>
       </div>
     </div>
   </div>
@@ -137,20 +139,20 @@
 <!-- ═══════ ADD KNOWLEDGE ═══════ -->
 <div id="p-add" class="page">
   <div class="page-header">
-    <button class="back-link" onclick="show('home')">← Back to Archive</button>
-    <h1 class="page-title">Add Knowledge</h1>
-    <p class="page-subtitle">New Knowledge extracted from new or old source</p>
+    <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
+    <h1 class="page-title"><span class="ln-en">Add Knowledge</span><span class="ln-uk">Додати знання</span></h1>
+    <p class="page-subtitle"><span class="ln-en">New Knowledge extracted from new or old source</span><span class="ln-uk">Нові знання, видобуті з нового або існуючого джерела</span></p>
   </div>
   <div class="add-body">
     <div>
-      <div class="upload-label">Source / PDF</div>
+      <div class="upload-label"><span class="ln-en">Source / PDF</span><span class="ln-uk">Джерело / PDF</span></div>
       <div class="drop-zone disabled" style="height: 180px">
-        <p>Drop PDF or click to upload</p>
-        <span class="soon-badge">Feature coming soon</span>
+        <p><span class="ln-en">Drop PDF or click to upload</span><span class="ln-uk">Перетягніть PDF або клацніть для завантаження</span></p>
+        <span class="soon-badge"><span class="ln-en">Feature coming soon</span><span class="ln-uk">Незабаром</span></span>
       </div>
     </div>
     <div class="topics-col">
-      <div class="upload-label">Topics</div>
+      <div class="upload-label"><span class="ln-en">Topics</span><span class="ln-uk">Теми</span></div>
       <div class="topics-grid">
         <span class="topic-tag" onclick="this.classList.toggle('sel')">Піч</span>
         <span class="topic-tag" onclick="this.classList.toggle('sel')">Сволок</span>
@@ -180,9 +182,9 @@
 <!-- ═══════ VALIDATION ═══════ -->
 <div id="p-validate" class="page">
   <div class="page-header">
-    <button class="back-link" onclick="show('home')">← Back to Archive</button>
-    <h1 class="page-title">Validation</h1>
-    <p class="page-subtitle">Help us validate extracted knowledge from new sources</p>
+    <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
+    <h1 class="page-title"><span class="ln-en">Validation</span><span class="ln-uk">Перевірка</span></h1>
+    <p class="page-subtitle"><span class="ln-en">Help us validate extracted knowledge from new sources</span><span class="ln-uk">Допоможіть перевірити видобуті знання з нових джерел</span></p>
   </div>
   <div class="val-body" id="valBody"></div>
   <footer><span>Valentyna Lubska</span><span>Threshold</span><span>MAA02 — Algorithmic Design I</span></footer>
@@ -191,33 +193,33 @@
 <!-- ═══════ USE KNOWLEDGE ═══════ -->
 <div id="p-use" class="page">
   <div class="page-header">
-    <button class="back-link" onclick="show('home')">← Back to Archive</button>
-    <h1 class="page-title">Use Knowledge</h1>
-    <p class="page-subtitle">Apply the archive to enrich texts and generate culturally grounded images</p>
+    <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
+    <h1 class="page-title"><span class="ln-en">Use Knowledge</span><span class="ln-uk">Застосувати знання</span></h1>
+    <p class="page-subtitle"><span class="ln-en">Apply the archive to enrich texts and generate culturally grounded images</span><span class="ln-uk">Застосуйте архів для збагачення текстів та генерації культурно обґрунтованих зображень</span></p>
   </div>
   <div class="use-body">
     <div class="use-tabs">
-      <button class="use-tab active" onclick="useTab('enrich',this)">PASTE TEXT</button>
-      <button class="use-tab" onclick="useTab('gen',this)">IMAGE GENERATION</button>
+      <button class="use-tab active" onclick="useTab('enrich',this)"><span class="ln-en">PASTE TEXT</span><span class="ln-uk">ВСТАВИТИ ТЕКСТ</span></button>
+      <button class="use-tab" onclick="useTab('gen',this)"><span class="ln-en">IMAGE GENERATION</span><span class="ln-uk">ГЕНЕРАЦІЯ ЗОБРАЖЕНЬ</span></button>
     </div>
     <div id="u-enrich" class="use-panel active">
       <div class="use-split">
         <div class="use-pane">
           <div class="use-pane-label">
-            Paste Text
-            <button class="use-enrich-btn" id="enrichBtn" onclick="runEnrich()">Enrich →</button>
+            <span class="ln-en">Paste Text</span><span class="ln-uk">Вставити текст</span>
+            <button class="use-enrich-btn" id="enrichBtn" onclick="runEnrich()"><span class="ln-en">Enrich →</span><span class="ln-uk">Збагатити →</span></button>
           </div>
           <textarea id="enrichIn" placeholder="paste any Ukrainian text on vernacular architecture..."></textarea>
         </div>
         <div class="use-pane">
           <div class="use-pane-label">
-            Enriched
+            <span class="ln-en">Enriched</span><span class="ln-uk">Збагачений текст</span>
             <span style="display:inline-flex;align-items:center;gap:8px;">
-              <button class="copy-btn" id="copyBtn" onclick="copyEnriched()">Copy</button>
+              <button class="copy-btn" id="copyBtn" onclick="copyEnriched()"><span class="ln-en">Copy</span><span class="ln-uk">Копіювати</span></button>
               <span class="api-status"><span class="api-dot" id="enrichDot"></span><span id="enrichStatus">checking...</span></span>
             </span>
           </div>
-          <div class="use-output" id="enrichOut"><span style="color:#bbb;">enriched text will appear here...</span></div>
+          <div class="use-output" id="enrichOut"><span style="color:#bbb;"><span class="ln-en">enriched text will appear here...</span><span class="ln-uk">збагачений текст з'явиться тут...</span></span></div>
         </div>
       </div>
       <div class="use-summary" id="enrichSummary"></div>
@@ -229,9 +231,9 @@
         </div>
         <div class="img-gen-row">
           <textarea id="genPrompt" placeholder="Describe the scene — e.g. 'Ukrainian khata interior with whitewashed walls and decorated pich, natural light, ethnographic photograph style'"></textarea>
-          <button class="gen-btn" id="genBtn" onclick="runGenerate()">Generate</button>
+          <button class="gen-btn" id="genBtn" onclick="runGenerate()"><span class="ln-en">Generate</span><span class="ln-uk">Генерувати</span></button>
         </div>
-        <div class="gen-spinner" id="genSpinner">Generating image...</div>
+        <div class="gen-spinner" id="genSpinner"><span class="ln-en">Generating image...</span><span class="ln-uk">Генерація зображення...</span></div>
         <div class="gen-output" id="genOutput">
           <img id="genImg" src="" alt="Generated image">
         </div>
@@ -245,16 +247,21 @@
 <!-- ═══════ ABOUT ═══════ -->
 <div id="p-about" class="page">
   <div class="page-header">
-    <button class="back-link" onclick="show('home')">← Back to Archive</button>
-    <h1 class="page-title">About</h1>
-    <p class="page-subtitle">Method &amp; Pipeline</p>
+    <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
+    <h1 class="page-title"><span class="ln-en">About</span><span class="ln-uk">Про проєкт</span></h1>
+    <p class="page-subtitle"><span class="ln-en">Method &amp; Pipeline</span><span class="ln-uk">Метод та пайплайн</span></p>
   </div>
   <div class="about-body">
-    <p>Threshold is a digital archive for Ukrainian vernacular architectural knowledge, built as part of a thesis at IAAC (MAA02 — Algorithmic Design I).</p>
-    <p>The system works as a pipeline. A source — such as an ethnographic monograph — is uploaded and machine-read. Knowledge is extracted as subject–relation–object triples, each anchored to its evidence sentence and page reference. Extraction runs through parallel pipelines (BM25 retrieval and vector RAG), and every extracted rule carries its provenance.</p>
-    <p>Extracted rules then pass through human validation: each triple is reviewed against its source quote and tagged TRUE, FALSE, or CONTESTED. What is confirmed is saved. What is contested stays open.</p>
-    <p>Validated knowledge is put to work in two ways: enriching plain text with sourced architectural detail, and conditioning image generation through a LoRA-trained model — so that generated images of the Ukrainian khata are grounded in documented, human-verified knowledge rather than the model's generic priors.</p>
-    <p><strong>The archive grows.</strong></p>
+    <p class="ln-en">Threshold is a digital archive for Ukrainian vernacular architectural knowledge, built as part of a thesis at IAAC (MAA02 — Algorithmic Design I).</p>
+    <p class="ln-uk">Threshold — цифровий архів знань про українське народне архітектурне будівництво, створений у межах дисертації в IAAC (MAA02 — Алгоритмічний дизайн I).</p>
+    <p class="ln-en">The system works as a pipeline. A source — such as an ethnographic monograph — is uploaded and machine-read. Knowledge is extracted as subject–relation–object triples, each anchored to its evidence sentence and page reference. Extraction runs through parallel pipelines (BM25 retrieval and vector RAG), and every extracted rule carries its provenance.</p>
+    <p class="ln-uk">Система працює як конвеєр. Джерело — наприклад, етнографічна монографія — завантажується та зчитується машиною. Знання видобуваються у вигляді триплетів суб'єкт–зв'язок–об'єкт, кожен з яких прив'язаний до речення-доказу та посилання на сторінку. Видобування відбувається через паралельні конвеєри (BM25 пошук та векторний RAG), і кожне правило зберігає своє походження.</p>
+    <p class="ln-en">Extracted rules then pass through human validation: each triple is reviewed against its source quote and tagged TRUE, FALSE, or CONTESTED. What is confirmed is saved. What is contested stays open.</p>
+    <p class="ln-uk">Видобуті правила проходять людську верифікацію: кожен триплет перевіряється відносно вихідної цитати та позначається як ПРАВДА, ХИБНО або СПІРНО. Те, що підтверджено, — зберігається. Те, що викликає сумнів, — залишається відкритим.</p>
+    <p class="ln-en">Validated knowledge is put to work in two ways: enriching plain text with sourced architectural detail, and conditioning image generation through a LoRA-trained model — so that generated images of the Ukrainian khata are grounded in documented, human-verified knowledge rather than the model's generic priors.</p>
+    <p class="ln-uk">Верифіковані знання застосовуються двома способами: для збагачення тексту підтвердженими архітектурними деталями та для умовної генерації зображень через LoRA-навчену модель — щоб згенеровані зображення української хати ґрунтувалися на задокументованих, верифікованих людиною знаннях, а не на загальних уявленнях моделі.</p>
+    <p class="ln-en"><strong>The archive grows.</strong></p>
+    <p class="ln-uk"><strong>Архів росте.</strong></p>
   </div>
   <footer><span>Valentyna Lubska</span><span>Threshold</span><span>MAA02 — Algorithmic Design I</span></footer>
 </div>
