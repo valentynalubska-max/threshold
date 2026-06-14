@@ -15,7 +15,8 @@
     <button class="nav-link active" data-page="home" onclick="show('home')"><span class="ln-en">Home</span><span class="ln-uk">Головна</span></button>
     <button class="nav-link" data-page="add" onclick="show('add')"><span class="ln-en">Teach</span><span class="ln-uk">Навчити</span></button>
     <button class="nav-link" data-page="validate" onclick="show('validate')"><span class="ln-en">Validate</span><span class="ln-uk">Перевірити</span></button>
-    <button class="nav-link" data-page="use" onclick="show('use')"><span class="ln-en">Explore</span><span class="ln-uk">Дослідити</span></button>
+    <button class="nav-link" data-page="use" onclick="show('use')"><span class="ln-en">Generate</span><span class="ln-uk">Генерувати</span></button>
+    <button class="nav-link" data-page="explore" onclick="show('explore')"><span class="ln-en">Explore</span><span class="ln-uk">Граф</span></button>
     <button class="nav-link" data-page="about" onclick="show('about')"><span class="ln-en">About</span><span class="ln-uk">Про проєкт</span></button>
   </div>
   <div class="nav-search">
@@ -555,7 +556,7 @@
 <div id="p-use" class="page">
   <div class="page-header">
     <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
-    <h1 class="page-title"><span class="ln-en">Use Knowledge</span><span class="ln-uk">Застосувати знання</span></h1>
+    <h1 class="page-title"><span class="ln-en">Generate</span><span class="ln-uk">Генерувати</span></h1>
     <p class="page-subtitle"><span class="ln-en">Apply the archive to enrich texts and generate culturally grounded images</span><span class="ln-uk">Застосуйте архів для збагачення текстів та генерації культурно обґрунтованих зображень</span></p>
   </div>
   <div class="use-body">
@@ -584,6 +585,9 @@
         </div>
       </div>
       <div class="use-summary" id="enrichSummary"></div>
+      <button id="sendToGenBtn" class="send-gen-btn" onclick="sendToGen()" style="display:none">
+        <span class="ln-en">SEND TO IMAGE GENERATION →</span><span class="ln-uk">НАДІСЛАТИ ДО ГЕНЕРАЦІЇ →</span>
+      </button>
     </div>
     <div id="u-gen" class="use-panel">
       <div class="img-gen">
@@ -625,6 +629,51 @@
     <p class="ln-uk"><strong>Архів росте.</strong></p>
   </div>
   <footer><span>Valentyna Lubska</span><span>Threshold</span><span>MAA02 — Algorithmic Design I</span></footer>
+</div>
+
+<!-- ═══════ EXPLORE ═══════ -->
+<div id="p-explore" class="page">
+  <div class="explore-topbar">
+    <button class="back-link explore-back" onclick="show('home')"><span class="ln-en">← Back</span><span class="ln-uk">← Назад</span></button>
+    <div class="explore-title-area">
+      <span class="ln-en">Knowledge Graph</span><span class="ln-uk">Граф знань</span>
+      <span class="explore-counts" id="explore-counts"></span>
+    </div>
+    <div class="explore-filters">
+      <button class="exp-pill active" data-filter="ALL"><span class="ln-en">All</span><span class="ln-uk">Усі</span></button>
+      <button class="exp-pill" data-filter="SPATIAL"><span class="ln-en">Spatial</span><span class="ln-uk">Просторові</span></button>
+      <button class="exp-pill" data-filter="MATERIAL"><span class="ln-en">Material</span><span class="ln-uk">Матеріальні</span></button>
+      <button class="exp-pill" data-filter="RITUAL"><span class="ln-en">Ritual</span><span class="ln-uk">Ритуальні</span></button>
+      <button class="exp-pill" data-filter="COSMO"><span class="ln-en">Cosmo</span><span class="ln-uk">Косм.</span></button>
+      <button class="exp-pill" data-filter="SEMANT"><span class="ln-en">Semantic</span><span class="ln-uk">Семантичні</span></button>
+    </div>
+    <div class="explore-search-wrap">
+      <input type="text" id="explore-search" placeholder="Search nodes…">
+    </div>
+    <div class="explore-zoom-btns">
+      <button id="explore-zoom-in" title="Zoom in">+</button>
+      <button id="explore-zoom-fit" title="Fit to screen">⊙</button>
+      <button id="explore-zoom-out" title="Zoom out">−</button>
+    </div>
+  </div>
+  <div class="explore-body">
+    <div id="explore-svg-container" class="explore-canvas">
+      <div class="explore-loading"><span class="ln-en">Click "Explore" in the nav to load</span><span class="ln-uk">Натисніть "Граф" для завантаження</span></div>
+    </div>
+    <aside id="explore-panel" class="explore-panel">
+      <div id="explore-panel-content" class="explore-panel-inner">
+        <p class="explore-hint"><span class="ln-en">Click a node to explore</span><span class="ln-uk">Натисніть вузол для перегляду</span></p>
+      </div>
+    </aside>
+  </div>
+  <div id="explore-legend" class="explore-legend"></div>
+  <div id="explore-sheet" class="explore-sheet">
+    <div class="explore-sheet-handle">
+      <span><span class="ln-en">Node Details</span><span class="ln-uk">Деталі вузла</span></span>
+      <button id="explore-sheet-close" class="explore-sheet-close">✕</button>
+    </div>
+    <div id="explore-sheet-content" class="explore-panel-inner"></div>
+  </div>
 </div>
 
   <script type="module" src="/src/main.js"></script>

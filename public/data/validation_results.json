@@ -1,0 +1,83 @@
+{
+  "book_id": "B4_MASNENKO_2012",
+  "generated": "2026-05-09T19:29:24+00:00",
+  "total_in_excel": 117,
+  "tagged_total": 117,
+  "true": 38,
+  "false": 30,
+  "contested": 48,
+  "skip": 1,
+  "auto_flag_accuracy": {
+    "auto_true_confirmed_pct": 30.8,
+    "auto_flag_review_false_pct": 18.5,
+    "auto_contested_confirmed_pct": 44.0
+  },
+  "per_subject": {
+    "PICH_STOVE": {
+      "TRUE": 5,
+      "FALSE": 2,
+      "CONTESTED": 5
+    },
+    "KOMYN_CHIMNEY": {
+      "TRUE": 2,
+      "FALSE": 1,
+      "CONTESTED": 3
+    },
+    "SVOLOK": {
+      "TRUE": 4,
+      "FALSE": 0,
+      "CONTESTED": 0
+    },
+    "WALL": {
+      "TRUE": 12,
+      "FALSE": 11,
+      "CONTESTED": 14
+    },
+    "DOLIVKA": {
+      "TRUE": 4,
+      "FALSE": 1,
+      "CONTESTED": 4
+    },
+    "ORNAMENTAL_FRIEZE": {
+      "TRUE": 3,
+      "FALSE": 5,
+      "CONTESTED": 10
+    },
+    "TABLE": {
+      "TRUE": 3,
+      "FALSE": 2,
+      "CONTESTED": 2
+    },
+    "POBILKA": {
+      "TRUE": 3,
+      "FALSE": 1,
+      "CONTESTED": 9
+    },
+    "BENCH_LAVA": {
+      "TRUE": 1,
+      "FALSE": 2,
+      "CONTESTED": 0
+    },
+    "LAVA": {
+      "TRUE": 1,
+      "FALSE": 0,
+      "CONTESTED": 0
+    },
+    "CEILING": {
+      "TRUE": 0,
+      "FALSE": 4,
+      "CONTESTED": 1
+    }
+  },
+  "pipeline_reliability": {
+    "vector_true_rate": 40.7,
+    "vectorless_true_rate": 30.3
+  },
+  "recoverable_losses": [
+    {
+      "subject": "LAVA",
+      "relation": "ADJACENT_TO",
+      "object": "TABLE"
+    }
+  ]
+}

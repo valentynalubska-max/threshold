@@ -33,6 +33,20 @@ function toggleMenu() {
   if (menu) menu.classList.toggle('open');
 }
 
+function sendToGen() {
+  const out = document.getElementById('enrichOut');
+  const prompt = document.getElementById('genPrompt');
+  const genTabBtn = document.querySelector('.use-tab[onclick*="\'gen\'"]');
+  if (!out || !prompt || !genTabBtn) return;
+  prompt.value = out.innerText.trim();
+  useTab('gen', genTabBtn);
+}
+
+function _hasEnrichedContent() {
+  const out = document.getElementById('enrichOut');
+  return out && !out.querySelector('[style*="color:#bbb"]') && out.innerText.trim().length > 0;
+}
+
 function copyEnriched() {
   const out = document.getElementById('enrichOut');
   const btn = document.getElementById('copyBtn');
@@ -88,7 +102,7 @@ function initTooltips() {
 }
 
 // Expose functions used by inline HTML handlers
-Object.assign(window, { show, kbTab, useTab, setActive, vote, nextT, runEnrich, runGenerate, addTopic, handleFile, copyEnriched, closeLightbox, toggleMenu });
+Object.assign(window, { show, kbTab, useTab, setActive, vote, nextT, runEnrich, runGenerate, addTopic, handleFile, copyEnriched, closeLightbox, toggleMenu, sendToGen });
 
 window.addEventListener('load', () => {
   checkApis();
@@ -96,4 +110,13 @@ window.addEventListener('load', () => {
   initGallery();
   initLangToggle();
   initTooltips();
+
+  // Watch enrichOut for content — show/hide the send button
+  const enrichOut = document.getElementById('enrichOut');
+  const sendBtn = document.getElementById('sendToGenBtn');
+  if (enrichOut && sendBtn) {
+    new MutationObserver(() => {
+      sendBtn.style.display = _hasEnrichedContent() ? 'block' : 'none';
+    }).observe(enrichOut, { childList: true, subtree: true });
+  }
 });

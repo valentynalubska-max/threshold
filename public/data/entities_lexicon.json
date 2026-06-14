@@ -1,0 +1,532 @@
+{
+  "_meta": {
+    "version": "2.0",
+    "language_primary": "uk",
+    "language_secondary": "ru",
+    "id_format": "transliterated_EN_stable_key",
+    "alias_language": "Ukrainian morphological variants + Russian cognates where relevant",
+    "project": "ПОРІГ — Ukrainian vernacular architecture lexicon",
+    "source": "B4 Masnenko & Rakshanov 2012, B2 Tsapenko 1967, B1 Kosmina 2008",
+    "notes": "IDs are stable ASCII keys. Ukrainian aliases are primary. Russian aliases marked [ru]. Transliterated aliases marked [translit]."
+  },
+
+  "KHATA_HOUSE": {
+    "type": "STRUCTURE",
+    "label_uk": "хата",
+    "label_en": "traditional Ukrainian dwelling",
+    "untranslatable": false,
+    "aliases": [
+      "хата", "хати", "хату", "хаті", "хатою", "хатах",
+      "хатнє", "хатній", "хатнього",
+      "житло", "житла", "житлу", "житлом",
+      "будівля", "будівлі",
+      "изба", "избе", "избу", "избой"
+    ],
+    "notes": "Primary living structure. Symbolically viewed as domestic temple and model of universe."
+  },
+
+  "SINY_VESTIBULE": {
+    "type": "SPACE",
+    "label_uk": "сіни",
+    "label_en": "entrance hall / vestibule",
+    "untranslatable": true,
+    "untranslatability_note": "сіни encodes threshold logic — organises entire khata spatial grammar. Russian сени is false cognate (simpler passage, no ritual register).",
+    "aliases": [
+      "сіни", "сінях", "сінями", "сіней", "сіням",
+      "сіни", "в сінях",
+      "сени", "сенях", "сенями"
+    ],
+    "notes": "Unheated entrance hall. Threshold category — entire khata spatial logic organised around сіни/хата distinction."
+  },
+
+  "KOMORA_PANTRY": {
+    "type": "SPACE",
+    "label_uk": "комора",
+    "label_en": "storage room / pantry",
+    "untranslatable": false,
+    "aliases": [
+      "комора", "комори", "коморі", "комору", "коморою",
+      "кладова", "кладової"
+    ],
+    "notes": "Unheated storage for grain, food, textiles, tools."
+  },
+
+  "PICH_STOVE": {
+    "type": "ELEMENT",
+    "label_uk": "піч",
+    "label_en": "masonry stove",
+    "untranslatable": true,
+    "untranslatability_note": "піч is a spatial zone — heats, cooks, sleeping platform, ritual centre. Russian печь is most dangerous false cognate. English stove/oven = appliance only.",
+    "aliases": [
+      "піч", "печі", "пічці", "піччю", "пічка", "пічки",
+      "пічку", "пічкою",
+      "піч-мати", "піч мати",
+      "варистая піч", "варна піч",
+      "піч варистая",
+      "печь", "печи", "печью", "печку", "печке"
+    ],
+    "notes": "Massive clay stove. Thermal, functional, ritual and spatial heart of khata. Addressed as living being or mother."
+  },
+
+  "CHELIUSTI": {
+    "type": "ELEMENT",
+    "label_uk": "челюсті",
+    "label_en": "stove mouth / arched opening",
+    "untranslatable": true,
+    "untranslatability_note": "Encodes піч as animate — the mouth of a living being. Absent from B2 entirely. English firebox opening = functional only.",
+    "aliases": [
+      "челюсті", "челюстей", "челюстями", "челюстях",
+      "челюсть",
+      "отвір печі", "отвір у печі",
+      "уста печі",
+      "зев", "зева", "устье", "устья"
+    ],
+    "notes": "Arched opening of stove. Anatomical term — encodes animate quality of піч."
+  },
+
+  "PIDDUVALO": {
+    "type": "ELEMENT",
+    "label_uk": "піддувало",
+    "label_en": "draft opening / lower firebox",
+    "untranslatable": false,
+    "aliases": [
+      "піддувало", "піддувала", "піддувалом",
+      "піддувальний отвір",
+      "поддувало", "поддувала", "поддувалом"
+    ],
+    "notes": "Lower opening below челюсті for draft/ash. Functional element."
+  },
+
+  "KOMYN_CHIMNEY": {
+    "type": "ELEMENT",
+    "label_uk": "комин",
+    "label_en": "chimney / smoke hood",
+    "untranslatable": false,
+    "aliases": [
+      "комин", "комина", "комину", "комином", "комині",
+      "димохід", "димоходу",
+      "труба", "труби", "трубою",
+      "дымоход", "труба"
+    ],
+    "notes": "Smoke-collecting hood or chimney above hearth."
+  },
+
+  "CHERYN": {
+    "type": "ELEMENT",
+    "label_uk": "черінь",
+    "label_en": "stove floor / hearth floor",
+    "untranslatable": false,
+    "aliases": [
+      "черінь", "череня", "череню", "черенем",
+      "под печи", "под", "пода"
+    ],
+    "notes": "Internal floor of stove where fuel burns and food cooks."
+  },
+
+  "ZAPICHOK": {
+    "type": "SPACE",
+    "label_uk": "запічок",
+    "label_en": "space behind stove",
+    "untranslatable": false,
+    "aliases": [
+      "запічок", "запічка", "запічку", "запічком",
+      "за піччю", "закуток за піччю",
+      "запечье", "запечку"
+    ],
+    "notes": "Warm space between stove and wall. Used for sleeping or storage."
+  },
+
+  "POKUT_ICON_CORNER": {
+    "type": "SPACE",
+    "label_uk": "покуть",
+    "label_en": "sacred / icon corner",
+    "untranslatable": true,
+    "untranslatability_note": "покуть encodes cosmological position — identified as bright heavenly star. No English equivalent preserves this.",
+    "aliases": [
+      "покуть", "покуті", "покутю", "покутям",
+      "покут",
+      "красний кут", "красному куті", "красного кута",
+      "святий кут", "святому куті",
+      "божий кут",
+      "красный угол", "красному углу"
+    ],
+    "notes": "Sacred corner diagonally opposite stove. Most prestigious space. Cosmologically identified as bright star."
+  },
+
+  "SVOLOK": {
+    "type": "ELEMENT",
+    "label_uk": "сволок",
+    "label_en": "main ceiling beam",
+    "untranslatable": true,
+    "untranslatability_note": "сволок is simultaneously structural element + spatial orienter + Milky Way (Чумацький Шлях). Russian балка/матиця = structural only. English ceiling beam = structural only.",
+    "aliases": [
+      "сволок", "сволока", "сволоку", "сволоком", "сволоці",
+      "матиця", "матиці", "матицю", "матицею",
+      "головна балка", "головної балки",
+      "центральна балка",
+      "чумацький шлях", "Чумацький Шлях",
+      "балка", "балки", "балку", "балкою",
+      "матица", "матицы", "матице", "матицей",
+      "сволок"
+    ],
+    "notes": "Central ceiling beam. Structural + cosmological — identified as Milky Way. Site of building sacrifice."
+  },
+
+  "CEILING_BEAMS": {
+    "type": "ELEMENT",
+    "label_uk": "стельові балки",
+    "label_en": "ceiling beams (general)",
+    "untranslatable": false,
+    "aliases": [
+      "стельові балки", "стельових балок", "стельовими балками",
+      "балки стелі", "балки",
+      "потолочные балки", "балки потолка"
+    ],
+    "notes": "General ceiling beams (not the central svolok). Vectorless pipeline ID — kept for merge compatibility."
+  },
+
+  "PIL_SLEEPING_PLATFORM": {
+    "type": "ELEMENT",
+    "label_uk": "піл",
+    "label_en": "sleeping platform",
+    "untranslatable": false,
+    "aliases": [
+      "піл", "пола", "полу", "полом", "полі",
+      "пол", "полу",
+      "лежанка", "лежанки",
+      "дерев'яний настил", "дерев'яного настилу"
+    ],
+    "notes": "Fixed wooden sleeping platform between stove and wall."
+  },
+
+  "TABLE": {
+    "type": "ELEMENT",
+    "label_uk": "стіл",
+    "label_en": "table",
+    "untranslatable": false,
+    "aliases": [
+      "стіл", "стола", "столу", "столом", "столі",
+      "стол", "стола", "столу", "столом"
+    ],
+    "notes": "Positioned in pokut. First object brought into new house. Domestic altar for ritual meals."
+  },
+
+  "BENCH_LAVA": {
+    "type": "ELEMENT",
+    "label_uk": "лава",
+    "label_en": "fixed bench",
+    "untranslatable": false,
+    "aliases": [
+      "лава", "лави", "лаві", "лаву", "лавою", "лавах",
+      "лавка", "лавки",
+      "лавица", "лавицы"
+    ],
+    "notes": "Fixed wooden bench along walls. Meets at table in pokut corner."
+  },
+
+  "MYSNYK": {
+    "type": "ELEMENT",
+    "label_uk": "мисник",
+    "label_en": "dish shelf",
+    "untranslatable": true,
+    "untranslatability_note": "Podillia-specific term for open dish shelf. Dropped by both pipelines from B2 — a documented extraction failure.",
+    "aliases": [
+      "мисник", "мисника", "миснику", "мисником", "миснику",
+      "мисниця", "мисниці",
+      "полиця для посуду", "полиця для мисок",
+      "судница", "судницы"
+    ],
+    "notes": "Shelf or open cupboard for ceramic dishes. Podillia-specific. Key dropped term in B2 Tsapenko."
+  },
+
+  "BOZHNYTSIA": {
+    "type": "ELEMENT",
+    "label_uk": "божниця",
+    "label_en": "icon shelf",
+    "untranslatable": false,
+    "aliases": [
+      "божниця", "божниці", "божницю", "божницею",
+      "полиця для ікон", "полиця для образів",
+      "иконная полка", "полка для икон"
+    ],
+    "notes": "Narrow shelf for icons in pokut corner."
+  },
+
+  "SKRYNIA": {
+    "type": "ELEMENT",
+    "label_uk": "скриня",
+    "label_en": "dowry chest",
+    "untranslatable": false,
+    "aliases": [
+      "скриня", "скрині", "скриню", "скринею", "скринях",
+      "скринька", "скриньки",
+      "скриня з посагом",
+      "сундук", "сундука", "сундуку"
+    ],
+    "notes": "Decorated chest for dowry and finest textiles. Placed near table — signals family life-cycle stage."
+  },
+
+  "ZHERDKA": {
+    "type": "ELEMENT",
+    "label_uk": "жердка",
+    "label_en": "hanging rod",
+    "untranslatable": false,
+    "aliases": [
+      "жердка", "жердки", "жердці", "жердку", "жердкою",
+      "жердь", "жерді",
+      "жердина"
+    ],
+    "notes": "Horizontal rod suspended from ceiling above пол for hanging clothing. Displays family wealth."
+  },
+
+  "WALL": {
+    "type": "ELEMENT",
+    "label_uk": "стіна",
+    "label_en": "wall",
+    "untranslatable": false,
+    "aliases": [
+      "стіна", "стіни", "стіні", "стіну", "стіною", "стінах",
+      "стінка", "стінки",
+      "стена", "стены", "стене", "стеной", "стенах"
+    ],
+    "notes": "Cosmologically identified with mountains and forests."
+  },
+
+  "CEILING": {
+    "type": "ELEMENT",
+    "label_uk": "стеля",
+    "label_en": "ceiling",
+    "untranslatable": false,
+    "aliases": [
+      "стеля", "стелі", "стелю", "стелею",
+      "потолок", "потолка", "потолку", "потолком"
+    ],
+    "notes": "Cosmologically identified with celestial vault."
+  },
+
+  "WINDOW": {
+    "type": "ELEMENT",
+    "label_uk": "вікно",
+    "label_en": "window",
+    "untranslatable": false,
+    "aliases": [
+      "вікно", "вікна", "вікну", "вікном", "вікнах",
+      "вікон",
+      "окно", "окна", "окну", "окном", "окнах"
+    ],
+    "notes": "Peripichne window placed to illuminate cooking surface."
+  },
+
+  "DOOR": {
+    "type": "ELEMENT",
+    "label_uk": "двері",
+    "label_en": "door",
+    "untranslatable": false,
+    "aliases": [
+      "двері", "дверей", "дверям", "дверима",
+      "дверний отвір", "дверного отвору",
+      "дверь", "двери", "дверей", "дверях"
+    ]
+  },
+
+  "THRESHOLD_PORIH": {
+    "type": "ELEMENT",
+    "label_uk": "поріг",
+    "label_en": "threshold",
+    "untranslatable": true,
+    "untranslatability_note": "поріг is site of ancestor burial and protective boundary between living and spirit world. Also project name — threshold as conceptual frame.",
+    "aliases": [
+      "поріг", "порога", "порогу", "порогом", "порозі",
+      "поріжок",
+      "порог", "порога", "порогу", "порогом"
+    ],
+    "notes": "Physical threshold. Historically significant as site for ancestor protection and burial."
+  },
+
+  "DOLIVKA": {
+    "type": "ELEMENT",
+    "label_uk": "долівка",
+    "label_en": "earthen floor",
+    "untranslatable": true,
+    "untranslatability_note": "долівка is re-dressed with clay, cow dung, ochre — cosmological earth, not static material. English earthen floor = static/primitive. Absent from B2.",
+    "aliases": [
+      "долівка", "долівки", "долівці", "долівку", "долівкою",
+      "підлога", "підлоги", "підлозі",
+      "земляна підлога", "земляної підлоги",
+      "глиняна підлога",
+      "пол", "пола", "полу", "полом",
+      "земляной пол", "глиняный пол"
+    ],
+    "notes": "Earthen/clay floor. Represents the earth cosmologically. Re-dressed ritually."
+  },
+
+  "POBILKA": {
+    "type": "ELEMENT",
+    "label_uk": "побілка",
+    "label_en": "lime wash",
+    "untranslatable": true,
+    "untranslatability_note": "побілка is a calendar act — seasonal renewal before Easter, women's work. Russian побєлка loses ritual. English whitewash loses both material practice and ritual.",
+    "aliases": [
+      "побілка", "побілки", "побілці", "побілку", "побілкою",
+      "білення", "білення стін",
+      "вапнування", "вапнування стін",
+      "білити", "білили", "побілили", "побілені",
+      "побілені стіни", "побілена піч",
+      "побелка", "побелки", "побелке", "побелкой",
+      "белить", "белили", "побелили"
+    ],
+    "notes": "Seasonal whitewashing. Ritual calendar act, not maintenance. Women's work."
+  },
+
+  "ORNAMENTAL_FRIEZE": {
+    "type": "ELEMENT",
+    "label_uk": "орнаментальна смуга",
+    "label_en": "ornamental frieze / decorative band",
+    "untranslatable": false,
+    "aliases": [
+      "орнаментальна смуга", "орнаментальної смуги",
+      "орнаментальний фриз",
+      "декоративна смуга", "декоративної смуги",
+      "розпис", "розпису", "розписом",
+      "мальовка", "мальовки", "мальовкою",
+      "червона смуга", "червоної смуги",
+      "орнамент", "орнаменту", "орнаментом",
+      "вазон", "вазону",
+      "орнаментальная полоса", "орнаментальный фриз",
+      "роспись"
+    ],
+    "notes": "Decorative painted band. Often at ceiling-wall junction or on стove panels."
+  },
+
+  "PRYZBA": {
+    "type": "ELEMENT",
+    "label_uk": "призьба",
+    "label_en": "exterior clay ledge",
+    "untranslatable": false,
+    "aliases": [
+      "призьба", "призьби", "призьбі", "призьбою",
+      "завалинка", "завалинки",
+      "завалинка", "завалинки"
+    ],
+    "notes": "Clay-packed ledge along exterior base. Insulation and social seating."
+  },
+
+  "STRIKHA_ROOF": {
+    "type": "ELEMENT",
+    "label_uk": "стріха",
+    "label_en": "thatched roof",
+    "untranslatable": false,
+    "aliases": [
+      "стріха", "стріхи", "стрісі", "стріхою",
+      "солом'яний дах", "солом'яного даху",
+      "очеретяний дах",
+      "крыша", "соломенная крыша", "кровля"
+    ],
+    "notes": "Thatched roof of rye straw or reeds. Described as mother-child bond with living space."
+  },
+
+  "ROOF": {
+    "type": "ELEMENT",
+    "label_uk": "дах",
+    "label_en": "roof",
+    "untranslatable": false,
+    "aliases": [
+      "дах", "даху", "дахом", "даші",
+      "крыша", "кровля"
+    ]
+  },
+
+  "ENTRANCE": {
+    "type": "SPACE",
+    "label_uk": "вхід",
+    "label_en": "entrance",
+    "untranslatable": false,
+    "aliases": [
+      "вхід", "входу", "входом", "вході",
+      "вхідний отвір",
+      "вход", "входа", "входом"
+    ]
+  },
+
+  "RYNDUK": {
+    "type": "ELEMENT",
+    "label_uk": "рундук",
+    "label_en": "exterior porch / platform",
+    "untranslatable": true,
+    "untranslatability_note": "Podillia-specific covered exterior porch. Not present in standard Russian architectural vocabulary.",
+    "aliases": [
+      "рундук", "рундука", "рундуку", "рундуком",
+      "ганок", "ганку", "ганком",
+      "ґанок", "ґанку"
+    ],
+    "notes": "Podillia-specific exterior porch. Formally absent from current pipeline — to be added."
+  },
+
+  "VANKYR": {
+    "type": "ELEMENT",
+    "label_uk": "ванькир",
+    "label_en": "outbuilding / lean-to",
+    "untranslatable": true,
+    "untranslatability_note": "Podillia-specific term for attached outbuilding or lean-to. No Russian or English equivalent.",
+    "aliases": [
+      "ванькир", "ванькира", "ванькиру", "ванькиром",
+      "прибудова", "прибудови",
+      "прибудинок"
+    ],
+    "notes": "Podillia-specific outbuilding. Formally absent from current pipeline — to be added."
+  },
+
+  "WOODEN_VESSEL": {
+    "type": "ELEMENT",
+    "label_uk": "дерев'яний посуд",
+    "label_en": "wooden vessel",
+    "untranslatable": false,
+    "aliases": [
+      "дерев'яний посуд", "дерев'яного посуду",
+      "діжка", "діжки", "діжку", "діжкою",
+      "миска", "миски",
+      "посуд", "посуду",
+      "деревянная посуда", "кадка"
+    ]
+  },
+
+  "WOVEN_TEXTILE": {
+    "type": "ELEMENT",
+    "label_uk": "тканина",
+    "label_en": "woven textile",
+    "untranslatable": false,
+    "aliases": [
+      "тканина", "тканини", "тканині", "тканиною",
+      "рушник", "рушника", "рушнику", "рушником", "рушниках",
+      "вишивка", "вишивки",
+      "полотно", "полотна",
+      "ткань", "рушник", "полотно"
+    ],
+    "notes": "Woven textiles including rushnyky. Displayed on zherdka — signals family wealth."
+  },
+
+  "LIVING_ROOM": {
+    "type": "SPACE",
+    "label_uk": "кімната",
+    "label_en": "main living room",
+    "untranslatable": false,
+    "aliases": [
+      "кімната", "кімнати", "кімнаті",
+      "велика хата", "велика кімната",
+      "жила кімната", "жилої кімнати",
+      "жилая комната", "комната"
+    ],
+    "notes": "Primary living space within khata."
+  },
+
+  "BED_SLEEPING_PLATFORM": {
+    "type": "ELEMENT",
+    "label_uk": "ліжко",
+    "label_en": "bed / sleeping platform",
+    "untranslatable": false,
+    "aliases": [
+      "ліжко", "ліжка", "ліжку", "ліжком",
+      "кровать", "кровати", "кроватью"
+    ]
+  }
+}

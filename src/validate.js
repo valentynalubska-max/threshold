@@ -38,8 +38,8 @@ export function renderVal() {
     <div class="triple-evidence">${t.ev}</div>
     <div class="val-btns">
       <button class="val-btn t" onclick="vote('t')">${uk ? 'ПРАВДА' : 'TRUE'}</button>
-      <button class="val-btn f" onclick="vote('f')">${uk ? 'ФАЛЬШИВИЙ' : 'FALSE'}</button>
       <button class="val-btn c" onclick="vote('c')">${uk ? 'СПІРНО' : 'CONTESTED'}</button>
+      <button class="val-btn f" onclick="vote('f')">${uk ? 'ФАЛЬШИВИЙ' : 'FALSE'}</button>
     </div>
     <button id="nBtn" class="val-next" onclick="nextT()">${uk ? 'Далі →' : 'Next →'}</button>
     <div class="val-counter">${cur + 1} / ${triples.length}</div>

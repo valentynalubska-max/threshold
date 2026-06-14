@@ -1,8 +1,9 @@
 import { renderVal } from './validate.js';
 import { galleryRecenter } from './gallery.js';
 import { initTranslations } from './translate.js';
+import { initExplore } from './explore.js';
 
-const pages = { home:'p-home', pich:'p-pich', khata:'p-khata', pokut:'p-pokut', ornament:'p-ornament', porig:'p-porig', vikno:'p-vikno', add:'p-add', validate:'p-validate', use:'p-use', about:'p-about' };
+const pages = { home:'p-home', pich:'p-pich', khata:'p-khata', pokut:'p-pokut', ornament:'p-ornament', porig:'p-porig', vikno:'p-vikno', add:'p-add', validate:'p-validate', use:'p-use', about:'p-about', explore:'p-explore' };
 
 export function show(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -13,6 +14,7 @@ export function show(id) {
   if (menu) menu.classList.remove('open');
   window.scrollTo(0, 0);
   if (id === 'validate') renderVal();
+  if (id === 'explore') initExplore();
   if (id === 'pich') { galleryRecenter(); initTranslations('p-pich'); }
   if (id === 'khata') { galleryRecenter(); initTranslations('p-khata'); }
   if (id === 'pokut') { galleryRecenter(); initTranslations('p-pokut'); }
