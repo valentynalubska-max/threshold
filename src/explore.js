@@ -21,11 +21,12 @@ const SEL  = '#E53325';
 const CATS = ['SPATIAL','MATERIAL','RITUAL','COSMO','SEMANT','PROPO'];
 
 // Physics constants
-const REP     = 2800;
-const SPRING  = 0.035;
+const REP     = 800;
+const SPRING  = 0.03;
 const IDEAL   = 120;
-const GRAVITY = 0.0015;
-const DAMP    = 0.88;
+const GRAVITY = 0.05;
+const DAMP    = 0.7;
+const V_MAX   = 8;
 
 // Runtime state
 let _nodes = [], _edges = [];
@@ -77,16 +78,29 @@ async function _fetchData() {
     fetch('/data/validation_results.json').then(r => r.json()),
   ]);
 
-  const lexicon = Object.assign({}, lex);
-  delete lexicon._meta;
   const validation = val.per_subject || {};
 
+  // Only use keys that exist in the lexicon (named entities, not free-text objects)
+  const entityKeys = new Set(
+    Object.keys(lex).filter(k => k !== '_meta')
+  );
+
+  // Only keep edges where BOTH endpoints are lexicon entities
+  const filteredEdges = kg.edges.filter(
+    e => entityKeys.has(e.subject) && entityKeys.has(e.object) && e.subject !== e.object
+  );
+
+  // Only create nodes for entity keys that appear in the filtered edge set
+  const usedKeys = new Set();
+  filteredEdges.forEach(e => { usedKeys.add(e.subject); usedKeys.add(e.object); });
+
   const nodeMap = new Map();
-  const getNode = id => {
-    if (!nodeMap.has(id)) {
-      const lx = lexicon[id];
+  Array.from(entityKeys)
+    .filter(id => usedKeys.has(id))
+    .forEach(id => {
+      const lx = lex[id];
       const angle = Math.random() * Math.PI * 2;
-      const radius = 80 + Math.random() * 350;
+      const radius = 40 + Math.random() * 120;
       nodeMap.set(id, {
         id,
         label_uk: lx?.label_uk || id.replace(/_/g, ' ').toLowerCase(),
@@ -102,24 +116,25 @@ async function _fetchData() {
         vx: 0, vy: 0,
         _el: null, _c: null
       });
-    }
-    return nodeMap.get(id);
-  };
+    });
 
-  _edges = kg.edges
+  _nodes = [...nodeMap.values()];
+
+  _edges = filteredEdges
     .map(e => ({
       id: e.triple_id,
-      source: getNode(e.subject),
-      target: getNode(e.object),
+      source: nodeMap.get(e.subject),
+      target: nodeMap.get(e.object),
       relation: e.relation || '',
       category: e.relation_category || 'SPATIAL',
       evidence: Array.isArray(e.evidence) ? e.evidence : (e.evidence ? [e.evidence] : []),
       _el: null
     }))
-    .filter(e => e.source.id !== e.target.id);
+    .filter(e => e.source && e.target);
 
-  _nodes = [...nodeMap.values()];
   _edges.forEach(e => { e.source.degree++; e.target.degree++; });
+
+  console.log('Entity nodes:', _nodes.length, 'Edges:', _edges.length);
 
   const cnt = document.getElementById('explore-counts');
   if (cnt) cnt.textContent = `${_nodes.length} nodes · ${_edges.length} edges`;
@@ -153,19 +168,23 @@ function _tick(alpha) {
     e.target.vx -= f * dx; e.target.vy -= f * dy;
   }
 
-  // Gravity + integrate
+  // Gravity + clamp velocity + integrate + clamp position (fixed bound; fitToView scales after)
   for (const n of _nodes) {
     n.vx = (n.vx - n.x * GRAVITY) * DAMP;
     n.vy = (n.vy - n.y * GRAVITY) * DAMP;
+    n.vx = Math.max(-V_MAX, Math.min(V_MAX, n.vx));
+    n.vy = Math.max(-V_MAX, Math.min(V_MAX, n.vy));
     n.x += n.vx * alpha;
     n.y += n.vy * alpha;
+    n.x = Math.max(-340, Math.min(340, n.x));
+    n.y = Math.max(-240, Math.min(240, n.y));
   }
 }
 
 function _runSim() {
   return new Promise(resolve => {
     let alpha = 1.0, ticks = 0;
-    const TOTAL = 200, BATCH = 15;
+    const TOTAL = 300, BATCH = 15;
 
     const step = () => {
       for (let i = 0; i < BATCH && alpha > 0.001; i++) {
@@ -398,13 +417,14 @@ function _centerGraph() {
     if (n.x > x1) x1 = n.x; if (n.y > y1) y1 = n.y;
   }
   const gw = (x1 - x0) || 1, gh = (y1 - y0) || 1;
-  _sc = Math.max(0.1, Math.min(1.2, Math.min(cw / (gw + 80), ch / (gh + 80))));
+  // Scale 0.4–1.5 with 120px padding as per spec
+  _sc = Math.max(0.4, Math.min(1.5, Math.min(cw / (gw + 120), ch / (gh + 120))));
   _tx = cw / 2 - ((x0 + x1) / 2) * _sc;
   _ty = ch / 2 - ((y0 + y1) / 2) * _sc;
-  if (isNaN(_tx) || isNaN(_ty) || isNaN(_sc)) { _tx = cw/2; _ty = ch/2; _sc = 1; }
+  if (isNaN(_tx) || isNaN(_ty) || isNaN(_sc)) { _tx = cw / 2; _ty = ch / 2; _sc = 1; }
   _applyTx();
   _lblVis();
-  console.log('_centerGraph —', Math.round(cw), 'x', Math.round(ch), '— scale', _sc.toFixed(3), 'tx', Math.round(_tx), 'ty', Math.round(_ty));
+  console.log('fitToView —', Math.round(cw), 'x', Math.round(ch), '| scale', _sc.toFixed(3), 'tx', Math.round(_tx), 'ty', Math.round(_ty));
 }
 
 function _lblVis() {
