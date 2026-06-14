@@ -21,9 +21,9 @@ const SEL  = '#E53325';
 const CATS = ['SPATIAL','MATERIAL','RITUAL','COSMO','SEMANT','PROPO'];
 
 // Physics constants
-const REP     = 800;
+const REP     = 2500;
 const SPRING  = 0.03;
-const IDEAL   = 120;
+const IDEAL   = 180;
 const GRAVITY = 0.05;
 const DAMP    = 0.7;
 const V_MAX   = 8;
@@ -235,26 +235,6 @@ function _setupSVG() {
   _svg = svgEl('svg');
   _svg.style.cssText = 'width:100%;height:100%;display:block;cursor:grab;touch-action:none;user-select:none;';
 
-  // Arrow markers
-  const defs = svgEl('defs');
-  [...CATS, 'SEL'].forEach(cat => {
-    const color = cat === 'SEL' ? SEL : (EDGE_COLORS[cat] || '#aaa');
-    const m = svgEl('marker');
-    m.setAttribute('id', `arr-${cat}`);
-    m.setAttribute('markerWidth', '5');
-    m.setAttribute('markerHeight', '5');
-    m.setAttribute('refX', '4');
-    m.setAttribute('refY', '2.5');
-    m.setAttribute('orient', 'auto');
-    m.setAttribute('markerUnits', 'strokeWidth');
-    const p = svgEl('path');
-    p.setAttribute('d', 'M0,0 L0,6 L6,3 z');
-    p.setAttribute('fill', color);
-    m.appendChild(p);
-    defs.appendChild(m);
-  });
-  _svg.appendChild(defs);
-
   _canvas = svgEl('g');
   _edgeG  = svgEl('g');
   _nodeG  = svgEl('g');
@@ -279,10 +259,10 @@ function _renderAll() {
   _edges.forEach(e => {
     const path = svgEl('path');
     path.setAttribute('fill', 'none');
-    path.setAttribute('stroke', EDGE_COLORS[e.category] || '#aaa');
-    path.setAttribute('stroke-width', '1');
-    path.setAttribute('opacity', '0.25');
-    path.setAttribute('marker-end', `url(#arr-${e.category})`);
+    path.setAttribute('stroke', '#B3B3B3');
+    path.setAttribute('stroke-width', '0.8');
+    path.setAttribute('stroke-dasharray', '3 4');
+    path.setAttribute('opacity', '0.35');
     _edgeG.appendChild(path);
     e._el = path;
   });
@@ -314,10 +294,12 @@ function _renderAll() {
 
     const lbl = svgEl('text');
     lbl.setAttribute('text-anchor', 'middle');
-    lbl.setAttribute('y', r + 11);
-    lbl.setAttribute('font-size', '8');
+    lbl.setAttribute('dominant-baseline', 'hanging');
+    lbl.setAttribute('y', r + 6);
+    lbl.setAttribute('font-size', '11');
+    lbl.setAttribute('font-weight', '400');
     lbl.setAttribute('font-family', 'NAMU, sans-serif');
-    lbl.setAttribute('fill', '#222');
+    lbl.setAttribute('fill', '#0A0A0A');
     lbl.setAttribute('pointer-events', 'none');
     lbl.setAttribute('class', 'exp-lbl');
     lbl.textContent = n.label_uk;
@@ -333,24 +315,14 @@ function _renderAll() {
 }
 
 function _r(n) {
-  return Math.max(4, Math.min(14, 4 + Math.log(Math.max(1, n.degree)) * 2.2));
+  const maxR = n.id === 'KHATA_HOUSE' ? 22 : 18;
+  return Math.max(8, Math.min(maxR, 8 + Math.log(Math.max(1, n.degree)) * 2.5));
 }
 
 function _updatePos() {
   for (const e of _edges) {
     if (!e._el) continue;
-    const sx = e.source.x, sy = e.source.y;
-    const tx = e.target.x, ty = e.target.y;
-    const dx = tx - sx, dy = ty - sy;
-    const len = Math.sqrt(dx * dx + dy * dy) || 1;
-    const r   = _r(e.target);
-    // End point sits at node boundary
-    const ex  = tx - dx / len * (r + 4);
-    const ey  = ty - dy / len * (r + 4);
-    // Cubic control point offset perpendicular to edge
-    const cx  = (sx + tx) / 2 - dy / len * 16;
-    const cy  = (sy + ty) / 2 + dx / len * 16;
-    e._el.setAttribute('d', `M${sx},${sy} Q${cx},${cy} ${ex},${ey}`);
+    e._el.setAttribute('d', `M${e.source.x},${e.source.y} L${e.target.x},${e.target.y}`);
   }
   for (const n of _nodes) {
     if (n._el) n._el.setAttribute('transform', `translate(${n.x},${n.y})`);
@@ -417,8 +389,8 @@ function _centerGraph() {
     if (n.x > x1) x1 = n.x; if (n.y > y1) y1 = n.y;
   }
   const gw = (x1 - x0) || 1, gh = (y1 - y0) || 1;
-  // Scale 0.4–1.5 with 120px padding as per spec
-  _sc = Math.max(0.4, Math.min(1.5, Math.min(cw / (gw + 120), ch / (gh + 120))));
+  // 80px padding + 10% extra breathing room so nodes don't hug the edge
+  _sc = Math.max(0.4, Math.min(1.5, Math.min(cw / (gw + 80), ch / (gh + 80)))) * 0.9;
   _tx = cw / 2 - ((x0 + x1) / 2) * _sc;
   _ty = ch / 2 - ((y0 + y1) / 2) * _sc;
   if (isNaN(_tx) || isNaN(_ty) || isNaN(_sc)) { _tx = cw / 2; _ty = ch / 2; _sc = 1; }
@@ -476,7 +448,7 @@ function _applyFilter() {
     if (!e._el) continue;
     const vis = _filter === 'ALL' || e.category === _filter;
     e._el.style.display = vis ? '' : 'none';
-    if (vis) e._el.setAttribute('opacity', '0.25');
+    if (vis) e._el.setAttribute('opacity', '0.35');
   }
   for (const n of _nodes) {
     if (!n._el) continue;
@@ -507,15 +479,16 @@ function _select(node) {
     for (const n of _nodes) {
       if (!n._el) continue;
       n._el.style.opacity = '1';
-      n._c?.setAttribute('fill', NODE_COLORS[n.type] || '#aaa');
+      n._c?.setAttribute('stroke', 'none');
+      n._c?.setAttribute('stroke-width', '0');
     }
     for (const e of _edges) {
       if (!e._el) continue;
       const vis = _filter === 'ALL' || e.category === _filter;
       e._el.style.display = vis ? '' : 'none';
-      e._el.setAttribute('opacity', '0.25');
-      e._el.setAttribute('stroke', EDGE_COLORS[e.category] || '#aaa');
-      e._el.setAttribute('marker-end', `url(#arr-${e.category})`);
+      e._el.setAttribute('opacity', '0.35');
+      e._el.setAttribute('stroke', '#B3B3B3');
+      e._el.setAttribute('stroke-width', '0.8');
     }
     _updatePanel(null);
     return;
@@ -530,7 +503,8 @@ function _select(node) {
   for (const n of _nodes) {
     if (!n._el) continue;
     const is = n === node;
-    n._c?.setAttribute('fill', is ? SEL : (NODE_COLORS[n.type] || '#aaa'));
+    n._c?.setAttribute('stroke', is ? '#0A0A0A' : 'none');
+    n._c?.setAttribute('stroke-width', is ? '3' : '0');
     n._el.style.opacity = connectedIds.has(n.id) ? '1' : '0.15';
   }
 
@@ -538,9 +512,9 @@ function _select(node) {
     if (!e._el) continue;
     const rel = e.source === node || e.target === node;
     e._el.style.display = '';
-    e._el.setAttribute('opacity', rel ? '1' : '0.04');
-    e._el.setAttribute('stroke', rel ? SEL : (EDGE_COLORS[e.category] || '#aaa'));
-    e._el.setAttribute('marker-end', rel ? 'url(#arr-SEL)' : `url(#arr-${e.category})`);
+    e._el.setAttribute('opacity', rel ? '0.9' : '0.04');
+    e._el.setAttribute('stroke', '#B3B3B3');
+    e._el.setAttribute('stroke-width', rel ? '1.5' : '0.8');
   }
 
   _updatePanel(node);
@@ -557,14 +531,14 @@ function _highlight(node) {
     if (e.target === node) ids.add(e.source.id);
   }
   for (const n of _nodes) {
-    if (n._el) n._el.style.opacity = ids.has(n.id) ? '1' : '0.15';
+    if (n._el) n._el.style.opacity = ids.has(n.id) ? '1' : '0.7';
   }
   for (const e of _edges) {
     if (!e._el) continue;
     const rel = e.source === node || e.target === node;
-    e._el.setAttribute('opacity', rel ? '1' : '0.04');
-    e._el.setAttribute('stroke', rel ? SEL : (EDGE_COLORS[e.category] || '#aaa'));
-    e._el.setAttribute('marker-end', rel ? 'url(#arr-SEL)' : `url(#arr-${e.category})`);
+    e._el.setAttribute('opacity', rel ? '0.9' : '0.1');
+    e._el.setAttribute('stroke', '#B3B3B3');
+    e._el.setAttribute('stroke-width', rel ? '1.5' : '0.8');
   }
 }
 
@@ -575,9 +549,9 @@ function _unhighlight() {
     if (!e._el) continue;
     const vis = _filter === 'ALL' || e.category === _filter;
     e._el.style.display = vis ? '' : 'none';
-    e._el.setAttribute('opacity', '0.25');
-    e._el.setAttribute('stroke', EDGE_COLORS[e.category] || '#aaa');
-    e._el.setAttribute('marker-end', `url(#arr-${e.category})`);
+    e._el.setAttribute('opacity', '0.35');
+    e._el.setAttribute('stroke', '#B3B3B3');
+    e._el.setAttribute('stroke-width', '0.8');
   }
 }
 
@@ -661,13 +635,11 @@ function _buildLegend() {
   const el = document.getElementById('explore-legend');
   if (!el) return;
   el.innerHTML = `
-    <div class="exp-leg-ttl">Nodes</div>
+    <div class="exp-leg-ttl">Node types</div>
     ${Object.entries(NODE_COLORS).filter(([k]) => k !== 'UNKNOWN').map(([k, c]) =>
       `<div class="exp-leg-row"><span class="exp-leg-dot" style="background:${c}"></span>${k.toLowerCase()}</div>`
     ).join('')}
-    <div class="exp-leg-ttl" style="margin-top:8px">Edges</div>
-    ${CATS.map(k =>
-      `<div class="exp-leg-row"><span class="exp-leg-line" style="background:${EDGE_COLORS[k]}"></span>${k.toLowerCase()}</div>`
-    ).join('')}
+    <div class="exp-leg-ttl" style="margin-top:8px">Relations</div>
+    <div class="exp-leg-row"><span class="exp-leg-dash"></span>connection</div>
   `;
 }
