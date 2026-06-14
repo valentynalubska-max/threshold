@@ -24,7 +24,7 @@
   </div>
   <div class="lang-toggle">
     <span class="active">ENG</span>
-    <span>UK</span>
+    <span>UA</span>
   </div>
 </nav>
 
@@ -119,12 +119,152 @@
     <div class="kb-sidebar">
       <div class="sidebar-label"><span class="ln-en">Other Elements</span><span class="ln-uk">Інші елементи</span></div>
       <div class="sidebar-links">
+        <button class="sidebar-link" onclick="show('khata')">Хата →</button>
+        <button class="sidebar-link" onclick="show('pokut')">Покуть →</button>
         <button class="sidebar-link">Сволок →</button>
-        <button class="sidebar-link">Покуть →</button>
         <button class="sidebar-link">Сіни →</button>
+        <button class="sidebar-link">Долівка →</button>
+        <button class="sidebar-link">Комин →</button>
+      </div>
+      <div class="sidebar-nav">
+        <button class="sidebar-link" onclick="show('add')"><span class="ln-en">Add Knowledge →</span><span class="ln-uk">Додати знання →</span></button>
+        <button class="sidebar-link" onclick="show('validate')"><span class="ln-en">Validate Knowledge →</span><span class="ln-uk">Перевірити знання →</span></button>
+        <button class="sidebar-link" onclick="show('use')"><span class="ln-en">Use Knowledge →</span><span class="ln-uk">Використати знання →</span></button>
+      </div>
+    </div>
+  </div>
+  <footer><span>Valentyna Lubska</span><span>Threshold</span><span>MAA02 — Algorithmic Design I</span></footer>
+</div>
+
+<!-- ═══════ KHATA ═══════ -->
+<div id="p-khata" class="page">
+  <div class="element-header">
+    <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
+    <h1 class="element-title">The Khata — Хата</h1>
+    <p class="element-variants">хата · хатина · оселя · домівка · хатці</p>
+  </div>
+  <div class="carousel-wrap">
+    <div class="carousel-track">
+      <div class="carousel-item" data-w="155" data-h="210" onclick="setActive(this)"><img src="/assets/images/khata-village.jpg" alt="Ukrainian village"></div>
+      <div class="carousel-item" data-w="155" data-h="210" onclick="setActive(this)"><img src="/assets/images/khata-gogol-house.jpg" alt="Khata exterior"></div>
+      <div class="carousel-item active" data-w="270" data-h="360" onclick="setActive(this)"><img src="/assets/images/subject - old khata/maxresdefault.jpg" alt="Traditional Ukrainian Khata"><div class="cap">Traditional Ukrainian Khata</div></div>
+      <div class="carousel-item" data-w="140" data-h="190" onclick="setActive(this)"><img src="/assets/images/subject - old khata/175178.jpg" alt="Khata"></div>
+      <div class="carousel-item" data-w="155" data-h="210" onclick="setActive(this)"><img src="/assets/images/subject - old khata/175183.jpg" alt="Khata"></div>
+      <div class="carousel-item" data-w="140" data-h="190" onclick="setActive(this)"><img src="/assets/images/subject - old khata/175187.jpg" alt="Khata"></div>
+      <div class="carousel-item" data-w="155" data-h="210" onclick="setActive(this)"><img src="/assets/images/subject - old khata/175191.jpg" alt="Khata"></div>
+      <div class="carousel-item" data-w="140" data-h="190" onclick="setActive(this)"><img src="/assets/images/subject - old khata/175194.jpg" alt="Khata"></div>
+      <div class="carousel-item" data-w="155" data-h="210" onclick="setActive(this)"><img src="/assets/images/subject - old khata/4934686_original.jpg" alt="Khata"></div>
+    </div>
+  </div>
+  <div class="kb-section">
+    <div>
+      <h2 class="kb-title"><span class="ln-en">Knowledge Base</span><span class="ln-uk">База знань</span></h2>
+      <div class="kb-tabs">
+        <button class="kb-tab active" onclick="kbTab('kmat',this)"><span class="ln-en">Material</span><span class="ln-uk">Матеріал</span></button>
+        <button class="kb-tab" onclick="kbTab('kstr',this)"><span class="ln-en">Structure</span><span class="ln-uk">Конструкція</span></button>
+        <button class="kb-tab" onclick="kbTab('kdec',this)"><span class="ln-en">Decoration</span><span class="ln-uk">Оздоблення</span></button>
+        <button class="kb-tab" onclick="kbTab('krit',this)"><span class="ln-en">Ritual</span><span class="ln-uk">Ритуальне</span></button>
+      </div>
+      <div id="t-kmat" class="tab-panel active">
+        <div class="triple-item TRUE"><div class="triple-head">СТІНА — MADE_OF — дерево, камінь, глина</div><div class="triple-quote">«рублені, вальковані або складені з каменю й обмазані глиною стіни хати бувають таких типів»</div><div class="triple-source">REV100 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">СТІНА — SURFACE_FINISH — глина</div><div class="triple-quote">«Стіни обмащували глиною.»</div><div class="triple-source">REV102 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ДОЛІВКА — SURFACE_FINISH — бита, глиняна чи земляна</div><div class="triple-quote">«Долівка – бита, глиняна чи земляна.»</div><div class="triple-source">REV067 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ПОБІЛКА — SURFACE_FINISH — обілена</div><div class="triple-quote">«Житлова частина приміщення зовні й зсередини побілена.»</div><div class="triple-source">REV264 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ПОБІЛКА — MADE_OF — обмазка глиною і побілка</div><div class="triple-quote">«хмизом – обмазка глиною і побілка (мазанка).»</div><div class="triple-source">REV446 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+      </div>
+      <div id="t-kstr" class="tab-panel">
+        <div class="triple-item TRUE"><div class="triple-head">СТІНА — MADE_OF — дерево</div><div class="triple-quote">«Житло там споруджували повністю з дерева. Основним будівельним матеріалом було дерево.»</div><div class="triple-source">REV099 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">СВОЛОК — MADE_OF — деревяних балок</div><div class="triple-quote">«Перекриття робили з дерев'яних балок.»</div><div class="triple-source">REV384 · vector_rag</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ДОЛІВКА — MADE_OF — дерев'яна підлога з тесаних дощок</div><div class="triple-quote">«дерев'яна підлога з тесаних або різаних дощок.»</div><div class="triple-source">REV330 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+      </div>
+      <div id="t-kdec" class="tab-panel">
+        <div class="triple-item TRUE"><div class="triple-head">СТІНА — DECORATED_WITH — настінний розпис</div><div class="triple-quote">«декоративний настінний розпис виконувався на зовнішніх і внутрішніх стінах хати»</div><div class="triple-source">REV096 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ПОБІЛКА — DECORATED_WITH — синім, зеленим, червоним, блакитним, білим</div><div class="triple-quote">«Птахи й квіти розписані яскраво – синім, зеленим, червоним, блакитним, білим»</div><div class="triple-source">REV424 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ОРНАМЕНТАЛЬНИЙ ФРИЗ — DECORATED_WITH — різьбою надто в Карпатах</div><div class="triple-quote">«використовувалися орнаменти різьбою (надто в Карпатах).»</div><div class="triple-source">REV441 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ОРНАМЕНТАЛЬНИЙ ФРИЗ — IS_ANIMATE — не схожий на інші, свої оригінальні</div><div class="triple-quote">«Декоративний настінний розпис у кожному селі має не схожий на інші, свої оригінальні»</div><div class="triple-source">REV357 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+      </div>
+      <div id="t-krit" class="tab-panel">
+        <div class="triple-item CONTESTED"><div class="triple-head">ДОЛІВКА — IS_PROTECTIVE_AGAINST — нечистих сил</div><div class="triple-quote">«вище долівки – для охорони від нечистих сил.»</div><div class="triple-source">REV438 · B4 Masnenko 2012</div><div class="status status-CONTESTED">CONTESTED</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ОРНАМЕНТАЛЬНИЙ ФРИЗ — IS_ASSOCIATED_WITH — освітленням хати</div><div class="triple-quote">«Внутрішній розпис пов'язаний з освітленням хати.»</div><div class="triple-source">REV303 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">СВОЛОК — IS_COSMOLOGICALLY_IDENTIFIED_AS — Чумацький Шлях</div><div class="triple-quote">«Чумацький Шлях, а покуть – небесна ясная зоря.»</div><div class="triple-source">REV343 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+      </div>
+    </div>
+    <div class="kb-sidebar">
+      <div class="sidebar-label"><span class="ln-en">Other Elements</span><span class="ln-uk">Інші елементи</span></div>
+      <div class="sidebar-links">
+        <button class="sidebar-link" onclick="show('pich')">Піч →</button>
+        <button class="sidebar-link" onclick="show('pokut')">Покуть →</button>
+        <button class="sidebar-link">Сволок →</button>
         <button class="sidebar-link">Долівка →</button>
         <button class="sidebar-link">Побілка →</button>
         <button class="sidebar-link">Комин →</button>
+      </div>
+      <div class="sidebar-nav">
+        <button class="sidebar-link" onclick="show('add')"><span class="ln-en">Add Knowledge →</span><span class="ln-uk">Додати знання →</span></button>
+        <button class="sidebar-link" onclick="show('validate')"><span class="ln-en">Validate Knowledge →</span><span class="ln-uk">Перевірити знання →</span></button>
+        <button class="sidebar-link" onclick="show('use')"><span class="ln-en">Use Knowledge →</span><span class="ln-uk">Використати знання →</span></button>
+      </div>
+    </div>
+  </div>
+  <footer><span>Valentyna Lubska</span><span>Threshold</span><span>MAA02 — Algorithmic Design I</span></footer>
+</div>
+
+<!-- ═══════ POKUT ═══════ -->
+<div id="p-pokut" class="page">
+  <div class="element-header">
+    <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
+    <h1 class="element-title">The Pokut — Покуть</h1>
+    <p class="element-variants">покуть · покутя · красний кут · святий кут · горній кут</p>
+  </div>
+  <div class="carousel-wrap">
+    <div class="carousel-track">
+      <div class="carousel-item" data-w="140" data-h="190" onclick="setActive(this)"><img src="/assets/images/subject - pokut/pokut-.jpg" alt="Pokut"></div>
+      <div class="carousel-item active" data-w="270" data-h="360" onclick="setActive(this)"><img src="/assets/images/subject - pokut/image134.jpg" alt="Pokut — Sacred Corner"><div class="cap">Покуть — Sacred Corner</div></div>
+      <div class="carousel-item" data-w="155" data-h="210" onclick="setActive(this)"><img src="/assets/images/subject - pokut/487482771_1224489423019605_2388790638141298218_n.jpg" alt="Pokut"></div>
+      <div class="carousel-item" data-w="155" data-h="210" onclick="setActive(this)"><img src="/assets/images/subject - pokut/487506678_1224489469686267_7111610872482418127_n.jpg" alt="Pokut"></div>
+      <div class="carousel-item" data-w="155" data-h="210" onclick="setActive(this)"><img src="/assets/images/subject - pokut/488865037_1224706332997914_8090222676378108869_n.jpg" alt="Pokut"></div>
+      <div class="carousel-item" data-w="155" data-h="210" onclick="setActive(this)"><img src="/assets/images/subject - pokut/494745090_1251743686960845_5505916581521429494_n.jpg" alt="Pokut"></div>
+    </div>
+  </div>
+  <div class="kb-section">
+    <div>
+      <h2 class="kb-title"><span class="ln-en">Knowledge Base</span><span class="ln-uk">База знань</span></h2>
+      <div class="kb-tabs">
+        <button class="kb-tab active" onclick="kbTab('psp',this)"><span class="ln-en">Spatial</span><span class="ln-uk">Просторове</span></button>
+        <button class="kb-tab" onclick="kbTab('prit',this)"><span class="ln-en">Ritual</span><span class="ln-uk">Ритуальне</span></button>
+        <button class="kb-tab" onclick="kbTab('pfur',this)"><span class="ln-en">Furniture</span><span class="ln-uk">Меблі</span></button>
+        <button class="kb-tab" onclick="kbTab('pcos',this)"><span class="ln-en">Cosmological</span><span class="ln-uk">Космологічне</span></button>
+      </div>
+      <div id="t-psp" class="tab-panel active">
+        <div class="triple-item TRUE"><div class="triple-head">ПОКУТЬ — LOCATED_IN — кут навпроти печі</div><div class="triple-quote">«Покуть — кут хати, розташований по діагоналі від печі.»</div><div class="triple-source">B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ПОКУТЬ — IS_SPATIAL_ZONE — красний кут</div><div class="triple-quote">«Покутній кут хати — найсвятіше місце в оселі, зване також красним або святим кутом.»</div><div class="triple-source">B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">СВОЛОК — LOCATED_ON_AXIS_WITH — покуть та піч</div><div class="triple-quote">«Сволок пролягає між піччю та покутем, утворюючи головну просторову вісь хати від сакрального кута до ритуального вогнища.»</div><div class="triple-source">B4 Masnenko 2012 · p.31</div><div class="status status-TRUE">TRUE</div></div>
+      </div>
+      <div id="t-prit" class="tab-panel">
+        <div class="triple-item TRUE"><div class="triple-head">ПОКУТЬ — IS_ASSOCIATED_WITH — ікони та рушники</div><div class="triple-quote">«На покуті стояли ікони, оздоблені вишитими рушниками.»</div><div class="triple-source">B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ПОКУТЬ — IS_LIFE_CYCLE_MARKER — весільний обряд</div><div class="triple-quote">«Молодят садовили на покуть під час весільного обряду.»</div><div class="triple-source">B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ПОКУТЬ — IS_GENDERED — місце для почесних гостей</div><div class="triple-quote">«Найстарших та найшанованіших гостей садовили на покуть.»</div><div class="triple-source">B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+      </div>
+      <div id="t-pfur" class="tab-panel">
+        <div class="triple-item TRUE"><div class="triple-head">СТІЛ — LOCATED_IN — покутній кут</div><div class="triple-quote">«Стіл ставили в покутньому куті хати.»</div><div class="triple-source">B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">СТІЛ — MADE_OF — масивна стільниця</div><div class="triple-quote">«Основа стола складалася з масивної стільниці»</div><div class="triple-source">REV395 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">СТІЛ — IS_PROTECTIVE_AGAINST — не можна сідати на стіл</div><div class="triple-quote">«Не можна сідати на стіл, бо коли буде весілля, то коровай трісне наполовину.»</div><div class="triple-source">REV188 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item CONTESTED"><div class="triple-head">СТІЛ — IS_PROTECTIVE_AGAINST — не можна виносити непокритим</div><div class="triple-quote">«Не можна виносити з хати стола, не покритого скатертиною, голого, бо в господі того, кому переноситься стіл, стане голо.»</div><div class="triple-source">REV187 · B4 Masnenko 2012</div><div class="status status-CONTESTED">CONTESTED</div></div>
+      </div>
+      <div id="t-pcos" class="tab-panel">
+        <div class="triple-item TRUE"><div class="triple-head">СВОЛОК — IS_COSMOLOGICALLY_IDENTIFIED_AS — покуть — небесна ясная зоря</div><div class="triple-quote">«Чумацький Шлях, а покуть – небесна ясная зоря.»</div><div class="triple-source">REV343 · B4 Masnenko 2012</div><div class="status status-TRUE">TRUE</div></div>
+        <div class="triple-item TRUE"><div class="triple-head">ПОКУТЬ — IS_COSMOLOGICALLY_IDENTIFIED_AS — небесна ясная зоря</div><div class="triple-quote">«Сволок – це Чумацький Шлях, а покуть – небесна ясная зоря.»</div><div class="triple-source">B4 Masnenko 2012 · p.31</div><div class="status status-TRUE">TRUE</div></div>
+      </div>
+    </div>
+    <div class="kb-sidebar">
+      <div class="sidebar-label"><span class="ln-en">Other Elements</span><span class="ln-uk">Інші елементи</span></div>
+      <div class="sidebar-links">
+        <button class="sidebar-link" onclick="show('pich')">Піч →</button>
+        <button class="sidebar-link" onclick="show('khata')">Хата →</button>
+        <button class="sidebar-link">Сволок →</button>
+        <button class="sidebar-link">Стіл →</button>
+        <button class="sidebar-link">Рушник →</button>
+        <button class="sidebar-link">Ікона →</button>
       </div>
       <div class="sidebar-nav">
         <button class="sidebar-link" onclick="show('add')"><span class="ln-en">Add Knowledge →</span><span class="ln-uk">Додати знання →</span></button>

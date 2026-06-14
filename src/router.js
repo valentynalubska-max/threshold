@@ -2,7 +2,7 @@ import { renderVal } from './validate.js';
 import { recenter } from './carousel.js';
 import { initTranslations } from './translate.js';
 
-const pages = { home:'p-home', pich:'p-pich', add:'p-add', validate:'p-validate', use:'p-use', about:'p-about' };
+const pages = { home:'p-home', pich:'p-pich', khata:'p-khata', pokut:'p-pokut', add:'p-add', validate:'p-validate', use:'p-use', about:'p-about' };
 
 export function show(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -14,11 +14,14 @@ export function show(id) {
   window.scrollTo(0, 0);
   if (id === 'validate') renderVal();
   if (id === 'pich') { recenter(); initTranslations('p-pich'); }
+  if (id === 'khata') { recenter(); initTranslations('p-khata'); }
+  if (id === 'pokut') { recenter(); initTranslations('p-pokut'); }
 }
 
 export function kbTab(name, btn) {
-  document.querySelectorAll('.kb-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  const page = btn.closest('.page');
+  page.querySelectorAll('.kb-tab').forEach(t => t.classList.remove('active'));
+  page.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('t-' + name).classList.add('active');
 }
@@ -33,7 +36,7 @@ export function useTab(name, btn) {
 export function initLangToggle() {
   document.querySelectorAll('.lang-toggle span').forEach(s => {
     s.addEventListener('click', () => {
-      const isUk = s.textContent.trim() === 'UK';
+      const isUk = s.textContent.trim() === 'UA';
       document.querySelectorAll('.lang-toggle span').forEach(x => x.classList.remove('active'));
       s.classList.add('active');
       document.body.classList.toggle('lang-uk', isUk);

@@ -4,7 +4,7 @@ export function setActive(el) {
 }
 
 function activate(el) {
-  const track = document.getElementById('cTrack');
+  const track = el.closest('.carousel-track');
   Array.from(track.querySelectorAll('.carousel-item')).forEach(item => {
     item.classList.remove('active');
     item.style.width = item.dataset.w + 'px';
@@ -17,16 +17,18 @@ function activate(el) {
 }
 
 export function recenter() {
-  const active = document.querySelector('.carousel-item.active');
+  const page = document.querySelector('.page.active');
+  if (!page) return;
+  const active = page.querySelector('.carousel-item.active');
   if (active) centerActive(active);
 }
 
-function snapToNearest() {
-  const wrap = document.getElementById('cWrap');
+function snapToNearest(track) {
+  const wrap = track.closest('.carousel-wrap');
   if (!wrap) return;
   const wrapCenter = wrap.getBoundingClientRect().left + wrap.offsetWidth / 2;
   let best = null, bestDist = Infinity;
-  document.querySelectorAll('.carousel-item').forEach(item => {
+  track.querySelectorAll('.carousel-item').forEach(item => {
     const r = item.getBoundingClientRect();
     const d = Math.abs(r.left + r.width / 2 - wrapCenter);
     if (d < bestDist) { bestDist = d; best = item; }
@@ -56,8 +58,9 @@ export function closeLightbox() {
 }
 
 export function centerActive(el) {
-  const wrap = document.getElementById('cWrap');
-  const track = document.getElementById('cTrack');
+  const wrap = el.closest('.carousel-wrap');
+  const track = el.closest('.carousel-track');
+  if (!wrap || !track) return;
   const wW = wrap.offsetWidth;
   const eL = el.offsetLeft;
   const eW = parseInt(el.style.width) || 270;
@@ -65,39 +68,40 @@ export function centerActive(el) {
 }
 
 export function initCarousel() {
-  const items = document.querySelectorAll('.carousel-item');
-  items.forEach(it => {
+  document.querySelectorAll('.carousel-item').forEach(it => {
     it.style.width = it.dataset.w + 'px';
     it.style.height = it.dataset.h + 'px';
   });
-  const active = document.querySelector('.carousel-item.active');
+  const activePage = document.querySelector('.page.active');
+  const active = activePage ? activePage.querySelector('.carousel-item.active') : null;
   if (active) centerActive(active);
 
-  const track = document.getElementById('cTrack');
-  if (!track) return;
-  let down = false, startX = 0, baseX = 0, moved = false;
-  track.addEventListener('pointerdown', e => {
-    down = true;
-    moved = false;
-    startX = e.pageX;
-    const m = new DOMMatrix(getComputedStyle(track).transform);
-    baseX = m.m41 || 0;
-    track.style.transition = 'none';
+  document.querySelectorAll('.carousel-track').forEach(track => {
+    let down = false, startX = 0, baseX = 0, moved = false;
+    track.addEventListener('pointerdown', e => {
+      down = true;
+      moved = false;
+      startX = e.pageX;
+      const m = new DOMMatrix(getComputedStyle(track).transform);
+      baseX = m.m41 || 0;
+      track.style.transition = 'none';
+    });
+    document.addEventListener('pointermove', e => {
+      if (!down) return;
+      if (Math.abs(e.pageX - startX) > 5) moved = true;
+      track.style.transform = `translateX(${baseX + e.pageX - startX}px)`;
+    });
+    document.addEventListener('pointerup', () => {
+      if (!down) return;
+      down = false;
+      track.style.transition = '';
+      if (moved) snapToNearest(track);
+    });
+    track.addEventListener('click', e => {
+      if (moved) { e.stopPropagation(); e.preventDefault(); }
+    }, true);
   });
-  document.addEventListener('pointermove', e => {
-    if (!down) return;
-    if (Math.abs(e.pageX - startX) > 5) moved = true;
-    track.style.transform = `translateX(${baseX + e.pageX - startX}px)`;
-  });
-  document.addEventListener('pointerup', () => {
-    if (!down) return;
-    down = false;
-    track.style.transition = '';
-    if (moved) snapToNearest();
-  });
-  track.addEventListener('click', e => {
-    if (moved) { e.stopPropagation(); e.preventDefault(); }
-  }, true);
+
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLightbox();
   });
