@@ -1,15 +1,21 @@
-// Fixed-height horizontal gallery: small thumbnails on load,
-// click to expand in place (grows upward), arrows to navigate,
-// click same image or outside to collapse. Section height never changes.
+// Fixed-height horizontal gallery.
+// Thumbnails at rest, click to expand to natural aspect ratio in place.
+// Drag the strip with mouse or finger.
 
 const EASE = 'transform 0.32s ease';
+const W_MAX = 480;      // max expanded width (landscape cap)
+
+// Match CSS breakpoints so expanded-height calculation stays in sync with CSS
+const MQ_MOBILE = window.matchMedia('(max-width: 600px)');
+function _expandedH() { return MQ_MOBILE.matches ? 260 : 360; }
+function _collapsedW() { return MQ_MOBILE.matches ? 100 : 140; }
 
 // ── Public API ────────────────────────────────────────────────────────────────
 
 export function initGallery() {
   document.querySelectorAll('.gallery').forEach(_setup);
 
-  // Collapse when clicking anywhere outside a gallery
+  // Clicking anywhere outside a gallery collapses it
   document.addEventListener('click', e => {
     if (!e.target.closest('.gallery')) {
       document.querySelectorAll('.gallery-item.active')
@@ -23,7 +29,10 @@ export function galleryRecenter() {
   const page = document.querySelector('.page.active');
   if (!page) return;
   const active = page.querySelector('.gallery-item.active');
-  if (active) _centerOn(active.closest('.gallery'), active, false);
+  if (active) {
+    const w = parseFloat(active.style.width) || _collapsedW();
+    _centerTo(active.closest('.gallery'), active, w, false);
+  }
 }
 
 // ── Per-gallery setup ─────────────────────────────────────────────────────────
@@ -32,15 +41,18 @@ function _setup(gallery) {
   const track = gallery.querySelector('.gallery-track');
   if (!track) return;
 
-  // Delegate clicks on items (no inline onclick needed)
-  track.addEventListener('click', e => {
-    if (gallery._drag) return;
-    const item = e.target.closest('.gallery-item');
-    if (!item) return;
-    item.classList.contains('active') ? _collapse(gallery) : _expand(gallery, item);
+  // Direct click listeners — avoids all pointer-capture ambiguity
+  gallery.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (gallery._dragged) return;   // swallow click after a drag
+      if (item.classList.contains('active')) {
+        _collapse(gallery);
+      } else {
+        _expand(gallery, item);
+      }
+    });
   });
 
-  // Arrow buttons
   gallery.querySelector('.gal-prev')
     ?.addEventListener('click', e => { e.stopPropagation(); _navigate(gallery, -1); });
   gallery.querySelector('.gal-next')
@@ -49,79 +61,117 @@ function _setup(gallery) {
   _setupDrag(gallery, track);
 }
 
-// ── State changes ─────────────────────────────────────────────────────────────
+// ── State ─────────────────────────────────────────────────────────────────────
 
 function _expand(gallery, item) {
-  gallery.querySelectorAll('.gallery-item').forEach(i => i.classList.remove('active'));
+  // Reset all items
+  gallery.querySelectorAll('.gallery-item').forEach(i => {
+    i.classList.remove('active');
+    i.style.width = '';
+  });
   item.classList.add('active');
   gallery.querySelectorAll('.gallery-arrow').forEach(a => a.classList.add('visible'));
-  _centerOn(gallery, item, true);
+
+  // Compute natural-ratio target width, then center
+  const img = item.querySelector('img');
+  const go = () => {
+    const hLg = _expandedH();
+    const nat = (img && img.naturalWidth && img.naturalHeight)
+      ? Math.min(W_MAX, Math.round(hLg * img.naturalWidth / img.naturalHeight))
+      : _collapsedW();
+    item.style.width = nat + 'px';
+    _centerTo(gallery, item, nat, true);
+  };
+
+  if (img && img.complete && img.naturalWidth) {
+    go();
+  } else if (img) {
+    img.addEventListener('load', go, { once: true });
+  }
 }
 
 function _collapse(gallery) {
-  gallery.querySelectorAll('.gallery-item').forEach(i => i.classList.remove('active'));
+  gallery.querySelectorAll('.gallery-item').forEach(i => {
+    i.classList.remove('active');
+    i.style.width = '';
+  });
   gallery.querySelectorAll('.gallery-arrow').forEach(a => a.classList.remove('visible'));
 }
 
 function _navigate(gallery, dir) {
   const items = Array.from(gallery.querySelectorAll('.gallery-item'));
   const cur = items.findIndex(i => i.classList.contains('active'));
-  if (cur < 0) return;
   const next = items[cur + dir];
   if (next) _expand(gallery, next);
 }
 
 // ── Centering ─────────────────────────────────────────────────────────────────
 
-// Uses getBoundingClientRect so the current translateX is already factored in.
-// shift = how far to move the track so item.center aligns with gallery.center
-function _centerOn(gallery, item, animate) {
+// Computes translateX so the item (at its FINAL targetW) is centred in the gallery.
+// Uses the item's un-transformed natural left so the answer is always accurate
+// regardless of what state the CSS transition is in.
+function _centerTo(gallery, item, targetW, animate) {
   const track = gallery.querySelector('.gallery-track');
-  if (!track || !gallery.offsetWidth) return;
-  const gr = gallery.getBoundingClientRect();
+  if (!track) return;
+  const galW = gallery.getBoundingClientRect().width;
+  if (!galW) return;
+
   const ir = item.getBoundingClientRect();
   const curTx = new DOMMatrix(getComputedStyle(track).transform).m41 || 0;
-  const shift = (gr.left + gr.width / 2) - (ir.left + ir.width / 2);
+
+  // Natural (un-transformed) left edge of the item
+  const naturalLeft = ir.left - curTx;
+  const newTx = galW / 2 - naturalLeft - targetW / 2;
+
   track.style.transition = animate ? EASE : 'none';
-  track.style.transform = `translateX(${curTx + shift}px)`;
+  track.style.transform = `translateX(${newTx}px)`;
 }
 
 // ── Drag / swipe ──────────────────────────────────────────────────────────────
 
 function _setupDrag(gallery, track) {
-  let dn = false, sx = 0, stx = 0, vx = 0, lx = 0, lt = 0;
-
   const getTx = () => new DOMMatrix(getComputedStyle(track).transform).m41 || 0;
 
   track.addEventListener('pointerdown', e => {
-    dn = true; gallery._drag = false;
-    sx = lx = e.pageX;
-    stx = getTx();
-    vx = 0; lt = Date.now();
+    // Only primary button / touch
+    if (e.button > 0) return;
+
+    let dragged = false;
+    const sx = e.clientX;
+    const stx = getTx();
+    let vx = 0, lx = e.clientX, lt = Date.now();
+
+    gallery._dragged = false;
     track.style.transition = 'none';
-    track.setPointerCapture(e.pointerId);
-  });
 
-  track.addEventListener('pointermove', e => {
-    if (!dn) return;
-    if (Math.abs(e.pageX - sx) > 5) gallery._drag = true;
-    if (!gallery._drag) return;
-    const now = Date.now(), dt = now - lt;
-    if (dt > 0) vx = (e.pageX - lx) / dt;
-    lx = e.pageX; lt = now;
-    track.style.transform = `translateX(${stx + (e.pageX - sx)}px)`;
-  });
+    // Use document listeners so drag works even if pointer leaves the track
+    const onMove = e => {
+      const dx = e.clientX - sx;
+      if (Math.abs(dx) > 5) dragged = true;
+      if (!dragged) return;
+      const now = Date.now(), dt = now - lt;
+      if (dt > 0) vx = (e.clientX - lx) / dt;
+      lx = e.clientX; lt = now;
+      track.style.transform = `translateX(${stx + dx}px)`;
+    };
 
-  track.addEventListener('pointerup', e => {
-    if (!dn) return;
-    dn = false;
-    track.releasePointerCapture(e.pointerId);
-    if (gallery._drag) {
-      // Coast with momentum then stop
-      track.style.transition = EASE;
-      track.style.transform = `translateX(${getTx() + vx * 180}px)`;
-    }
-    // Clear after click event has already fired (synchronous event order)
-    setTimeout(() => { gallery._drag = false; }, 20);
+    const onUp = () => {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', onUp);
+
+      if (dragged) {
+        track.style.transition = EASE;
+        track.style.transform = `translateX(${getTx() + vx * 180}px)`;
+        gallery._dragged = true;
+        // Clear flag AFTER click event fires (click is synchronous after pointerup)
+        setTimeout(() => { gallery._dragged = false; }, 50);
+      } else {
+        // Non-drag tap: restore transition so subsequent expand animates correctly
+        track.style.transition = '';
+      }
+    };
+
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
   });
 }
