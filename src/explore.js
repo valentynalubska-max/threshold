@@ -49,9 +49,14 @@ export function initExplore() {
     .then(() => {
       _setupSVG();
       _renderAll();
+      // Apply initial positions and center immediately (RAF ensures layout is done)
+      requestAnimationFrame(() => {
+        _updatePos();
+        _centerGraph();
+      });
       return _runSim();
     })
-    .then(() => { _ready = true; _onShow(); })
+    .then(() => { _ready = true; _centerGraph(); })
     .catch(err => {
       console.error('Explore error', err);
       const c2 = document.getElementById('explore-svg-container');
@@ -168,6 +173,9 @@ function _runSim() {
         _tick(alpha);
         ticks++;
       }
+      if (ticks === BATCH) {
+        console.log('First tick — sample position:', _nodes[0]?.id, Math.round(_nodes[0]?.x), Math.round(_nodes[0]?.y));
+      }
       _updatePos();
       if (alpha > 0.001 && ticks < TOTAL) {
         setTimeout(step, 0);
@@ -214,12 +222,12 @@ function _setupSVG() {
     const color = cat === 'SEL' ? SEL : (EDGE_COLORS[cat] || '#aaa');
     const m = svgEl('marker');
     m.setAttribute('id', `arr-${cat}`);
-    m.setAttribute('markerWidth', '6');
-    m.setAttribute('markerHeight', '6');
-    m.setAttribute('refX', '5');
-    m.setAttribute('refY', '3');
+    m.setAttribute('markerWidth', '5');
+    m.setAttribute('markerHeight', '5');
+    m.setAttribute('refX', '4');
+    m.setAttribute('refY', '2.5');
     m.setAttribute('orient', 'auto');
-    m.setAttribute('markerUnits', 'userSpaceOnUse');
+    m.setAttribute('markerUnits', 'strokeWidth');
     const p = svgEl('path');
     p.setAttribute('d', 'M0,0 L0,6 L6,3 z');
     p.setAttribute('fill', color);
@@ -236,6 +244,8 @@ function _setupSVG() {
   _svg.appendChild(_canvas);
   c.appendChild(_svg);
 
+  // Set initial transform so canvas isn't stuck at bare (0,0)
+  _applyTx();
   _bindPanZoom();
   _bindControls();
   _buildLegend();
@@ -380,6 +390,8 @@ function _applyTx() {
 function _centerGraph() {
   if (!_nodes.length) return;
   const cw = _cw(), ch = _ch();
+  if (!cw || !ch) { requestAnimationFrame(_centerGraph); return; }
+
   let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
   for (const n of _nodes) {
     if (n.x < x0) x0 = n.x; if (n.y < y0) y0 = n.y;
@@ -389,8 +401,10 @@ function _centerGraph() {
   _sc = Math.max(0.1, Math.min(1.2, Math.min(cw / (gw + 80), ch / (gh + 80))));
   _tx = cw / 2 - ((x0 + x1) / 2) * _sc;
   _ty = ch / 2 - ((y0 + y1) / 2) * _sc;
+  if (isNaN(_tx) || isNaN(_ty) || isNaN(_sc)) { _tx = cw/2; _ty = ch/2; _sc = 1; }
   _applyTx();
   _lblVis();
+  console.log('_centerGraph —', Math.round(cw), 'x', Math.round(ch), '— scale', _sc.toFixed(3), 'tx', Math.round(_tx), 'ty', Math.round(_ty));
 }
 
 function _lblVis() {
@@ -398,8 +412,14 @@ function _lblVis() {
   document.querySelectorAll('.exp-lbl').forEach(l => { l.style.display = show ? '' : 'none'; });
 }
 
-function _cw() { return document.getElementById('explore-svg-container')?.clientWidth  || 800; }
-function _ch() { return document.getElementById('explore-svg-container')?.clientHeight || 600; }
+function _cw() {
+  const el = document.getElementById('explore-svg-container');
+  return (el?.getBoundingClientRect().width)  || el?.clientWidth  || 800;
+}
+function _ch() {
+  const el = document.getElementById('explore-svg-container');
+  return (el?.getBoundingClientRect().height) || el?.clientHeight || 600;
+}
 
 // ── Controls ──────────────────────────────────────────────────────────
 

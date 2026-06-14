@@ -427,6 +427,7 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
   flex: 1;
   overflow: hidden;
   min-height: 0;
+  height: 0;       /* forces flex to control height, not content */
   position: relative;
 }
 
@@ -435,6 +436,8 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
   overflow: hidden;
   position: relative;
   background: var(--white);
+  min-height: 0;
+  min-width: 0;
 }
 
 .explore-loading {
