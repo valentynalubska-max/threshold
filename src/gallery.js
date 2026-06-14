@@ -22,6 +22,27 @@ export function initGallery() {
         .forEach(el => _collapse(el.closest('.gallery')));
     }
   });
+
+  // Keyboard left/right arrow navigation
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    // Only act when on a subject page with a gallery
+    const page = document.querySelector('.page.active');
+    if (!page) return;
+    const gallery = page.querySelector('.gallery');
+    if (!gallery) return;
+    e.preventDefault();
+    const dir = e.key === 'ArrowLeft' ? -1 : 1;
+    const items = Array.from(gallery.querySelectorAll('.gallery-item'));
+    const cur = items.findIndex(i => i.classList.contains('active'));
+    if (cur === -1) {
+      // No item open yet — open the first/last depending on direction
+      const target = dir === 1 ? items[0] : items[items.length - 1];
+      if (target) _expand(gallery, target);
+    } else {
+      _navigate(gallery, dir);
+    }
+  });
 }
 
 // Called from router.js when navigating to a subject page

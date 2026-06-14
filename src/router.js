@@ -1,5 +1,4 @@
 import { renderVal } from './validate.js';
-import { recenter } from './carousel.js';
 import { galleryRecenter } from './gallery.js';
 import { initTranslations } from './translate.js';
 
@@ -15,11 +14,11 @@ export function show(id) {
   window.scrollTo(0, 0);
   if (id === 'validate') renderVal();
   if (id === 'pich') { galleryRecenter(); initTranslations('p-pich'); }
-  if (id === 'khata') { recenter(); initTranslations('p-khata'); }
-  if (id === 'pokut') { recenter(); initTranslations('p-pokut'); }
-  if (id === 'ornament') { recenter(); initTranslations('p-ornament'); }
-  if (id === 'porig') { recenter(); initTranslations('p-porig'); }
-  if (id === 'vikno') { recenter(); initTranslations('p-vikno'); }
+  if (id === 'khata') { galleryRecenter(); initTranslations('p-khata'); }
+  if (id === 'pokut') { galleryRecenter(); initTranslations('p-pokut'); }
+  if (id === 'ornament') { galleryRecenter(); initTranslations('p-ornament'); }
+  if (id === 'porig') { galleryRecenter(); initTranslations('p-porig'); }
+  if (id === 'vikno') { galleryRecenter(); initTranslations('p-vikno'); }
 }
 
 export function kbTab(name, btn) {
