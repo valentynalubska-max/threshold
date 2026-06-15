@@ -48,6 +48,7 @@ let _ro       = null;
 let _cam       = { scale: 1, x: 0, y: 0 };  // current rendered camera
 let _camTarget = { scale: 1, x: 0, y: 0 };  // target camera
 let _camRAF    = null;
+let _pendingSearch = null; // entity query set before explore finished initialising
 
 // ── Entry ─────────────────────────────────────────────────────────────
 
@@ -65,6 +66,10 @@ export function initExplore() {
       _buildLayout();
       _draw();
       _ready = true;
+      if (_pendingSearch) {
+        const q = _pendingSearch; _pendingSearch = null;
+        selectEntityByQuery(q);
+      }
     })
     .catch(err => {
       console.error('Explore error', err);
@@ -734,6 +739,26 @@ function _bindControls() {
     document.getElementById('explore-sheet')?.classList.remove('open');
     _selElem = -1; _selRule = -1; _updatePanel(-1); _resetCamera(); _draw();
   });
+}
+
+// ── External API ──────────────────────────────────────────────────────
+
+export function selectEntityByQuery(q) {
+  if (!q) return;
+  const ql = q.toLowerCase();
+  if (!_ready) { _pendingSearch = ql; return; }
+  const idx = _nodes.findIndex(n =>
+    n.label_uk.toLowerCase().includes(ql) ||
+    n.label_en.toLowerCase().includes(ql) ||
+    n.id.toLowerCase().includes(ql) ||
+    n.aliases.some(a => a.toLowerCase().includes(ql))
+  );
+  if (idx >= 0) {
+    _selElem = idx; _selRule = -1;
+    _updatePanel(idx);
+    _zoomToEntity(idx);
+    _draw();
+  }
 }
 
 // ── Legend ────────────────────────────────────────────────────────────

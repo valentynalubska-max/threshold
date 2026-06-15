@@ -1,4 +1,6 @@
 import { show, kbTab, useTab, initLangToggle } from './router.js';
+import { selectEntityByQuery } from './explore.js';
+import { initGlobalSearch } from './search.js';
 import { setActive, initCarousel, closeLightbox } from './carousel.js';
 import { initGallery } from './gallery.js';
 import { vote, nextT } from './validate.js';
@@ -40,6 +42,8 @@ function sendToGen() {
   if (!out || !prompt || !genTabBtn) return;
   prompt.value = out.innerText.trim();
   useTab('gen', genTabBtn);
+  // Start generation immediately after switching tab
+  setTimeout(runGenerate, 60);
 }
 
 function _hasEnrichedContent() {
@@ -110,6 +114,7 @@ window.addEventListener('load', () => {
   initGallery();
   initLangToggle();
   initTooltips();
+  initGlobalSearch(show, selectEntityByQuery);
 
   // Watch enrichOut for content — show/hide the send button
   const enrichOut = document.getElementById('enrichOut');

@@ -503,7 +503,11 @@
   <div class="page-header">
     <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
     <h1 class="page-title"><span class="ln-en">Add Knowledge</span><span class="ln-uk">Додати знання</span></h1>
-    <p class="page-subtitle"><span class="ln-en">New Knowledge extracted from new or old source</span><span class="ln-uk">Нові знання, видобуті з нового або існуючого джерела</span></p>
+    <p class="page-subtitle"><span class="ln-en">Contribute a source fragment</span><span class="ln-uk">Нові знання, видобуті з нового або існуючого джерела</span></p>
+    <div class="page-desc">
+      <p>Submit a passage from an ethnographic or historical source about Ukrainian vernacular architecture. The pipeline extracts structured knowledge triples — subject, relation, object — and adds them to the shared knowledge base.</p>
+      <p>Text can be in Ukrainian, Russian, or English. Original terminology is preserved and tagged for later review.</p>
+    </div>
   </div>
   <div class="add-body">
     <div>
@@ -546,7 +550,11 @@
   <div class="page-header">
     <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
     <h1 class="page-title"><span class="ln-en">Validation</span><span class="ln-uk">Перевірка</span></h1>
-    <p class="page-subtitle"><span class="ln-en">Help us validate extracted knowledge from new sources</span><span class="ln-uk">Допоможіть перевірити видобуті знання з нових джерел</span></p>
+    <p class="page-subtitle"><span class="ln-en">Review extracted rules</span><span class="ln-uk">Допоможіть перевірити видобуті знання з нових джерел</span></p>
+    <div class="page-desc">
+      <p>Each extracted rule is a claim about how something was built, placed, or used. Here you can read the rule alongside its source evidence and mark it as TRUE, CONTESTED, or FALSE.</p>
+      <p>Contested rules — where the source is ambiguous or the translation uncertain — are as important as confirmed ones. Disagreement is data.</p>
+    </div>
   </div>
   <div class="val-body" id="valBody"></div>
   <footer><span>Valentyna Lubska</span><span>Threshold</span><span>MAA02 — Algorithmic Design I</span></footer>
@@ -557,7 +565,11 @@
   <div class="page-header">
     <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
     <h1 class="page-title"><span class="ln-en">Generate</span><span class="ln-uk">Генерувати</span></h1>
-    <p class="page-subtitle"><span class="ln-en">Apply the archive to enrich texts and generate culturally grounded images</span><span class="ln-uk">Застосуйте архів для збагачення текстів та генерації культурно обґрунтованих зображень</span></p>
+    <p class="page-subtitle"><span class="ln-en">Visualise an element</span><span class="ln-uk">Застосуйте архів для збагачення текстів та генерації культурно обґрунтованих зображень</span></p>
+    <div class="page-desc">
+      <p>Choose an architectural element from the lexicon. The archive retrieves all validated rules describing it — its materials, spatial position, ritual associations, cosmological meaning — and assembles them into an enriched description.</p>
+      <p>That description becomes the basis for an AI-generated image. The image is not an illustration. It is a measurement of how much cultural knowledge survived the pipeline.</p>
+    </div>
   </div>
   <div class="use-body">
     <div class="use-tabs">
@@ -586,7 +598,7 @@
       </div>
       <div class="use-summary" id="enrichSummary"></div>
       <button id="sendToGenBtn" class="send-gen-btn" onclick="sendToGen()" style="display:none">
-        <span class="ln-en">SEND TO IMAGE GENERATION →</span><span class="ln-uk">НАДІСЛАТИ ДО ГЕНЕРАЦІЇ →</span>
+        <span class="ln-en">GENERATE IMAGE FROM ENRICHED TEXT →</span><span class="ln-uk">ГЕНЕРУВАТИ ЗОБРАЖЕННЯ →</span>
       </button>
     </div>
     <div id="u-gen" class="use-panel">
@@ -614,19 +626,39 @@
   <div class="page-header">
     <button class="back-link" onclick="show('home')"><span class="ln-en">← Back to Archive</span><span class="ln-uk">← До архіву</span></button>
     <h1 class="page-title"><span class="ln-en">About</span><span class="ln-uk">Про проєкт</span></h1>
-    <p class="page-subtitle"><span class="ln-en">Method &amp; Pipeline</span><span class="ln-uk">Метод та пайплайн</span></p>
   </div>
   <div class="about-body">
-    <p class="ln-en">Threshold is a digital archive for Ukrainian vernacular architectural knowledge, built as part of a thesis at IAAC (MAA02 — Algorithmic Design I).</p>
-    <p class="ln-uk">Threshold — цифровий архів знань про українське народне архітектурне будівництво, створений у межах дисертації в IAAC (MAA02 — Алгоритмічний дизайн I).</p>
-    <p class="ln-en">The system works as a pipeline. A source — such as an ethnographic monograph — is uploaded and machine-read. Knowledge is extracted as subject–relation–object triples, each anchored to its evidence sentence and page reference. Extraction runs through parallel pipelines (BM25 retrieval and vector RAG), and every extracted rule carries its provenance.</p>
-    <p class="ln-uk">Система працює як конвеєр. Джерело — наприклад, етнографічна монографія — завантажується та зчитується машиною. Знання видобуваються у вигляді триплетів суб'єкт–зв'язок–об'єкт, кожен з яких прив'язаний до речення-доказу та посилання на сторінку. Видобування відбувається через паралельні конвеєри (BM25 пошук та векторний RAG), і кожне правило зберігає своє походження.</p>
-    <p class="ln-en">Extracted rules then pass through human validation: each triple is reviewed against its source quote and tagged TRUE, FALSE, or CONTESTED. What is confirmed is saved. What is contested stays open.</p>
-    <p class="ln-uk">Видобуті правила проходять людську верифікацію: кожен триплет перевіряється відносно вихідної цитати та позначається як ПРАВДА, ХИБНО або СПІРНО. Те, що підтверджено, — зберігається. Те, що викликає сумнів, — залишається відкритим.</p>
-    <p class="ln-en">Validated knowledge is put to work in two ways: enriching plain text with sourced architectural detail, and conditioning image generation through a LoRA-trained model — so that generated images of the Ukrainian khata are grounded in documented, human-verified knowledge rather than the model's generic priors.</p>
-    <p class="ln-uk">Верифіковані знання застосовуються двома способами: для збагачення тексту підтвердженими архітектурними деталями та для умовної генерації зображень через LoRA-навчену модель — щоб згенеровані зображення української хати ґрунтувалися на задокументованих, верифікованих людиною знаннях, а не на загальних уявленнях моделі.</p>
-    <p class="ln-en"><strong>The archive grows.</strong></p>
-    <p class="ln-uk"><strong>Архів росте.</strong></p>
+    <div class="about-text">
+      <p><strong>ПОРІГ — Threshold —</strong> is a thesis project investigating what happens to minority architectural knowledge when it passes through standard AI extraction pipelines trained predominantly on English and dominant-language corpora.</p>
+      <p>The case study is the Ukrainian vernacular dwelling, the khata, drawn from five primary ethnographic sources on the Podillia region. The pipeline processes these texts — written in Ukrainian and Russian — through dual extraction paths: a vector-based RAG system and a vectorless BM25 system. What survives as structured knowledge, and what is lost at each stage, is the central research question.</p>
+      <p>The output is 1,181 extracted rules describing how spaces were built, decorated, inhabited, and understood. These rules form the archive you are now inside. Each one carries a provenance tag, a confidence status, and the original sentence it came from.</p>
+      <p>The losses are documented too. Terms without English equivalents, relations that do not exist in standard ontologies, cultural meanings that collapse under translation — these are recorded as findings, not failures. The threshold in the title refers both to the architectural element and to the boundary where one knowledge system ends and another begins.</p>
+    </div>
+    <div class="about-credits">
+      <div class="credit-block">
+        <div class="credit-label">Project</div>
+        <div class="credit-row"><span class="credit-name">Valentyna Lubska</span><span class="credit-role">Author: researcher, pipeline, archive</span></div>
+      </div>
+      <div class="credit-block">
+        <div class="credit-label">Academic context</div>
+        <div class="credit-row"><span class="credit-name">MAA02 — Algorithmic Design I</span><span class="credit-role">IAAC, 2025–2026</span></div>
+        <div class="credit-row"><span class="credit-name">Iacopo Neri</span><span class="credit-role">Thesis adviser</span></div>
+        <div class="credit-row"><span class="credit-name">Shrey Kapur</span><span class="credit-role">Assistant adviser</span></div>
+      </div>
+      <div class="credit-block">
+        <div class="credit-label">Technical</div>
+        <div class="credit-row"><span class="credit-name">Extraction pipeline</span><span class="credit-role">Vector RAG + Vectorless BM25</span></div>
+        <div class="credit-row"><span class="credit-name">Image generation</span><span class="credit-role">FLUX-LoRA via fal.ai</span></div>
+        <div class="credit-row"><span class="credit-name">Text enrichment</span><span class="credit-role">Claude (Anthropic)</span></div>
+        <div class="credit-row"><span class="credit-name">Vote persistence</span><span class="credit-role">Supabase</span></div>
+        <div class="credit-row"><span class="credit-name">Deployment</span><span class="credit-role">Vercel</span></div>
+      </div>
+      <div class="credit-block">
+        <div class="credit-label">Primary sources</div>
+        <div class="credit-row"><span class="credit-name">B4 Masnenko, 2012</span><span class="credit-role">Podillia khata, Ukrainian</span></div>
+        <div class="credit-row"><span class="credit-name">Four additional ethnographic sources</span><span class="credit-role">Ukrainian &amp; Russian</span></div>
+      </div>
+    </div>
   </div>
   <footer><span>Valentyna Lubska</span><span>Threshold</span><span>MAA02 — Algorithmic Design I</span></footer>
 </div>
@@ -657,6 +689,10 @@
     </div>
   </div>
   <div class="explore-body">
+    <div class="explore-sidebar">
+      <p class="explore-desc">Every extracted rule is a connection between two things — an element and a property, a space and a practice, a material and a meaning. The graph maps all connections at once. Click any element to see its full rule set. Click a rule to read the original source sentence it came from.</p>
+      <div id="explore-legend" class="explore-legend"></div>
+    </div>
     <div id="explore-svg-container" class="explore-canvas">
       <div class="explore-loading"><span class="ln-en">Click "Explore" in the nav to load</span><span class="ln-uk">Натисніть "Граф" для завантаження</span></div>
     </div>
@@ -666,7 +702,6 @@
       </div>
     </aside>
   </div>
-  <div id="explore-legend" class="explore-legend"></div>
   <div id="explore-sheet" class="explore-sheet">
     <div class="explore-sheet-handle">
       <span><span class="ln-en">Node Details</span><span class="ln-uk">Деталі вузла</span></span>
