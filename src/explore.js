@@ -1,4 +1,6 @@
-// Force-directed knowledge graph — vanilla JS, SVG, no D3
+// Constellation knowledge graph — Canvas, static circular layout, no physics
+
+import { forceSimulation, forceManyBody, forceLink, forceCollide, forceX, forceY, forceRadial } from 'd3-force';
 
 const NODE_COLORS = {
   STRUCTURE: '#5C4033',
@@ -9,34 +11,45 @@ const NODE_COLORS = {
   COSMO:     '#F6E4A6',
   UNKNOWN:   '#aaa'
 };
-const EDGE_COLORS = {
-  SPATIAL:  '#A3B4BE',
-  MATERIAL: '#5C4033',
-  RITUAL:   '#5D1D16',
-  COSMO:    '#7A6E47',
-  SEMANT:   '#D6BDB8',
-  PROPO:    '#F6E4A6'
+
+const CAT_COLORS = {
+  SPATIAL:  '#8BA8B5',
+  MATERIAL: '#7A5C3A',
+  RITUAL:   '#8B3A35',
+  COSMO:    '#6B6535',
+  SEMANT:   '#7A6B8E',
+  PROPO:    '#9B8E82',
+  OTHER:    '#9B8E82'
 };
-const SEL  = '#E53325';
-const CATS = ['SPATIAL','MATERIAL','RITUAL','COSMO','SEMANT','PROPO'];
 
-// Physics constants
-const REP     = 2500;
-const SPRING  = 0.03;
-const IDEAL   = 180;
-const GRAVITY = 0.05;
-const DAMP    = 0.7;
-const V_MAX   = 8;
+const CATS = ['SPATIAL', 'MATERIAL', 'RITUAL', 'COSMO', 'SEMANT', 'PROPO'];
 
-// Runtime state
-let _nodes = [], _edges = [];
-let _filter = 'ALL', _sel = null;
-let _tx = 0, _ty = 0, _sc = 1;
-let _svg = null, _canvas = null, _edgeG = null, _nodeG = null;
-let _simAlpha = 0, _rafId = null;
-let _ready = false, _loading = false;
+const MAX_RULE_DOTS = 14; // cap rule dots drawn per entity on canvas (panel still lists all)
+const SWIRL_DIST_STEP = 3; // outward distance increment per rule dot
+const SWIRL_FAN = 2.3; // angular spread (radians) of the rule-dot fan, facing away from center
+const DIAMOND_R = 140; // keep entity circles clear of the center source-label diamond
 
-// ── Entry ────────────────────────────────────────────────────────────
+// ── State ─────────────────────────────────────────────────────────────
+let _nodes    = [];   // entity nodes from lexicon
+let _edges    = [];   // entity-entity links {source, target, category}
+let _elemNodes = [];  // canvas layout positions for entity circles
+let _ruleNodes = [];  // canvas layout positions for rule dots
+let _selElem  = -1;  // selected entity index
+let _selRule  = -1;  // selected rule node index
+let _hovElem  = -1;
+let _hovRule  = -1;
+let _canvas   = null;
+let _ctx      = null;
+let _filter   = 'ALL';
+let _ready    = false;
+let _loading  = false;
+let _dpr      = 1;
+let _ro       = null;
+let _cam       = { scale: 1, x: 0, y: 0 };  // current rendered camera
+let _camTarget = { scale: 1, x: 0, y: 0 };  // target camera
+let _camRAF    = null;
+
+// ── Entry ─────────────────────────────────────────────────────────────
 
 export function initExplore() {
   if (_ready) { _onShow(); return; }
@@ -48,16 +61,11 @@ export function initExplore() {
 
   _fetchData()
     .then(() => {
-      _setupSVG();
-      _renderAll();
-      // Apply initial positions and center immediately (RAF ensures layout is done)
-      requestAnimationFrame(() => {
-        _updatePos();
-        _centerGraph();
-      });
-      return _runSim();
+      _setupCanvas();
+      _buildLayout();
+      _draw();
+      _ready = true;
     })
-    .then(() => { _ready = true; _centerGraph(); })
     .catch(err => {
       console.error('Explore error', err);
       const c2 = document.getElementById('explore-svg-container');
@@ -66,10 +74,12 @@ export function initExplore() {
 }
 
 function _onShow() {
-  requestAnimationFrame(() => _centerGraph());
+  _resizeCanvas();
+  _buildLayout();
+  _draw();
 }
 
-// ── Data ─────────────────────────────────────────────────────────────
+// ── Data ──────────────────────────────────────────────────────────────
 
 async function _fetchData() {
   const [kg, lex, val] = await Promise.all([
@@ -79,554 +89,651 @@ async function _fetchData() {
   ]);
 
   const validation = val.per_subject || {};
+  const entityKeys = new Set(Object.keys(lex).filter(k => k !== '_meta'));
 
-  // Only use keys that exist in the lexicon (named entities, not free-text objects)
-  const entityKeys = new Set(
-    Object.keys(lex).filter(k => k !== '_meta')
-  );
+  const nodeMap = new Map();
+  entityKeys.forEach(id => {
+    const lx = lex[id];
+    nodeMap.set(id, {
+      id,
+      label_uk: lx?.label_uk || id.replace(/_/g, ' ').toLowerCase(),
+      label_en: lx?.label_en || id.replace(/_/g, ' ').toLowerCase(),
+      type: lx?.type || 'UNKNOWN',
+      untranslatable: !!lx?.untranslatable,
+      notes: lx?.notes || '',
+      aliases: lx?.aliases || [],
+      validation: validation[id] || null,
+      rules: [],   // ALL KG triples where this entity is subject
+      degree: 0
+    });
+  });
 
-  // Only keep edges where BOTH endpoints are lexicon entities
+  // Collect ALL rules per entity (object need not be a lexicon key)
+  kg.edges.filter(e => entityKeys.has(e.subject)).forEach(e => {
+    const node = nodeMap.get(e.subject);
+    if (!node) return;
+    const ev = Array.isArray(e.evidence) ? (e.evidence[0] || '') : (e.evidence || '');
+    node.rules.push({
+      rel: e.relation || '',
+      obj: e.object || '',
+      cat: e.relation_category || 'SPATIAL',
+      ev
+    });
+  });
+
+  // Entity-entity edges (constellation spokes)
   const filteredEdges = kg.edges.filter(
     e => entityKeys.has(e.subject) && entityKeys.has(e.object) && e.subject !== e.object
   );
 
-  // Only create nodes for entity keys that appear in the filtered edge set
+  // Include nodes that have rules OR appear in entity-entity edges
   const usedKeys = new Set();
   filteredEdges.forEach(e => { usedKeys.add(e.subject); usedKeys.add(e.object); });
+  nodeMap.forEach((n, k) => { if (n.rules.length) usedKeys.add(k); });
 
-  const nodeMap = new Map();
-  Array.from(entityKeys)
+  _nodes = Array.from(entityKeys)
     .filter(id => usedKeys.has(id))
-    .forEach(id => {
-      const lx = lex[id];
-      const angle = Math.random() * Math.PI * 2;
-      const radius = 40 + Math.random() * 120;
-      nodeMap.set(id, {
-        id,
-        label_uk: lx?.label_uk || id.replace(/_/g, ' ').toLowerCase(),
-        label_en: lx?.label_en || id.replace(/_/g, ' ').toLowerCase(),
-        type: lx?.type || 'UNKNOWN',
-        untranslatable: !!lx?.untranslatable,
-        notes: lx?.notes || '',
-        aliases: lx?.aliases || [],
-        validation: validation[id] || null,
-        degree: 0,
-        x: Math.cos(angle) * radius,
-        y: Math.sin(angle) * radius,
-        vx: 0, vy: 0,
-        _el: null, _c: null
-      });
-    });
+    .map(id => nodeMap.get(id))
+    .filter(Boolean);
 
-  _nodes = [...nodeMap.values()];
+  const nIdx = new Map(_nodes.map((n, i) => [n.id, i]));
 
   _edges = filteredEdges
     .map(e => ({
-      id: e.triple_id,
-      source: nodeMap.get(e.subject),
-      target: nodeMap.get(e.object),
-      relation: e.relation || '',
-      category: e.relation_category || 'SPATIAL',
-      evidence: Array.isArray(e.evidence) ? e.evidence : (e.evidence ? [e.evidence] : []),
-      _el: null
+      source:   nIdx.get(e.subject),
+      target:   nIdx.get(e.object),
+      category: e.relation_category || 'SPATIAL'
     }))
-    .filter(e => e.source && e.target);
+    .filter(e => e.source !== undefined && e.target !== undefined);
 
-  _edges.forEach(e => { e.source.degree++; e.target.degree++; });
-
-  console.log('Entity nodes:', _nodes.length, 'Edges:', _edges.length);
+  _edges.forEach(e => { _nodes[e.source].degree++; _nodes[e.target].degree++; });
 
   const cnt = document.getElementById('explore-counts');
-  if (cnt) cnt.textContent = `${_nodes.length} nodes · ${_edges.length} edges`;
+  if (cnt) cnt.textContent = `${_nodes.length} nodes · ${_edges.length} connections`;
+  console.log('Entities:', _nodes.length, 'Links:', _edges.length,
+    'Total rules:', _nodes.reduce((s, n) => s + n.rules.length, 0));
 }
 
-// ── Simulation ───────────────────────────────────────────────────────
+// ── Canvas setup ──────────────────────────────────────────────────────
 
-function _tick(alpha) {
-  const N = _nodes.length;
-
-  // Repulsion O(n²)
-  for (let i = 0; i < N; i++) {
-    const a = _nodes[i];
-    for (let j = i + 1; j < N; j++) {
-      const b = _nodes[j];
-      const dx = b.x - a.x, dy = b.y - a.y;
-      const d2 = dx * dx + dy * dy + 1;
-      const d  = Math.sqrt(d2);
-      const f  = REP / d2;
-      a.vx -= f * dx / d; a.vy -= f * dy / d;
-      b.vx += f * dx / d; b.vy += f * dy / d;
-    }
-  }
-
-  // Springs
-  for (const e of _edges) {
-    const dx = e.target.x - e.source.x, dy = e.target.y - e.source.y;
-    const d  = Math.sqrt(dx * dx + dy * dy) || 1;
-    const f  = SPRING * (d - IDEAL) / d;
-    e.source.vx += f * dx; e.source.vy += f * dy;
-    e.target.vx -= f * dx; e.target.vy -= f * dy;
-  }
-
-  // Gravity + clamp velocity + integrate + clamp position (fixed bound; fitToView scales after)
-  for (const n of _nodes) {
-    n.vx = (n.vx - n.x * GRAVITY) * DAMP;
-    n.vy = (n.vy - n.y * GRAVITY) * DAMP;
-    n.vx = Math.max(-V_MAX, Math.min(V_MAX, n.vx));
-    n.vy = Math.max(-V_MAX, Math.min(V_MAX, n.vy));
-    n.x += n.vx * alpha;
-    n.y += n.vy * alpha;
-    n.x = Math.max(-340, Math.min(340, n.x));
-    n.y = Math.max(-240, Math.min(240, n.y));
-  }
-}
-
-function _runSim() {
-  return new Promise(resolve => {
-    let alpha = 1.0, ticks = 0;
-    const TOTAL = 300, BATCH = 15;
-
-    const step = () => {
-      for (let i = 0; i < BATCH && alpha > 0.001; i++) {
-        alpha *= 0.986;
-        _tick(alpha);
-        ticks++;
-      }
-      if (ticks === BATCH) {
-        console.log('First tick — sample position:', _nodes[0]?.id, Math.round(_nodes[0]?.x), Math.round(_nodes[0]?.y));
-      }
-      _updatePos();
-      if (alpha > 0.001 && ticks < TOTAL) {
-        setTimeout(step, 0);
-      } else {
-        _centerGraph();
-        // Continue RAF for remainder
-        _simAlpha = 0.04;
-        _startRaf();
-        resolve();
-      }
-    };
-    setTimeout(step, 0);
-  });
-}
-
-function _startRaf() {
-  if (_rafId) return;
-  const step = () => {
-    if (_simAlpha < 0.001) { _rafId = null; return; }
-    _tick(_simAlpha);
-    _simAlpha *= 0.985;
-    _updatePos();
-    _rafId = requestAnimationFrame(step);
-  };
-  _rafId = requestAnimationFrame(step);
-}
-
-// ── SVG ──────────────────────────────────────────────────────────────
-
-const NS = 'http://www.w3.org/2000/svg';
-const svgEl = (tag) => document.createElementNS(NS, tag);
-
-function _setupSVG() {
+function _setupCanvas() {
   const c = document.getElementById('explore-svg-container');
   if (!c) return;
   c.innerHTML = '';
 
-  _svg = svgEl('svg');
-  _svg.style.cssText = 'width:100%;height:100%;display:block;cursor:grab;touch-action:none;user-select:none;';
+  _dpr = window.devicePixelRatio || 1;
+  _canvas = document.createElement('canvas');
+  _canvas.style.cssText = 'width:100%;height:100%;display:block;cursor:default;touch-action:none;';
+  c.appendChild(_canvas);
+  _ctx = _canvas.getContext('2d');
 
-  _canvas = svgEl('g');
-  _edgeG  = svgEl('g');
-  _nodeG  = svgEl('g');
-  _canvas.appendChild(_edgeG);
-  _canvas.appendChild(_nodeG);
-  _svg.appendChild(_canvas);
-  c.appendChild(_svg);
-
-  // Set initial transform so canvas isn't stuck at bare (0,0)
-  _applyTx();
-  _bindPanZoom();
+  _resizeCanvas();
+  _bindEvents();
   _bindControls();
   _buildLegend();
+
+  if (_ro) _ro.disconnect();
+  _ro = new ResizeObserver(() => { _resizeCanvas(); _buildLayout(); _draw(); });
+  _ro.observe(c);
 }
 
-function _renderAll() {
-  if (!_svg) return;
-  _edgeG.innerHTML = '';
-  _nodeG.innerHTML = '';
-
-  // Edges
-  _edges.forEach(e => {
-    const path = svgEl('path');
-    path.setAttribute('fill', 'none');
-    path.setAttribute('stroke', '#B3B3B3');
-    path.setAttribute('stroke-width', '0.8');
-    path.setAttribute('stroke-dasharray', '3 4');
-    path.setAttribute('opacity', '0.35');
-    _edgeG.appendChild(path);
-    e._el = path;
-  });
-
-  // Nodes
-  _nodes.forEach(n => {
-    const g   = svgEl('g');
-    g.dataset.nid = n.id;
-    g.style.cursor = 'pointer';
-    const r   = _r(n);
-    const col = NODE_COLORS[n.type] || '#aaa';
-
-    if (n.untranslatable) {
-      const ring = svgEl('circle');
-      ring.setAttribute('r', r + 3.5);
-      ring.setAttribute('fill', 'none');
-      ring.setAttribute('stroke', col);
-      ring.setAttribute('stroke-width', '1');
-      ring.setAttribute('stroke-dasharray', '3,2');
-      ring.setAttribute('opacity', '0.7');
-      g.appendChild(ring);
-    }
-
-    const c = svgEl('circle');
-    c.setAttribute('r', r);
-    c.setAttribute('fill', col);
-    g.appendChild(c);
-    n._c = c;
-
-    const lbl = svgEl('text');
-    lbl.setAttribute('text-anchor', 'middle');
-    lbl.setAttribute('dominant-baseline', 'hanging');
-    lbl.setAttribute('y', r + 6);
-    lbl.setAttribute('font-size', '11');
-    lbl.setAttribute('font-weight', '400');
-    lbl.setAttribute('font-family', 'NAMU, sans-serif');
-    lbl.setAttribute('fill', '#0A0A0A');
-    lbl.setAttribute('pointer-events', 'none');
-    lbl.setAttribute('class', 'exp-lbl');
-    lbl.textContent = n.label_uk;
-    g.appendChild(lbl);
-
-    g.addEventListener('click', ev => { ev.stopPropagation(); _select(n); });
-    g.addEventListener('mouseenter', () => _highlight(n));
-    g.addEventListener('mouseleave', _unhighlight);
-
-    _nodeG.appendChild(g);
-    n._el = g;
-  });
+function _resizeCanvas() {
+  const c = document.getElementById('explore-svg-container');
+  if (!c || !_canvas) return;
+  const rect = c.getBoundingClientRect();
+  const w = rect.width  || c.clientWidth  || 800;
+  const h = rect.height || c.clientHeight || 600;
+  _canvas.width  = Math.round(w * _dpr);
+  _canvas.height = Math.round(h * _dpr);
+  _ctx.setTransform(_dpr, 0, 0, _dpr, 0, 0);
 }
 
-function _r(n) {
-  const maxR = n.id === 'KHATA_HOUSE' ? 22 : 18;
-  return Math.max(8, Math.min(maxR, 8 + Math.log(Math.max(1, n.degree)) * 2.5));
+function _cw() { return _canvas ? _canvas.width  / _dpr : 800; }
+function _ch() { return _canvas ? _canvas.height / _dpr : 600; }
+
+// ── Camera (zoom/pan to selection) ──────────────────────────────────────
+
+function _setCameraTarget(scale, x, y) {
+  _camTarget = { scale, x, y };
+  if (!_camRAF) _camRAF = requestAnimationFrame(_animateCamera);
 }
 
-function _updatePos() {
-  for (const e of _edges) {
-    if (!e._el) continue;
-    e._el.setAttribute('d', `M${e.source.x},${e.source.y} L${e.target.x},${e.target.y}`);
-  }
-  for (const n of _nodes) {
-    if (n._el) n._el.setAttribute('transform', `translate(${n.x},${n.y})`);
+function _animateCamera() {
+  const t = 0.18;
+  _cam.scale += (_camTarget.scale - _cam.scale) * t;
+  _cam.x     += (_camTarget.x     - _cam.x)     * t;
+  _cam.y     += (_camTarget.y     - _cam.y)     * t;
+  _draw();
+  const done = Math.abs(_camTarget.scale - _cam.scale) < 0.001
+    && Math.abs(_camTarget.x - _cam.x) < 0.3
+    && Math.abs(_camTarget.y - _cam.y) < 0.3;
+  if (!done) {
+    _camRAF = requestAnimationFrame(_animateCamera);
+  } else {
+    _cam = { ..._camTarget };
+    _camRAF = null;
+    _draw();
   }
 }
 
-// ── Pan / Zoom ────────────────────────────────────────────────────────
-
-function _bindPanZoom() {
-  let drag = false, ox = 0, oy = 0, stx = 0, sty = 0;
-
-  _svg.addEventListener('pointerdown', e => {
-    if (e.button > 0) return;
-    if (e.target.closest('[data-nid]')) return;
-    drag = true;
-    ox = e.clientX; oy = e.clientY;
-    stx = _tx; sty = _ty;
-    _svg.setPointerCapture(e.pointerId);
-    _svg.style.cursor = 'grabbing';
-  });
-
-  _svg.addEventListener('pointermove', e => {
-    if (!drag) return;
-    _tx = stx + e.clientX - ox;
-    _ty = sty + e.clientY - oy;
-    _applyTx();
-  });
-
-  _svg.addEventListener('pointerup', () => { drag = false; _svg.style.cursor = 'grab'; });
-
-  _svg.addEventListener('wheel', e => {
-    e.preventDefault();
-    const rect = _svg.getBoundingClientRect();
-    _zoomAt(e.clientX - rect.left, e.clientY - rect.top, e.deltaY < 0 ? 1.12 : 0.9);
-  }, { passive: false });
-
-  _svg.addEventListener('click', e => {
-    if (!e.target.closest('[data-nid]')) _select(null);
-  });
+function _toWorld(mx, my) {
+  const w = _cw(), h = _ch();
+  return [(mx - w / 2) / _cam.scale + _cam.x, (my - h / 2) / _cam.scale + _cam.y];
 }
 
-function _zoomAt(mx, my, f) {
-  const ns = Math.max(0.1, Math.min(3, _sc * f));
-  const r  = ns / _sc;
-  _tx = mx - r * (mx - _tx);
-  _ty = my - r * (my - _ty);
-  _sc = ns;
-  _applyTx();
-  _lblVis();
+function _zoomToEntity(ei) {
+  const en     = _elemNodes[ei];
+  const swirlR = _swirlR(en.node);
+  const scale  = Math.min(2.4, Math.max(1.3, 120 / swirlR));
+  _setCameraTarget(scale, en.x, en.y);
 }
 
-function _applyTx() {
-  if (_canvas) _canvas.setAttribute('transform', `translate(${_tx},${_ty}) scale(${_sc})`);
+function _resetCamera() {
+  _setCameraTarget(1, _cw() / 2, _ch() / 2);
 }
 
-function _centerGraph() {
+// ── Layout ────────────────────────────────────────────────────────────
+
+function _elemR(n) {
+  return Math.max(14, Math.min(30, 10 + n.label_uk.length * 1.6));
+}
+
+// Radius of the full rule-dot swirl around an entity (used for layout spacing)
+function _swirlR(n) {
+  const cap = Math.min(n.rules.length, MAX_RULE_DOTS);
+  if (!cap) return _elemR(n);
+  return _elemR(n) + 14 + (cap - 1) * SWIRL_DIST_STEP;
+}
+
+function _buildLayout() {
   if (!_nodes.length) return;
   const cw = _cw(), ch = _ch();
-  if (!cw || !ch) { requestAnimationFrame(_centerGraph); return; }
+  const cx = cw / 2, cy = ch / 2;
 
-  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
-  for (const n of _nodes) {
-    if (n.x < x0) x0 = n.x; if (n.y < y0) y0 = n.y;
-    if (n.x > x1) x1 = n.x; if (n.y > y1) y1 = n.y;
+  _cam = { scale: 1, x: cx, y: cy };
+  _camTarget = { scale: 1, x: cx, y: cy };
+  if (_camRAF) { cancelAnimationFrame(_camRAF); _camRAF = null; }
+
+  // Deterministic scattered starting positions across the full canvas (organic clustering,
+  // not a ring) — d3-force then pulls connected nodes into loose clusters from here
+  const pos = _nodes.map((n, i) => {
+    const a1 = Math.sin(i * 12.9898 + 4.1414) * 43758.5453;
+    const a2 = Math.sin(i * 78.233  + 1.7321) * 12543.6789;
+    const rx = a1 - Math.floor(a1); // pseudo-random 0..1
+    const ry = a2 - Math.floor(a2);
+    return { x: cx + (rx - 0.5) * cw * 0.9, y: cy + (ry - 0.5) * ch * 0.9 };
+  });
+
+  const radii  = _nodes.map(n => _elemR(n));
+  const swirls = _nodes.map(n => _swirlR(n));
+  const maxRules = Math.max(1, ..._nodes.map(n => n.rules.length));
+  const spread   = Math.min(cw, ch) * 0.68;
+
+  // d3-force relaxation: repulsion + edge springs + collision (no-overlap) + weak centering
+  const simNodes = _nodes.map((n, i) => ({ x: pos[i].x, y: pos[i].y, r: radii[i], sr: swirls[i], rc: n.rules.length }));
+  const simLinks = _edges.map(e => ({ source: e.source, target: e.target }));
+
+  const sim = forceSimulation(simNodes)
+    .force('charge', forceManyBody().strength(-150))
+    .force('link', forceLink(simLinks).distance(d => d.source.sr + d.target.sr + 40).strength(0.4))
+    .force('collide', forceCollide(d => d.sr + 18).iterations(3))
+    .force('x', forceX(cx).strength(0.0025))
+    .force('y', forceY(cy).strength(0.01))
+    // Ripple out from the center title: busy (8+ rule) nodes drift toward the outer edge,
+    // quieter nodes settle closer in
+    .force('radial', forceRadial(
+      d => DIAMOND_R + 40 + (d.rc / maxRules) * spread,
+      cx, cy
+    ).strength(0.22))
+    .stop();
+
+  for (let i = 0; i < 400; i++) sim.tick();
+
+  // Fit the relaxed layout into the canvas with a margin
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  simNodes.forEach((p, i) => {
+    const pad = swirls[i] + 16; // leave room for full rule-dot swirls
+    minX = Math.min(minX, p.x - pad); maxX = Math.max(maxX, p.x + pad);
+    minY = Math.min(minY, p.y - pad); maxY = Math.max(maxY, p.y + pad);
+  });
+  const bw    = maxX - minX || 1, bh = maxY - minY || 1;
+  const scale = Math.min((cw * 0.96) / bw, (ch * 0.96) / bh);
+  const ox    = cx - ((minX + maxX) / 2) * scale;
+  const oy    = cy - ((minY + maxY) / 2) * scale;
+
+  _elemNodes = _nodes.map((n, i) => ({
+    x: simNodes[i].x * scale + ox,
+    y: simNodes[i].y * scale + oy,
+    node: n, idx: i
+  }));
+
+  // Push any node that landed too close to the center title/diamond outward (the diamond
+  // is always drawn at canvas center, which the relaxed+fitted layout doesn't account for)
+  const clearR = DIAMOND_R * scale;
+  _elemNodes.forEach(en => {
+    const dx = en.x - cx, dy = en.y - cy;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    const minDist = clearR + _elemR(en.node);
+    if (dist < minDist) {
+      const ang = dist > 0.01 ? Math.atan2(dy, dx) : en.idx * 2.399;
+      en.x = cx + Math.cos(ang) * minDist;
+      en.y = cy + Math.sin(ang) * minDist;
+    }
+  });
+
+  // Resolve any new overlaps introduced by the diamond-clearance push above
+  for (let iter = 0; iter < 6; iter++) {
+    for (let i = 0; i < _elemNodes.length; i++) {
+      for (let j = i + 1; j < _elemNodes.length; j++) {
+        const a = _elemNodes[i], b = _elemNodes[j];
+        const dx = b.x - a.x, dy = b.y - a.y;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+        const minDist = _elemR(a.node) + _elemR(b.node) + 6;
+        if (dist < minDist) {
+          if (dist < 0.01) dist = 0.01;
+          const overlap = (minDist - dist) / 2;
+          const ux = dx / dist, uy = dy / dist;
+          a.x -= ux * overlap; a.y -= uy * overlap;
+          b.x += ux * overlap; b.y += uy * overlap;
+        }
+      }
+    }
   }
-  const gw = (x1 - x0) || 1, gh = (y1 - y0) || 1;
-  // 80px padding + 10% extra breathing room so nodes don't hug the edge
-  _sc = Math.max(0.4, Math.min(1.5, Math.min(cw / (gw + 80), ch / (gh + 80)))) * 0.9;
-  _tx = cw / 2 - ((x0 + x1) / 2) * _sc;
-  _ty = ch / 2 - ((y0 + y1) / 2) * _sc;
-  if (isNaN(_tx) || isNaN(_ty) || isNaN(_sc)) { _tx = cw / 2; _ty = ch / 2; _sc = 1; }
-  _applyTx();
-  _lblVis();
-  console.log('fitToView —', Math.round(cw), 'x', Math.round(ch), '| scale', _sc.toFixed(3), 'tx', Math.round(_tx), 'ty', Math.round(_ty));
+
+  // Rule dots: logarithmic-spiral "swirl" placement around each hub
+  _ruleNodes = [];
+  _elemNodes.forEach((en, ei) => {
+    const rules = en.node.rules;
+    const nr    = rules.length;
+    if (!nr) { en.extraRules = 0; return; }
+
+    // Cap rule dots drawn on canvas; sample evenly across the full list for category diversity
+    const cap   = Math.min(nr, MAX_RULE_DOTS);
+    en.extraRules = nr - cap;
+
+    // Fan rule dots away from the center (diamond), spread across SWIRL_FAN radians
+    const outAng   = Math.atan2(en.y - cy, en.x - cx) || (ei * 2.399);
+    const baseDist = _elemR(en.node) + 14;
+
+    for (let pi = 0; pi < cap; pi++) {
+      const ri   = Math.floor(pi * nr / cap);
+      const r    = rules[ri];
+      const t    = cap > 1 ? pi / (cap - 1) : 0.5;
+      const ang  = outAng - SWIRL_FAN / 2 + t * SWIRL_FAN;
+      const dist = baseDist + pi * SWIRL_DIST_STEP;
+      let rx = Math.max(10, Math.min(cw - 10, en.x + dist * Math.cos(ang)));
+      let ry = Math.max(10, Math.min(ch - 10, en.y + dist * Math.sin(ang)));
+
+      // Push the dot clear of any entity circle it would otherwise land inside
+      _elemNodes.forEach(other => {
+        if (other === en) return;
+        const odx = rx - other.x, ody = ry - other.y;
+        const od  = Math.sqrt(odx * odx + ody * ody);
+        const minD = _elemR(other.node) + 4;
+        if (od < minD) {
+          const oa = od > 0.01 ? Math.atan2(ody, odx) : ang;
+          rx = other.x + Math.cos(oa) * minD;
+          ry = other.y + Math.sin(oa) * minD;
+        }
+      });
+
+      // Deterministic jitter (stable across redraws)
+      const jx   = Math.sin(ei * 13.7 + pi * 7.31) * 4;
+      const jy   = Math.cos(ei * 11.3 + pi * 5.17) * 4;
+      const cpx  = (en.x + rx) / 2 + jx;
+      const cpy  = (en.y + ry) / 2 + jy;
+      const lbl  = r.obj.length > 18 ? r.obj.slice(0, 16) + '…' : r.obj;
+      const dx   = rx - en.x, dy2 = ry - en.y;
+      const dl   = Math.sqrt(dx * dx + dy2 * dy2) || 1;
+
+      _ruleNodes.push({
+        x: rx, y: ry, cpx, cpy,
+        ex: en.x, ey: en.y,
+        rule: r, ei, origRi: ri, pi, lbl,
+        lx: rx + (dx / dl) * 10,
+        ly: ry + (dy2 / dl) * 10,
+        align: rx > cx ? 'left' : 'right'
+      });
+    }
+  });
 }
 
-function _lblVis() {
-  const show = _sc >= 0.4;
-  document.querySelectorAll('.exp-lbl').forEach(l => { l.style.display = show ? '' : 'none'; });
+// ── Draw ──────────────────────────────────────────────────────────────
+
+function _draw() {
+  if (!_ctx || !_canvas) return;
+  const w = _cw(), h = _ch();
+  const cx = w / 2, cy = h / 2;
+  const hasSel = _selElem >= 0;
+  const ctx = _ctx;
+  ctx.clearRect(0, 0, w, h);
+
+  const neighborSet = hasSel ? new Set(_edges.flatMap(e =>
+    e.source === _selElem ? [e.target] : e.target === _selElem ? [e.source] : []
+  )) : null;
+
+  ctx.save();
+  ctx.translate(w / 2, h / 2);
+  ctx.scale(_cam.scale, _cam.scale);
+  ctx.translate(-_cam.x, -_cam.y);
+
+  // 1. Entity-to-entity links
+  _edges.forEach(e => {
+    const ea = _elemNodes[e.source], eb = _elemNodes[e.target];
+    if (!ea || !eb) return;
+    const catOk  = _filter === 'ALL' || e.category === _filter;
+    const inSel  = !hasSel || _selElem === e.source || _selElem === e.target;
+    const active = inSel && catOk;
+    const col    = CAT_COLORS[e.category] || CAT_COLORS.OTHER;
+    const cpx    = (ea.x + eb.x) / 2 + (eb.y - ea.y) * 0.12;
+    const cpy    = (ea.y + eb.y) / 2 - (eb.x - ea.x) * 0.12;
+    ctx.save();
+    ctx.strokeStyle = col;
+    ctx.globalAlpha = active ? (hasSel ? 0.4 : 0.18) : 0.04;
+    ctx.lineWidth   = active ? 1.2 : 0.5;
+    ctx.setLineDash([]);
+    ctx.beginPath(); ctx.moveTo(ea.x, ea.y); ctx.quadraticCurveTo(cpx, cpy, eb.x, eb.y); ctx.stroke();
+    ctx.restore();
+  });
+
+  // 2. Rule lines (only for the selected entity)
+  if (hasSel) _ruleNodes.forEach((rn, i) => {
+    if (rn.ei !== _selElem) return;
+    const isRuleSel = _selRule === i;
+    const catOk     = _filter === 'ALL' || rn.rule.cat === _filter;
+    const col       = CAT_COLORS[rn.rule.cat] || CAT_COLORS.OTHER;
+    ctx.save();
+    ctx.strokeStyle  = col;
+    ctx.globalAlpha  = isRuleSel ? 0.9 : catOk ? 0.45 : 0.03;
+    ctx.lineWidth    = isRuleSel ? 1.1 : 0.5;
+    ctx.setLineDash([]);
+    ctx.beginPath(); ctx.moveTo(rn.ex, rn.ey); ctx.quadraticCurveTo(rn.cpx, rn.cpy, rn.x, rn.y); ctx.stroke();
+    ctx.restore();
+  });
+
+  // 3. Rule dots — uniform density everywhere; selected/hovered dot pops
+  _ruleNodes.forEach((rn, i) => {
+    const col = CAT_COLORS[rn.rule.cat] || CAT_COLORS.OTHER;
+    const isRuleSel = rn.ei === _selElem && _selRule === i;
+    const isHovR    = rn.ei === _selElem && _hovRule === i;
+    const r     = (isRuleSel || isHovR) ? 5 : 2;
+    const alpha = (isRuleSel || isHovR) ? 1 : 0.25;
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle   = col;
+    ctx.beginPath(); ctx.arc(rn.x, rn.y, r, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+  });
+
+  // 4. Entity circles
+  _elemNodes.forEach((en, ei) => {
+    const isSel = _selElem === ei;
+    const isHov = _hovElem === ei;
+    const n     = en.node;
+    const r     = _elemR(n);
+    const col   = NODE_COLORS[n.type] || '#5D1D16';
+    const isNeighbor  = hasSel && neighborSet.has(ei);
+    const sizeAlpha   = Math.max(0.78, 1 - (r - 14) / 16 * 0.22); // smaller nodes render more solid
+    const circleAlpha = hasSel ? (isSel ? 1 : isNeighbor ? 0.35 : 0.12) : (isHov ? 1 : sizeAlpha);
+    const labelAlpha  = hasSel ? (isSel ? 1 : isNeighbor ? 0.6  : 0.08) : circleAlpha;
+    ctx.save();
+    ctx.globalAlpha = circleAlpha;
+    ctx.fillStyle   = col;
+    ctx.beginPath(); ctx.arc(en.x, en.y, r + (isSel ? 1.5 : 0), 0, Math.PI * 2); ctx.fill();
+    if (isSel) { ctx.strokeStyle = '#0A0A0A'; ctx.lineWidth = 2.5; ctx.stroke(); }
+    ctx.fillStyle    = '#F5F2ED';
+    const fs         = r > 22 ? 8.5 : r > 16 ? 7.5 : 7;
+    ctx.font         = `500 ${fs}px NAMU, sans-serif`;
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.globalAlpha  = labelAlpha;
+    ctx.fillText(n.label_uk, en.x, en.y);
+    ctx.restore();
+
+    // "+N more" indicator below selected circle when rules are truncated
+    if (isSel && en.extraRules > 0) {
+      ctx.save();
+      ctx.globalAlpha  = 0.6;
+      ctx.fillStyle    = '#9B8E82';
+      ctx.font         = '400 8px NAMU, sans-serif';
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText(`+${en.extraRules} more`, en.x, en.y + r + 6);
+      ctx.restore();
+    }
+  });
+
+  // 5. Source diamond
+  const sr = 9;
+  ctx.save();
+  ctx.globalAlpha = hasSel ? 0.4 : 0.75;
+  ctx.fillStyle   = '#E8E0D0'; ctx.strokeStyle = '#9B8E82'; ctx.lineWidth = 0.8;
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - sr); ctx.lineTo(cx + sr, cy);
+  ctx.lineTo(cx, cy + sr); ctx.lineTo(cx - sr, cy);
+  ctx.closePath(); ctx.fill(); ctx.stroke();
+  ctx.fillStyle    = '#7A6B5A';
+  ctx.globalAlpha  = hasSel ? 0.4 : 0.85;
+  ctx.font         = '400 6.5px NAMU, sans-serif';
+  ctx.textAlign    = 'center';
+  ctx.textBaseline = 'top';
+  ctx.fillText('B4 Masnenko 2012', cx, cy + sr + 3);
+  ctx.restore();
+
+  ctx.restore(); // camera transform
 }
 
-function _cw() {
-  const el = document.getElementById('explore-svg-container');
-  return (el?.getBoundingClientRect().width)  || el?.clientWidth  || 800;
+// ── Hit testing + events ──────────────────────────────────────────────
+
+function _mousePos(e) {
+  if (!_canvas) return [0, 0];
+  const rect = _canvas.getBoundingClientRect();
+  return [
+    (e.clientX - rect.left) * ((_canvas.width / _dpr) / rect.width),
+    (e.clientY - rect.top)  * ((_canvas.height / _dpr) / rect.height)
+  ];
 }
-function _ch() {
-  const el = document.getElementById('explore-svg-container');
-  return (el?.getBoundingClientRect().height) || el?.clientHeight || 600;
-}
 
-// ── Controls ──────────────────────────────────────────────────────────
+function _bindEvents() {
+  if (!_canvas) return;
 
-function _bindControls() {
-  document.getElementById('explore-zoom-in')
-    ?.addEventListener('click', () => _zoomAt(_cw() / 2, _ch() / 2, 1.2));
-  document.getElementById('explore-zoom-out')
-    ?.addEventListener('click', () => _zoomAt(_cw() / 2, _ch() / 2, 0.85));
-  document.getElementById('explore-zoom-fit')
-    ?.addEventListener('click', _centerGraph);
+  _canvas.addEventListener('click', e => {
+    const [sx, sy] = _mousePos(e);
+    const [mx, my] = _toWorld(sx, sy);
 
-  document.querySelectorAll('.exp-pill').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.exp-pill').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      _filter = btn.dataset.filter;
-      _applyFilter();
+    // Rule dot hit (only when an entity is selected)
+    if (_selElem >= 0) {
+      let hitRule = -1;
+      _ruleNodes.forEach((rn, i) => {
+        if (rn.ei !== _selElem) return;
+        const dx = mx - rn.x, dy = my - rn.y;
+        if (dx * dx + dy * dy < 144) hitRule = i;
+      });
+      if (hitRule >= 0) {
+        _selRule = _selRule === hitRule ? -1 : hitRule;
+        _highlightPanelRule(_selRule);
+        _draw();
+        return;
+      }
+    }
+
+    // Entity node hit
+    let hitElem = -1;
+    _elemNodes.forEach((en, ei) => {
+      const r = _elemR(en.node) + 5;
+      const dx = mx - en.x, dy = my - en.y;
+      if (dx * dx + dy * dy < r * r) hitElem = ei;
     });
+
+    if (hitElem >= 0) {
+      if (_selElem === hitElem) {
+        _selElem = -1; _selRule = -1; _updatePanel(-1);
+        _resetCamera();
+      } else {
+        _selElem = hitElem; _selRule = -1; _updatePanel(hitElem);
+        _zoomToEntity(hitElem);
+      }
+    } else {
+      _selElem = -1; _selRule = -1; _updatePanel(-1);
+      _resetCamera();
+    }
+    _draw();
   });
 
-  const search = document.getElementById('explore-search');
-  if (search) search.addEventListener('input', () => _applySearch(search.value.trim().toLowerCase()));
-
-  document.getElementById('explore-sheet-close')?.addEventListener('click', () => {
-    document.getElementById('explore-sheet')?.classList.remove('open');
-    _select(null);
+  _canvas.addEventListener('mousemove', e => {
+    const [sx, sy] = _mousePos(e);
+    const [mx, my] = _toWorld(sx, sy);
+    let fe = -1, fr = -1;
+    _elemNodes.forEach((en, ei) => {
+      const r = _elemR(en.node) + 5;
+      const dx = mx - en.x, dy = my - en.y;
+      if (dx * dx + dy * dy < r * r) fe = ei;
+    });
+    if (_selElem >= 0) {
+      _ruleNodes.forEach((rn, i) => {
+        if (rn.ei !== _selElem) return;
+        const dx = mx - rn.x, dy = my - rn.y;
+        if (dx * dx + dy * dy < 100) fr = i;
+      });
+    }
+    const changed = fe !== _hovElem || fr !== _hovRule;
+    _hovElem = fe; _hovRule = fr;
+    if (changed) {
+      _canvas.style.cursor = (fe >= 0 || fr >= 0) ? 'pointer' : 'default';
+      _draw();
+    }
   });
-}
 
-// ── Filter + Search ───────────────────────────────────────────────────
-
-function _applyFilter() {
-  for (const e of _edges) {
-    if (!e._el) continue;
-    const vis = _filter === 'ALL' || e.category === _filter;
-    e._el.style.display = vis ? '' : 'none';
-    if (vis) e._el.setAttribute('opacity', '0.35');
-  }
-  for (const n of _nodes) {
-    if (!n._el) continue;
-    if (_filter === 'ALL') { n._el.style.opacity = '1'; continue; }
-    const linked = _edges.some(e => e.category === _filter && (e.source === n || e.target === n));
-    n._el.style.opacity = linked ? '1' : '0.08';
-  }
-}
-
-function _applySearch(q) {
-  if (!q) { _applyFilter(); return; }
-  for (const n of _nodes) {
-    if (!n._el) continue;
-    const match = n.label_uk.toLowerCase().includes(q)
-      || n.label_en.toLowerCase().includes(q)
-      || n.id.toLowerCase().includes(q)
-      || n.aliases.some(a => a.toLowerCase().includes(q));
-    n._el.style.opacity = match ? '1' : '0.06';
-  }
-}
-
-// ── Selection + Hover ─────────────────────────────────────────────────
-
-function _select(node) {
-  _sel = node;
-
-  if (!node) {
-    for (const n of _nodes) {
-      if (!n._el) continue;
-      n._el.style.opacity = '1';
-      n._c?.setAttribute('stroke', 'none');
-      n._c?.setAttribute('stroke-width', '0');
-    }
-    for (const e of _edges) {
-      if (!e._el) continue;
-      const vis = _filter === 'ALL' || e.category === _filter;
-      e._el.style.display = vis ? '' : 'none';
-      e._el.setAttribute('opacity', '0.35');
-      e._el.setAttribute('stroke', '#B3B3B3');
-      e._el.setAttribute('stroke-width', '0.8');
-    }
-    _updatePanel(null);
-    return;
-  }
-
-  const connectedIds = new Set([node.id]);
-  for (const e of _edges) {
-    if (e.source === node) connectedIds.add(e.target.id);
-    if (e.target === node) connectedIds.add(e.source.id);
-  }
-
-  for (const n of _nodes) {
-    if (!n._el) continue;
-    const is = n === node;
-    n._c?.setAttribute('stroke', is ? '#0A0A0A' : 'none');
-    n._c?.setAttribute('stroke-width', is ? '3' : '0');
-    n._el.style.opacity = connectedIds.has(n.id) ? '1' : '0.15';
-  }
-
-  for (const e of _edges) {
-    if (!e._el) continue;
-    const rel = e.source === node || e.target === node;
-    e._el.style.display = '';
-    e._el.setAttribute('opacity', rel ? '0.9' : '0.04');
-    e._el.setAttribute('stroke', '#B3B3B3');
-    e._el.setAttribute('stroke-width', rel ? '1.5' : '0.8');
-  }
-
-  _updatePanel(node);
-  document.getElementById('explore-sheet')?.classList.add('open');
-  const sc = document.getElementById('explore-sheet-content');
-  if (sc) sc.innerHTML = document.getElementById('explore-panel-content')?.innerHTML || '';
-}
-
-function _highlight(node) {
-  if (_sel) return;
-  const ids = new Set([node.id]);
-  for (const e of _edges) {
-    if (e.source === node) ids.add(e.target.id);
-    if (e.target === node) ids.add(e.source.id);
-  }
-  for (const n of _nodes) {
-    if (n._el) n._el.style.opacity = ids.has(n.id) ? '1' : '0.7';
-  }
-  for (const e of _edges) {
-    if (!e._el) continue;
-    const rel = e.source === node || e.target === node;
-    e._el.setAttribute('opacity', rel ? '0.9' : '0.1');
-    e._el.setAttribute('stroke', '#B3B3B3');
-    e._el.setAttribute('stroke-width', rel ? '1.5' : '0.8');
-  }
-}
-
-function _unhighlight() {
-  if (_sel) return;
-  for (const n of _nodes) { if (n._el) n._el.style.opacity = '1'; }
-  for (const e of _edges) {
-    if (!e._el) continue;
-    const vis = _filter === 'ALL' || e.category === _filter;
-    e._el.style.display = vis ? '' : 'none';
-    e._el.setAttribute('opacity', '0.35');
-    e._el.setAttribute('stroke', '#B3B3B3');
-    e._el.setAttribute('stroke-width', '0.8');
-  }
+  _canvas.addEventListener('mouseleave', () => { _hovElem = -1; _hovRule = -1; _draw(); });
 }
 
 // ── Panel ─────────────────────────────────────────────────────────────
 
-function _updatePanel(node) {
+function _updatePanel(ei) {
   const panel = document.getElementById('explore-panel-content');
   if (!panel) return;
 
-  if (!node) {
+  if (ei < 0) {
     panel.innerHTML = `<p class="explore-hint">
-      <span class="ln-en">Click a node to explore</span>
+      <span class="ln-en">Click a node to explore its rules</span>
       <span class="ln-uk">Натисніть вузол для перегляду</span>
     </p>`;
     return;
   }
 
-  const v     = node.validation;
+  const n = _nodes[ei];
+  if (!n) return;
+
+  const v     = n.validation;
   const total = v ? (v.TRUE || 0) + (v.FALSE || 0) + (v.CONTESTED || 0) : 0;
   const valHtml = v && total ? `
     <div class="exp-val-bar">
-      <div class="exp-seg seg-t" style="width:${v.TRUE     / total * 100}%"></div>
+      <div class="exp-seg seg-t" style="width:${v.TRUE / total * 100}%"></div>
       <div class="exp-seg seg-c" style="width:${v.CONTESTED / total * 100}%"></div>
-      <div class="exp-seg seg-f" style="width:${v.FALSE    / total * 100}%"></div>
+      <div class="exp-seg seg-f" style="width:${v.FALSE / total * 100}%"></div>
     </div>
     <div class="exp-val-nums">${v.TRUE} true · ${v.CONTESTED} contested · ${v.FALSE} false</div>
-  ` : '<p class="exp-dim">No validation data</p>';
+  ` : '';
 
-  const conns    = _edges.filter(e => e.source === node || e.target === node);
-  const connHtml = conns.slice(0, 10).map(e => {
-    const other = e.source === node ? e.target : e.source;
-    const dir   = e.source === node ? '→' : '←';
-    const ev    = (e.evidence[0] || '').replace(/</g, '&lt;');
-    return `<div class="exp-conn">
-      <div class="exp-conn-head">
-        <span class="exp-conn-dir">${dir}</span>
-        <span class="exp-conn-rel">${e.relation.replace(/_/g, ' ')}</span>
-        <span class="exp-conn-node" data-nid="${other.id}">${other.label_uk}</span>
+  const rules    = n.rules;
+  const rulesHtml = rules.map((r, ri) => {
+    const col      = CAT_COLORS[r.cat] || CAT_COLORS.OTHER;
+    const catMatch = _filter === 'ALL' || r.cat === _filter;
+    const ev       = r.ev.replace(/</g, '&lt;');
+    return `<div class="prule${catMatch ? '' : ' prule-dim'}" data-orig-ri="${ri}">
+      <div class="prule-triple" style="color:${col}">
+        ${n.label_uk.toUpperCase()} → ${r.rel.replace(/_/g, ' ')} → <span class="prule-obj">${r.obj}</span>
       </div>
-      ${ev ? `<div class="exp-conn-ev">${ev.slice(0, 120)}${ev.length > 120 ? '…' : ''}</div>` : ''}
+      <div class="prule-ev">«${ev.slice(0, 160)}${ev.length > 160 ? '…' : ''}»</div>
+      <div class="prule-cat" style="color:${col}">${r.cat.toLowerCase()}</div>
     </div>`;
   }).join('');
 
-  const badge = node.untranslatable
-    ? '<span class="exp-badge">untranslatable</span>'
-    : '';
-
   panel.innerHTML = `
     <button class="exp-close-btn" id="exp-close-btn">✕</button>
-    <div class="exp-type">${node.type}</div>
-    <h2 class="exp-label-uk">${node.label_uk} ${badge}</h2>
-    <div class="exp-label-en">${node.label_en}</div>
-    ${node.notes ? `<p class="exp-notes">${node.notes}</p>` : ''}
-    <div class="exp-section"><span class="ln-en">Validation</span><span class="ln-uk">Верифікація</span></div>
+    <div class="exp-type">${n.type}</div>
+    <h2 class="exp-label-uk">${n.label_uk}</h2>
+    <div class="exp-label-en">${n.label_en}</div>
+    ${n.notes ? `<p class="exp-notes">${n.notes}</p>` : ''}
     ${valHtml}
-    <div class="exp-section"><span class="ln-en">Connections (${conns.length})</span><span class="ln-uk">Зв'язки (${conns.length})</span></div>
-    <div class="exp-conns">${connHtml || '<p class="exp-dim">No connections</p>'}</div>
-    ${conns.length > 10 ? `<p class="exp-dim">+${conns.length - 10} more</p>` : ''}
-    ${node.aliases.length ? `
-      <div class="exp-section"><span class="ln-en">Aliases</span><span class="ln-uk">Варіанти</span></div>
-      <p class="exp-aliases">${node.aliases.slice(0, 8).join(' · ')}</p>
-    ` : ''}
+    <div class="exp-section">
+      <span class="ln-en">Rules (${rules.length})</span>
+      <span class="ln-uk">Правила (${rules.length})</span>
+    </div>
+    <div class="exp-conns" id="prule-list">${rulesHtml || '<p class="exp-dim">No rules</p>'}</div>
   `;
 
-  // Wire up connection node links
-  panel.querySelectorAll('.exp-conn-node[data-nid]').forEach(el => {
-    el.style.cursor = 'pointer';
+  document.getElementById('exp-close-btn')?.addEventListener('click', () => {
+    _selElem = -1; _selRule = -1; _updatePanel(-1); _resetCamera(); _draw();
+  });
+
+  panel.querySelectorAll('.prule').forEach(el => {
     el.addEventListener('click', () => {
-      const n = _nodes.find(n => n.id === el.dataset.nid);
-      if (n) _select(n);
+      const origRi = parseInt(el.dataset.origRi);
+      const rni    = _ruleNodes.findIndex(rn => rn.ei === _selElem && rn.origRi === origRi);
+      if (_selRule === rni) {
+        _selRule = -1;
+        panel.querySelectorAll('.prule').forEach(p => p.classList.remove('active'));
+      } else {
+        _selRule = rni;
+        panel.querySelectorAll('.prule').forEach(p => p.classList.remove('active'));
+        el.classList.add('active');
+      }
+      _draw();
     });
   });
 
-  // Close button
-  document.getElementById('exp-close-btn')?.addEventListener('click', () => _select(null));
+  // Mobile sheet sync
+  document.getElementById('explore-sheet')?.classList.add('open');
+  const sc = document.getElementById('explore-sheet-content');
+  if (sc) sc.innerHTML = panel.innerHTML;
+}
+
+function _highlightPanelRule(rni) {
+  const panel = document.getElementById('explore-panel-content');
+  if (!panel) return;
+  panel.querySelectorAll('.prule').forEach(el => el.classList.remove('active'));
+  if (rni < 0) return;
+  const origRi = _ruleNodes[rni]?.origRi;
+  const el     = panel.querySelector(`.prule[data-orig-ri="${origRi}"]`);
+  if (el) { el.classList.add('active'); el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+}
+
+// ── Controls ──────────────────────────────────────────────────────────
+
+function _bindControls() {
+  document.querySelectorAll('.exp-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.exp-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      _filter  = btn.dataset.filter;
+      _selRule = -1;
+      if (_selElem >= 0) _updatePanel(_selElem);
+      _draw();
+    });
+  });
+
+  const search = document.getElementById('explore-search');
+  if (search) search.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    if (!q) { _draw(); return; }
+    const idx = _nodes.findIndex(n =>
+      n.label_uk.toLowerCase().includes(q) ||
+      n.label_en.toLowerCase().includes(q) ||
+      n.id.toLowerCase().includes(q) ||
+      n.aliases.some(a => a.toLowerCase().includes(q))
+    );
+    if (idx >= 0) { _selElem = idx; _selRule = -1; _updatePanel(idx); _zoomToEntity(idx); _draw(); }
+  });
+
+  // Fit button → rebuild layout
+  document.getElementById('explore-zoom-fit')
+    ?.addEventListener('click', () => { _buildLayout(); _draw(); });
+
+  document.getElementById('explore-sheet-close')?.addEventListener('click', () => {
+    document.getElementById('explore-sheet')?.classList.remove('open');
+    _selElem = -1; _selRule = -1; _updatePanel(-1); _resetCamera(); _draw();
+  });
 }
 
 // ── Legend ────────────────────────────────────────────────────────────
@@ -640,6 +747,8 @@ function _buildLegend() {
       `<div class="exp-leg-row"><span class="exp-leg-dot" style="background:${c}"></span>${k.toLowerCase()}</div>`
     ).join('')}
     <div class="exp-leg-ttl" style="margin-top:8px">Relations</div>
-    <div class="exp-leg-row"><span class="exp-leg-dash"></span>connection</div>
+    ${CATS.map(k =>
+      `<div class="exp-leg-row"><span class="exp-leg-dot" style="background:${CAT_COLORS[k]}"></span>${k.toLowerCase()}</div>`
+    ).join('')}
   `;
 }
