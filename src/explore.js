@@ -226,6 +226,11 @@ function _toWorld(mx, my) {
   return [(mx - w / 2) / _cam.scale + _cam.x, (my - h / 2) / _cam.scale + _cam.y];
 }
 
+function _toScreen(wx, wy) {
+  const w = _cw(), h = _ch();
+  return [(wx - _cam.x) * _cam.scale + w / 2, (wy - _cam.y) * _cam.scale + h / 2];
+}
+
 function _zoomToEntity(ei) {
   const en     = _elemNodes[ei];
   const swirlR = _swirlR(en.node);
@@ -234,13 +239,27 @@ function _zoomToEntity(ei) {
 }
 
 function _resetCamera() {
-  _setCameraTarget(1, _cw() / 2, _ch() / 2);
+  _setCameraTarget(0.8, _cw() / 2, _ch() / 2);
 }
 
 // ── Layout ────────────────────────────────────────────────────────────
 
 function _elemR(n) {
-  return Math.max(14, Math.min(30, 10 + n.label_uk.length * 1.6));
+  return Math.max(15, Math.min(32, (10 + n.label_uk.length * 1.6) * 1.05));
+}
+
+function _wrapLabel(ctx, text, maxWidth) {
+  if (ctx.measureText(text).width <= maxWidth) return [text];
+  const words = text.split(' ');
+  if (words.length < 2) return [text];
+  let best = [text], bestDiff = Infinity;
+  for (let i = 1; i < words.length; i++) {
+    const l1 = words.slice(0, i).join(' ');
+    const l2 = words.slice(i).join(' ');
+    const diff = Math.abs(ctx.measureText(l1).width - ctx.measureText(l2).width);
+    if (diff < bestDiff) { bestDiff = diff; best = [l1, l2]; }
+  }
+  return best;
 }
 
 // Radius of the full rule-dot swirl around an entity (used for layout spacing)
@@ -255,8 +274,8 @@ function _buildLayout() {
   const cw = _cw(), ch = _ch();
   const cx = cw / 2, cy = ch / 2;
 
-  _cam = { scale: 1, x: cx, y: cy };
-  _camTarget = { scale: 1, x: cx, y: cy };
+  _cam = { scale: 0.8, x: cx, y: cy };
+  _camTarget = { scale: 0.8, x: cx, y: cy };
   if (_camRAF) { cancelAnimationFrame(_camRAF); _camRAF = null; }
 
   // Deterministic scattered starting positions across the full canvas (organic clustering,
@@ -280,7 +299,7 @@ function _buildLayout() {
 
   const sim = forceSimulation(simNodes)
     .force('charge', forceManyBody().strength(-150))
-    .force('link', forceLink(simLinks).distance(d => d.source.sr + d.target.sr + 40).strength(0.4))
+    .force('link', forceLink(simLinks).distance(d => d.source.sr + d.target.sr + 40).strength(0.2))
     .force('collide', forceCollide(d => d.sr + 18).iterations(3))
     .force('x', forceX(cx).strength(0.0025))
     .force('y', forceY(cy).strength(0.01))
@@ -294,7 +313,8 @@ function _buildLayout() {
 
   for (let i = 0; i < 400; i++) sim.tick();
 
-  // Fit the relaxed layout into the canvas with a margin
+  // Fit the relaxed layout into the canvas — use separate x/y scales so the layout
+  // fills the full canvas aspect ratio instead of staying square.
   let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
   simNodes.forEach((p, i) => {
     const pad = swirls[i] + 16; // leave room for full rule-dot swirls
@@ -302,19 +322,18 @@ function _buildLayout() {
     minY = Math.min(minY, p.y - pad); maxY = Math.max(maxY, p.y + pad);
   });
   const bw    = maxX - minX || 1, bh = maxY - minY || 1;
-  const scale = Math.min((cw * 0.96) / bw, (ch * 0.96) / bh);
-  const ox    = cx - ((minX + maxX) / 2) * scale;
-  const oy    = cy - ((minY + maxY) / 2) * scale;
+  const midX  = (minX + maxX) / 2, midY = (minY + maxY) / 2;
+  const scaleX = (cw * 0.90) / bw;
+  const scaleY = (ch * 0.90) / bh;
 
   _elemNodes = _nodes.map((n, i) => ({
-    x: simNodes[i].x * scale + ox,
-    y: simNodes[i].y * scale + oy,
+    x: cx + (simNodes[i].x - midX) * scaleX,
+    y: cy + (simNodes[i].y - midY) * scaleY,
     node: n, idx: i
   }));
 
-  // Push any node that landed too close to the center title/diamond outward (the diamond
-  // is always drawn at canvas center, which the relaxed+fitted layout doesn't account for)
-  const clearR = DIAMOND_R * scale;
+  // Push any node that landed too close to the center title/diamond outward
+  const clearR = DIAMOND_R * Math.min(scaleX, scaleY);
   _elemNodes.forEach(en => {
     const dx = en.x - cx, dy = en.y - cy;
     const dist = Math.sqrt(dx * dx + dy * dy);
@@ -461,7 +480,7 @@ function _draw() {
     const col = CAT_COLORS[rn.rule.cat] || CAT_COLORS.OTHER;
     const isRuleSel = rn.ei === _selElem && _selRule === i;
     const isHovR    = rn.ei === _selElem && _hovRule === i;
-    const r     = (isRuleSel || isHovR) ? 5 : 2;
+    const r     = (isRuleSel || isHovR) ? 7 : 4;
     const alpha = (isRuleSel || isHovR) ? 1 : 0.25;
     ctx.save();
     ctx.globalAlpha = alpha;
@@ -470,7 +489,8 @@ function _draw() {
     ctx.restore();
   });
 
-  // 4. Entity circles
+  // 4. Entity circles — shapes only; labels collected for fixed-size text pass after camera restore
+  const _labelPass = [];
   _elemNodes.forEach((en, ei) => {
     const isSel = _selElem === ei;
     const isHov = _hovElem === ei;
@@ -478,7 +498,7 @@ function _draw() {
     const r     = _elemR(n);
     const col   = NODE_COLORS[n.type] || '#5D1D16';
     const isNeighbor  = hasSel && neighborSet.has(ei);
-    const sizeAlpha   = Math.max(0.78, 1 - (r - 14) / 16 * 0.22); // smaller nodes render more solid
+    const sizeAlpha   = Math.max(0.78, 1 - (r - 15) / 17 * 0.22);
     const circleAlpha = hasSel ? (isSel ? 1 : isNeighbor ? 0.35 : 0.12) : (isHov ? 1 : sizeAlpha);
     const labelAlpha  = hasSel ? (isSel ? 1 : isNeighbor ? 0.6  : 0.08) : circleAlpha;
     ctx.save();
@@ -486,29 +506,11 @@ function _draw() {
     ctx.fillStyle   = col;
     ctx.beginPath(); ctx.arc(en.x, en.y, r + (isSel ? 1.5 : 0), 0, Math.PI * 2); ctx.fill();
     if (isSel) { ctx.strokeStyle = '#0A0A0A'; ctx.lineWidth = 2.5; ctx.stroke(); }
-    ctx.fillStyle    = '#F5F2ED';
-    const fs         = r > 22 ? 8.5 : r > 16 ? 7.5 : 7;
-    ctx.font         = `500 ${fs}px NAMU, sans-serif`;
-    ctx.textAlign    = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.globalAlpha  = labelAlpha;
-    ctx.fillText(n.label_uk, en.x, en.y);
     ctx.restore();
-
-    // "+N more" indicator below selected circle when rules are truncated
-    if (isSel && en.extraRules > 0) {
-      ctx.save();
-      ctx.globalAlpha  = 0.6;
-      ctx.fillStyle    = '#9B8E82';
-      ctx.font         = '400 8px NAMU, sans-serif';
-      ctx.textAlign    = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillText(`+${en.extraRules} more`, en.x, en.y + r + 6);
-      ctx.restore();
-    }
+    _labelPass.push({ en, r, fs: r > 26 ? 6.5 : r > 19 ? 6 : 5.5, labelAlpha, isSel });
   });
 
-  // 5. Source diamond
+  // 5. Source diamond shape (label drawn after camera restore at fixed screen size)
   const sr = 9;
   ctx.save();
   ctx.globalAlpha = hasSel ? 0.4 : 0.75;
@@ -517,15 +519,49 @@ function _draw() {
   ctx.moveTo(cx, cy - sr); ctx.lineTo(cx + sr, cy);
   ctx.lineTo(cx, cy + sr); ctx.lineTo(cx - sr, cy);
   ctx.closePath(); ctx.fill(); ctx.stroke();
-  ctx.fillStyle    = '#7A6B5A';
-  ctx.globalAlpha  = hasSel ? 0.4 : 0.85;
-  ctx.font         = '400 6.5px NAMU, sans-serif';
-  ctx.textAlign    = 'center';
-  ctx.textBaseline = 'top';
-  ctx.fillText('B4 Masnenko 2012', cx, cy + sr + 3);
   ctx.restore();
 
   ctx.restore(); // camera transform
+
+  // Entity labels at fixed screen-space size (unaffected by camera scale)
+  _labelPass.forEach(({ en, r, fs, labelAlpha, isSel }) => {
+    const [sx, sy] = _toScreen(en.x, en.y);
+    ctx.save();
+    ctx.globalAlpha  = labelAlpha;
+    ctx.fillStyle    = '#F5F2ED';
+    ctx.font         = `500 ${fs}px NAMU, sans-serif`;
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'middle';
+    const maxW  = r * _cam.scale * 1.6;
+    const lines = _wrapLabel(ctx, en.node.label_uk, maxW);
+    const lineH = fs + 2;
+    const startY = sy - (lines.length - 1) * lineH / 2;
+    lines.forEach((line, li) => ctx.fillText(line, sx, startY + li * lineH));
+    ctx.restore();
+    if (isSel && en.extraRules > 0) {
+      const [sx2, sy2] = _toScreen(en.x, en.y + r + 6);
+      ctx.save();
+      ctx.globalAlpha  = 0.6;
+      ctx.fillStyle    = '#9B8E82';
+      ctx.font         = '400 8px NAMU, sans-serif';
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText(`+${en.extraRules} more`, sx2, sy2);
+      ctx.restore();
+    }
+  });
+  // Diamond label at fixed screen-space size
+  {
+    const [sx, sy] = _toScreen(cx, cy + sr + 3);
+    ctx.save();
+    ctx.globalAlpha  = hasSel ? 0.4 : 0.85;
+    ctx.fillStyle    = '#7A6B5A';
+    ctx.font         = '400 6.5px NAMU, sans-serif';
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'top';
+    ctx.fillText('B4 Masnenko 2012', sx, sy);
+    ctx.restore();
+  }
 }
 
 // ── Hit testing + events ──────────────────────────────────────────────
@@ -730,6 +766,19 @@ function _bindControls() {
     );
     if (idx >= 0) { _selElem = idx; _selRule = -1; _updatePanel(idx); _zoomToEntity(idx); _draw(); }
   });
+
+  // Zoom in / out buttons — step by 20%, clamped to a sensible range
+  document.getElementById('explore-zoom-in')
+    ?.addEventListener('click', () => {
+      const s = Math.min(4, _camTarget.scale * 1.2);
+      _setCameraTarget(s, _camTarget.x, _camTarget.y);
+    });
+
+  document.getElementById('explore-zoom-out')
+    ?.addEventListener('click', () => {
+      const s = Math.max(0.4, _camTarget.scale / 1.2);
+      _setCameraTarget(s, _camTarget.x, _camTarget.y);
+    });
 
   // Fit button → rebuild layout
   document.getElementById('explore-zoom-fit')
