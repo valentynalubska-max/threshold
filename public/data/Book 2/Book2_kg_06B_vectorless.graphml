@@ -1,0 +1,547 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d9" for="edge" attr.name="provenance" attr.type="string" />
+  <key id="d8" for="edge" attr.name="provenance_count" attr.type="long" />
+  <key id="d7" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d6" for="edge" attr.name="pages" attr.type="string" />
+  <key id="d5" for="edge" attr.name="page" attr.type="long" />
+  <key id="d4" for="edge" attr.name="connector_token" attr.type="string" />
+  <key id="d3" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d2" for="node" attr.name="source_files" attr.type="string" />
+  <key id="d1" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d0" for="node" attr.name="label" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="BED_SLEEPING_PLATFORM">
+      <data key="d0">BED_SLEEPING_PLATFORM</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="MATERIAL_WOOD">
+      <data key="d0">MATERIAL_WOOD</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="PICH_STOVE">
+      <data key="d0">PICH_STOVE</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="WALL">
+      <data key="d0">WALL</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="DOOR_OPENING">
+      <data key="d0">DOOR_OPENING</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="WINDOW">
+      <data key="d0">WINDOW</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="MAIN_ROOM_KHATA">
+      <data key="d0">MAIN_ROOM_KHATA</data>
+      <data key="d1">SPACE</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="TABLE">
+      <data key="d0">TABLE</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="VESTIBULE_SINY">
+      <data key="d0">VESTIBULE_SINY</data>
+      <data key="d1">SPACE</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="SHELF">
+      <data key="d0">SHELF</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="ICONS">
+      <data key="d0">ICONS</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="STOVE_CORNER">
+      <data key="d0">STOVE_CORNER</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="CEILING_BEAM">
+      <data key="d0">CEILING_BEAM</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="MATERIAL_CLAY">
+      <data key="d0">MATERIAL_CLAY</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="MATERIAL_BRICK">
+      <data key="d0">MATERIAL_BRICK</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="FIREBOX_OPENING">
+      <data key="d0">FIREBOX_OPENING</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="CHIMNEY_FLUE">
+      <data key="d0">CHIMNEY_FLUE</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="MATERIAL_STRAW">
+      <data key="d0">MATERIAL_STRAW</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="CEILING">
+      <data key="d0">CEILING</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <node id="ATTIC_SPACE">
+      <data key="d0">ATTIC_SPACE</data>
+      <data key="d1">ELEMENT</data>
+      <data key="d2">triple_candidates_rulebased_6b_relaxed.jsonl</data>
+    </node>
+    <edge source="BED_SLEEPING_PLATFORM" target="MATERIAL_WOOD">
+      <data key="d3">MADE_OF</data>
+      <data key="d4">ДЕРЕВЯННЫЙ</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="BED_SLEEPING_PLATFORM" target="PICH_STOVE">
+      <data key="d3">MADE_OF</data>
+      <data key="d4">ДЕРЕВЯННЫЙ</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MATERIAL_WOOD" target="PICH_STOVE">
+      <data key="d3">MADE_OF</data>
+      <data key="d4">ДЕРЕВЯННЫЙ</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="PICH_STOVE" target="BED_SLEEPING_PLATFORM">
+      <data key="d3">AGAINST</data>
+      <data key="d4">У_СТЕНЫ</data>
+      <data key="d5">8</data>
+      <data key="d6">8</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="PICH_STOVE" target="TABLE">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="PICH_STOVE" target="WINDOW">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="PICH_STOVE" target="SHELF">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">НА</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="PICH_STOVE" target="MATERIAL_CLAY">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">ПРИ</data>
+      <data key="d5">69</data>
+      <data key="d6">69</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="PICH_STOVE" target="MATERIAL_BRICK">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">ПРИ</data>
+      <data key="d5">69</data>
+      <data key="d6">69</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="PICH_STOVE" target="WALL">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">РЯДОМ_С</data>
+      <data key="d5">69</data>
+      <data key="d6">69</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="WALL" target="DOOR_OPENING">
+      <data key="d3">BETWEEN</data>
+      <data key="d4">МЕЖДУ</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="WALL" target="WALL">
+      <data key="d3">ORIENTED_TOWARD</data>
+      <data key="d4">ОБРАЩЕН_К</data>
+      <data key="d5">79</data>
+      <data key="d6">79</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="WALL" target="WINDOW">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В</data>
+      <data key="d5">8</data>
+      <data key="d6">8</data>
+      <data key="d7">2.0</data>
+      <data key="d8">2</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="WALL" target="PICH_STOVE">
+      <data key="d3">AGAINST</data>
+      <data key="d4">У_СТЕНЫ</data>
+      <data key="d5">8</data>
+      <data key="d6">8</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="WALL" target="BED_SLEEPING_PLATFORM">
+      <data key="d3">AGAINST</data>
+      <data key="d4">У_СТЕНЫ</data>
+      <data key="d5">8</data>
+      <data key="d6">8</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="WALL" target="MAIN_ROOM_KHATA">
+      <data key="d3">ORIENTED_TOWARD</data>
+      <data key="d4">ОБРАЩЕН_К</data>
+      <data key="d5">79</data>
+      <data key="d6">79</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="WALL" target="VESTIBULE_SINY">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">ПРИ</data>
+      <data key="d5">8</data>
+      <data key="d6">8</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="WALL" target="MATERIAL_CLAY">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В</data>
+      <data key="d5">51</data>
+      <data key="d6">51</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="WALL" target="MATERIAL_STRAW">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">НА</data>
+      <data key="d5">51</data>
+      <data key="d6">51</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="DOOR_OPENING" target="VESTIBULE_SINY">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">ОКОЛО</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="DOOR_OPENING" target="STOVE_CORNER">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">У</data>
+      <data key="d5">15</data>
+      <data key="d6">15</data>
+      <data key="d7">2.0</data>
+      <data key="d8">2</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="DOOR_OPENING" target="FIREBOX_OPENING">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">У</data>
+      <data key="d5">15</data>
+      <data key="d6">15</data>
+      <data key="d7">2.0</data>
+      <data key="d8">2</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MAIN_ROOM_KHATA" target="PICH_STOVE">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В_ХАТЕ</data>
+      <data key="d5">50</data>
+      <data key="d6">50</data>
+      <data key="d7">2.0</data>
+      <data key="d8">2</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MAIN_ROOM_KHATA" target="WALL">
+      <data key="d3">BETWEEN</data>
+      <data key="d4">МЕЖДУ</data>
+      <data key="d5">45</data>
+      <data key="d6">45</data>
+      <data key="d7">2.0</data>
+      <data key="d8">2</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MAIN_ROOM_KHATA" target="MATERIAL_CLAY">
+      <data key="d3">MADE_OF</data>
+      <data key="d4">ИЗ</data>
+      <data key="d5">51</data>
+      <data key="d6">51</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MAIN_ROOM_KHATA" target="VESTIBULE_SINY">
+      <data key="d3">MADE_OF</data>
+      <data key="d4">ИЗ</data>
+      <data key="d5">45</data>
+      <data key="d6">45</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MAIN_ROOM_KHATA" target="ATTIC_SPACE">
+      <data key="d3">MADE_OF</data>
+      <data key="d4">ИЗ</data>
+      <data key="d5">45</data>
+      <data key="d6">45</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="TABLE" target="WINDOW">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="VESTIBULE_SINY" target="PICH_STOVE">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">РЯДОМ_С</data>
+      <data key="d5">51</data>
+      <data key="d6">51</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="VESTIBULE_SINY" target="SHELF">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">НА</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="VESTIBULE_SINY" target="WINDOW">
+      <data key="d3">MADE_OF</data>
+      <data key="d4">ИЗ</data>
+      <data key="d5">15</data>
+      <data key="d6">15</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="VESTIBULE_SINY" target="CHIMNEY_FLUE">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">РЯДОМ_С</data>
+      <data key="d5">51</data>
+      <data key="d6">51</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="VESTIBULE_SINY" target="WALL">
+      <data key="d3">ORIENTED_TOWARD</data>
+      <data key="d4">ОБРАЩЕН_К</data>
+      <data key="d5">79</data>
+      <data key="d6">79</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="VESTIBULE_SINY" target="VESTIBULE_SINY">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В</data>
+      <data key="d5">45</data>
+      <data key="d6">45</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="VESTIBULE_SINY" target="CEILING">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В</data>
+      <data key="d5">45</data>
+      <data key="d6">45</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="VESTIBULE_SINY" target="ATTIC_SPACE">
+      <data key="d3">MADE_OF</data>
+      <data key="d4">ИЗ</data>
+      <data key="d5">45</data>
+      <data key="d6">45</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="ICONS" target="MAIN_ROOM_KHATA">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="STOVE_CORNER" target="BED_SLEEPING_PLATFORM">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">ПРИ</data>
+      <data key="d5">28</data>
+      <data key="d6">28</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="CEILING_BEAM" target="CEILING_BEAM">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">НА</data>
+      <data key="d5">69</data>
+      <data key="d6">69</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="CEILING_BEAM" target="SHELF">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">НА</data>
+      <data key="d5">69</data>
+      <data key="d6">69</data>
+      <data key="d7">2.0</data>
+      <data key="d8">2</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MATERIAL_CLAY" target="MATERIAL_BRICK">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">ПРИ</data>
+      <data key="d5">69</data>
+      <data key="d6">69</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MATERIAL_CLAY" target="WALL">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В</data>
+      <data key="d5">51</data>
+      <data key="d6">51</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MATERIAL_CLAY" target="PICH_STOVE">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">НА</data>
+      <data key="d5">50</data>
+      <data key="d6">50</data>
+      <data key="d7">2.0</data>
+      <data key="d8">2</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MATERIAL_CLAY" target="ICONS">
+      <data key="d3">MADE_OF</data>
+      <data key="d4">ИЗ</data>
+      <data key="d5">50</data>
+      <data key="d6">50</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="FIREBOX_OPENING" target="STOVE_CORNER">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">У</data>
+      <data key="d5">15</data>
+      <data key="d6">15</data>
+      <data key="d7">2.0</data>
+      <data key="d8">2</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="CHIMNEY_FLUE" target="PICH_STOVE">
+      <data key="d3">ADJACENT_TO</data>
+      <data key="d4">РЯДОМ_С</data>
+      <data key="d5">51</data>
+      <data key="d6">51</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="MATERIAL_STRAW" target="MATERIAL_CLAY">
+      <data key="d3">LOCATED_IN</data>
+      <data key="d4">В</data>
+      <data key="d5">45</data>
+      <data key="d6">45</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+    <edge source="CEILING" target="VESTIBULE_SINY">
+      <data key="d3">MADE_OF</data>
+      <data key="d4">ИЗ</data>
+      <data key="d5">45</data>
+      <data key="d6">45</data>
+      <data key="d7">1.0</data>
+      <data key="d8">1</data>
+      <data key="d9">triple_candidates_rulebased_6b_relaxed.jsonl:*</data>
+    </edge>
+  </graph>
+</graphml>

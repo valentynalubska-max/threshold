@@ -357,6 +357,92 @@ footer{border-top:1px solid var(--border);padding:14px 40px;display:flex;justify
   padding-bottom: 0;
 }
 
+/* ── Explore landing ──────────────────────────────────────────── */
+.explore-landing {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.explore-landing-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 24px;
+  height: 48px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.explore-landing-title {
+  font-family: 'NAMU', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  flex: 1;
+}
+.explore-mode-toggle { display: flex; gap: 6px; }
+.exp-mode-btn {
+  background: none;
+  border: 1px solid var(--black);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-family: 'NAMU', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.exp-mode-btn.active, .exp-mode-btn:hover { background: var(--black); color: var(--white); }
+
+.explore-covers {
+  display: flex;
+  gap: 40px;
+  padding: 48px;
+  flex: 1;
+  align-items: flex-start;
+  overflow-x: auto;
+}
+.explore-book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 180px;
+  transition: opacity 0.2s;
+}
+.explore-book-card.unavailable { opacity: 0.25; pointer-events: none; }
+.explore-book-card:hover:not(.unavailable) .book-card-cover-wrap { outline: 2px solid var(--black); }
+.book-card-cover-wrap {
+  width: 180px;
+  height: 240px;
+  background: #1a1a1a;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.book-card-canvas { width: 100%; display: block; }
+.book-card-fallback {
+  position: absolute;
+  font-family: 'NAMU', sans-serif;
+  font-size: 32px;
+  color: #fff;
+  opacity: 0.3;
+  pointer-events: none;
+}
+.book-card-meta { display: flex; flex-direction: column; gap: 2px; }
+.book-card-author { font-family: 'NAMU', sans-serif; font-size: 11px; }
+.book-card-year { font-size: 11px; opacity: 0.5; }
+
+/* Graph view wrapper */
+.explore-graph-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .explore-topbar {
   display: flex;
   align-items: center;

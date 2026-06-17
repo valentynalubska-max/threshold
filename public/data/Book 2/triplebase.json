@@ -1,0 +1,2675 @@
+{
+  "book_id": "B2_TSAPENKO_RULES_1967",
+  "region": "Podillia",
+  "triple_count_raw": 164,
+  "triple_count_unique": 133,
+  "parse_errors": 0,
+  "triples": [
+    {
+      "triple_id": "SPM001",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "BED_SLEEPING_PLATFORM",
+      "relation": "ADJACENT_TO",
+      "object": "PICH_STOVE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Основное место для сна—деревянный помост (,,шл“)—примыкает к печи и к задней наружной стенке жилого помещения."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM002",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "ADJACENT_TO",
+      "object": "WALL",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "дверные проемы не имеют архитектурного обрамления."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM003",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "LOCATED_AT",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "door from vestibule to living room"
+      ],
+      "evidence": [
+        "Входная дверь из сеней в жилое помещение расположена на расстоянии около 1 м от наружной стенки."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0006"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM004",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "LOCATED_AT",
+      "object": "THRESHOLD",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "дверные проемы не имеют архитектурного обрамления."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM005",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "LOCATED_IN",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "глухая дверь"
+      ],
+      "evidence": [
+        "сени не освещаются, — 15 — а имеют только глухую дверь."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM006",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "ENTRANCE",
+      "relation": "LOCATED_AT",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Входная дверь из сеней в жилое помещение расположена на расстоянии около 1 м от наружной стенки."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM007",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "DOOR",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "дверь располагается рядом"
+      ],
+      "evidence": [
+        "а дверь располагается рядом с ним."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM008",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "входные двери"
+      ],
+      "evidence": [
+        "Под этим навесом делаются входные двери в сени.",
+        "состоянии жилья отсутствие тепловой изоляции пола"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005",
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM009",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DOMINANT_OVER",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "свес крыши"
+      ],
+      "evidence": [
+        "Большой свес крыши, устраиваемый обычно на боковом фасаде, покоится на консолях.",
+        "переднего фасада хаты"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005",
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM010",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "LOCATED_AT",
+      "object": "CENTER",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "архитектурное решение"
+      ],
+      "evidence": [
+        "Архитектурное решение стены хаты теряет свою непосредственность и живописную простоту."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM011",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ORIENTED_TOWARD",
+      "object": "ORIENTATION_NORTH",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "задний фасад"
+      ],
+      "evidence": [
+        "Задний фасад, ориентированный всегда на северные румбы, лишен оконных отверстий."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM012",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "VISIBLE_FROM",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "скромные формы кронштейнов, наличников, столбиков"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "SPM013",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "ADJACENT_TO",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Сравнительно большие размеры сеней вызваны тем, что они являются не только переходом к теплому помещению."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM014",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "LOCATED_IN",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Сравнительно большие размеры сеней вызваны тем, что они являются не только переходом к теплому помещению, но одновременно служат хозяйственным помещением для хранения инвентаря и продуктов."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM015",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "DOMINANT_OVER",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 0.9,
+      "notes_samples": [],
+      "evidence": [
+        "Однако эти условия сами по себе были настолько неблагоприятны, что в результате жилье все-таки было тесно, антигигиенично."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM016",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DOMINANT_OVER",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Stove is a dominant feature in the living room."
+      ],
+      "evidence": [
+        "жилье обогревала „варистая“ печь.",
+        "рядом с гладкими плоскостями внутренних стен сразу обращает на себя внимание."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0012",
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM017",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "LOCATED_AT",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "горизонтальным отводом дыма к сеням рядом с дымоходом"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM018",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "LOCATED_IN",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Сразу же при входе в помещение поставлена большая „варистая“ печь, которая занимает значительную площадь жилого помещения.",
+        "в одно жилое помещение не было обогревательной печки („грубка“), так как жилье обогревала „варистая“ печь.",
+        "Отделение спальни печкой."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007",
+        "B2_TSAPENKO_RULES_1967_CH0012",
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM019",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "vestibule is part of the house"
+      ],
+      "evidence": [
+        "хата на два жилых помещения с холодными сенями между ними"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0006"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM020",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "ADJACENT_TO",
+      "object": "WALL",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "боковая его поверхность, выходящая на главный фасад здания, является продолжением побеленной стены фасада."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM021",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "ADJACENT_TO",
+      "object": "EARTHEN_FLOOR",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стены холодных помещений делают в виде тонкой заборки между столбами одинарной хворостяной плетенкой с обмазкой с обеих сторон глиной."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0010"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM022",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DOMINANT_OVER",
+      "object": "EARTHEN_FLOOR",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стены холодных помещений делают в виде тонкой заборки между столбами одинарной хворостяной плетенкой с обмазкой с обеих сторон глиной."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0010"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM023",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Конструкция стены, сруб или каркас с заборкой в этих случаях в целях экономии труда остаются открытыми.",
+        "Описанные конструкции хат, независимо от применяемого материала, очень просты и экономны.",
+        "внешний облик украинской хаты",
+        "В живописном изображении навесного украшения копируются не только форма предмета и его положение на стене"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0010",
+        "B2_TSAPENKO_RULES_1967_CH0012",
+        "B2_TSAPENKO_RULES_1967_CH0016",
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM024",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "LOCATED_IN",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "жилища Украины цвет имеет настолько важное значение"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM025",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "LOCATED_IN",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "внешний облик украинской хаты"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM026",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "ADJACENT_TO",
+      "object": "WALL",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "положение окон определяется внутренней планировкой хаты."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM027",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "LOCATED_AT",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Форма окна чаще всего прямоугольная."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM028",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "освещения стола и спального угла"
+      ],
+      "evidence": [
+        "тоже ставится одно окно для освещения того же стола і реже еще одно окно для освещения спального угла."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM029",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "LOCATED_IN",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Window illuminates the clean corner of the living room."
+      ],
+      "evidence": [
+        "окно, освещающее чистый угол жилого помещения."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "SPM030",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WOODEN_VESSEL",
+      "relation": "ADJACENT_TO",
+      "object": "DOOR",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в одном из пролетов против входной двери устраивают деревянную лестницу."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM031",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WOODEN_VESSEL",
+      "relation": "LOCATED_AT",
+      "object": "THRESHOLD",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "нижний брус укладывают на стулья и в одном из пролетов против входной двери устраивают деревянную лестницу."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM001",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "DECORATED_WITH",
+      "object": "широкой дверной колодкой",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в рубленых зданиях дверь обрамляется широкой дверной колодкой."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM002",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "MADE_OF",
+      "object": "доски",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Полотно двери имело простую конструкцию—доски впритык на шпугах."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM003",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "EARTHEN_FLOOR",
+      "relation": "MADE_OF",
+      "object": "clay",
+      "region": "Podillia",
+      "certainty_max": 0.9,
+      "notes_samples": [],
+      "evidence": [
+        "Выпол­ нение хозяйственных работ в вечернее время требовало устройства искусственного освещения."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM004",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "живописный беспорядок",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Здания разбросаны в живописном беспорядке."
+      ],
+      "evidence": [
+        "здания, утопая в зелени, разбросаны в живописном беспорядке"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0003"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM005",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "орнамент",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Архитектурный облик включает орнамент."
+      ],
+      "evidence": [
+        "придавая каждому из них специфический колорит"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0003"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM006",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "глинобитных зданиях"
+      ],
+      "evidence": [
+        "в каркасных и глинобитных зданиях такой вынос осуществляется выпуском концов верхней обвязки."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM007",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "глина в сочетании с камышом, хвойростом или соломой",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Основным стеновым материалом является глина."
+      ],
+      "evidence": [
+        "основным стеновым материалом является глина в сочетании с камышом, хвойростом или соломой"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0003"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM008",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "глина в чистом виде или в сочетании с соломой и деревом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "в условиях степи"
+      ],
+      "evidence": [
+        "в условиях же степи единственным и удобным заменителем леса может быть только глина в чистом виде..."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0009"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM009",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "глина, дерево, солома, камыш",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Народное зодчество оперирует исключительно местными строительными материалами..."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0009"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM010",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "дерево",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "сруб четко показан",
+        "применяется в постройке"
+      ],
+      "evidence": [
+        "В лесных районах сруб четко показан и в плоскости стены и в угловых соединениях.",
+        "Народный зодчий охотнее всего применяет в постройке дерево благодаря его сравнительной легкости..."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005",
+        "B2_TSAPENKO_RULES_1967_CH0009"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM011",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "дерево, глина, камыш и солома",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Разнообразие местного стенового материала."
+      ],
+      "evidence": [
+        "здесь применяются дерево, глина, камыш и солома"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0003"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM012",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "древесина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "house made of wood"
+      ],
+      "evidence": [
+        "в отличие от Правобережья, где поверхность непокрытой глиной стены выполняется грубо"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0006"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM013",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "камень",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "подражанием каменной архитектуре"
+      ],
+      "evidence": [
+        "Нередко применяемые широкие угловые пилястры, архитектурные обрамления проемов и часто самая форма проема являются подражанием каменной архитектуре."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM014",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "солома",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "четырехскатной крышей"
+      ],
+      "evidence": [
+        "перекрыт мягко очерченной четырехскатной соломенной крышей с округленными углами пересечения скатов и конька."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM015",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "SURFACE_FINISH",
+      "object": "лепные украшения",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "отделка стены"
+      ],
+      "evidence": [
+        "гипса, позволяющего выполнять тяги и лепные украшения."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM016",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "SURFACE_FINISH",
+      "object": "побілка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "защита от атмосферных влияний"
+      ],
+      "evidence": [
+        "защитой наружной стороны деревянной стены от атмосферных влияний и огня..."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0009"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM017",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "SURFACE_FINISH",
+      "object": "тонким слоем глины",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "обмазка сруба"
+      ],
+      "evidence": [
+        "вторая отличительная чертой сруба на Украине является обмазка его тонким слоем глины."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0009"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM018",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "shelves and recesses",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "На переднем фасаде печи сделаны полки и впадины для хранения на них предметов и продуктов, портящихся от сырости."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM019",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "simple cornice",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Stove is topped with a simple cornice."
+      ],
+      "evidence": [
+        "Венчание печи оформляется карнизом из простых обломов."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM020",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "орнаментальные рисунки",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Роспись на печах носит на себе следы подражания кафельным печам"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM021",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "brick and clay",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Stove construction materials."
+      ],
+      "evidence": [
+        "печь; это громоздкое сооружение отличается богатством объемов."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM022",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "clay and straw",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "Конструкция печи замечательна использованием ее плоскостей и выступов для хозяйственных надобностей."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM023",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "При конструировании печи из глины поступают следующим образом...",
+        "„варистые\" печи строятся из глины"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0012",
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM024",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "камня или кирпича",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Конструкция ее требует или камня или кирпича"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM025",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "SURFACE_FINISH",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "эту арматуру обмазывают слоем глины, а боковые пазухи свода также забучивают глиной."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0012"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM026",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "SURFACE_FINISH",
+      "object": "глиняной обмазкой",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "при применении кирпича покрываются глиняной обмазкой"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM027",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "DECORATED_WITH",
+      "object": "красивую уступчатую форму углов и раз­ витые коньки крыши",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Таким образом, конструктивные приемы удачно сочетаются с эстети­ ческими стремлениями и создают весьма живописную форму крыши украинской хаты."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0012"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM028",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "дерево (гонт, щепа, тес), солома, камыш и черепица",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Эти материалы—дерево (гонт, щепа, тес), солома, камыш и черепица."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0012"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM029",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "солома",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Соломен­ ная кровля является господствующей в народном жилище Украины."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0012"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM030",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "солома, камыш и реже дерево",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Кровельным материалом являются солома, камыш."
+      ],
+      "evidence": [
+        "кровельным материалом являются солома, камыш и реже дерево"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0003"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM031",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "соломенная или камышовая",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "roof made of straw or reed"
+      ],
+      "evidence": [
+        "соломенная или камышовая кровля имеет спокойное, мягкое очертание"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0006"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM032",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "соломенной или Камышевой",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "легкая воспламеняемость соломенной или Камышевой кровли"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM033",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "SURFACE_FINISH",
+      "object": "тонким слоем глиняной обмазки и побелкой",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "оставляется в натуральном дереве, а покрывается тонким слоем глиняной обмазки і побілкою."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM034",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "геометрический орнамент",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Для заполнения такой плоскости применяется чисто геометрический орнамент."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM035",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "геометрическим орнаментом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Резьба по дереву. Геометрический орнамент."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM036",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "глиняная обмазка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Цоколь этот делают из глины, набиваемой между стеной и невысокой загородкой."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0010"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM037",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "живописная композиция",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Поле же стены, расположенное над окном и защищенное от дождя свесом крыши, является наиболее благоприятным местом для расположения живописной композиции."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM038",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "живописных композиций",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "глиной создала широкие возможности для живописных композиций"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM039",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "круговым орнаментом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Резьба по дереву. Круговой орнамент."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM040",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "наборы цветов",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "иногда плоскость стены или пояс заполняются чередующимися кра­ сочными рисунками букетов"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM041",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "навигационные украшения",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в основном она является подражанием таким навесным украшениям, как ковры, обои, вышитые полотенца"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM042",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "настенной живописью",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "побудила к украшению жилья настенной живописью"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM043",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "орнамент",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "скромные формы кронштейнов, наличников, столбиков, лобовых досок и других деревянных деталей здания отчетливо выделяются",
+        "орнамент, обрамляющий окно, портрет или какой-либо иной предмет"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0013",
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM044",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "орнамента",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "быстрому разрушению орнамента"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM045",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "орнамента на мебели",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Отличительной чертой резьбы на мебели"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM046",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "растительный и геометрический орнамент",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "излюбленной тематикой народной живописи является геометрический и растительный орнамент"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM047",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "угловыми пилястрами",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [],
+      "evidence": [
+        "Обработка стены хаты угловыми пилястрами, лопатками или другими членениями"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "rare"
+    },
+    {
+      "triple_id": "MAM048",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "цветами или листьями",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Цветы и листья даются крупно и исполнены яркими тонами."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM049",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Цоколь так же, как стену здания, покрывают глиняной обмазкой.",
+        "глиняные стены являются наиболее сложными в постройке"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0010",
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM050",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "глина, перемешанная с соломой",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Для кладки стен заготовляют комки глины, густо перемешанной с соломой."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0010"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM051",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "плотно пригнанных пластин или брусьев",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "walls made of tightly fitted boards or beams"
+      ],
+      "evidence": [
+        "здесь стены сделаны из плотно пригнанних друг к другу и чисто отделанных пластин или брусьев."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0006"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM052",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "гипс",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "отделка стены"
+      ],
+      "evidence": [
+        "на Подольщине этому явлению способствовало применение для отделки стены гипса."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM053",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "глиной",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Обмазка стен глиной создала широкие возможности"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM054",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "глиняная обмазка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стен же холодных помещений в большинстве случаев не покрывают обмазкой."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0010"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM055",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "дереве",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "walls of cold auxiliary rooms left in wood"
+      ],
+      "evidence": [
+        "стены же холодных подсобных помещений оставляются в дереве."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0006"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM056",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "моют теплой водой с мылом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "walls washed with warm water and soap"
+      ],
+      "evidence": [
+        "Такую поверхность стены не белят, но моют теплой водой с мылом."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0006"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM057",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "обмазка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стен же холодных помещений в большинстве случаев не покрывают обмазкой."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0010"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM058",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "обмазкой",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "walls of living spaces covered with plaster"
+      ],
+      "evidence": [
+        "Обмазкой покрываются обычно только стены жилих приміщень."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0006"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM059",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "побілка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Стены имеют побілку."
+      ],
+      "evidence": [
+        "белыми стенами на фоне зелени",
+        "Обработке этого угла уделяется особое внимание; здесь сосредоточиваются наиболее красочные и яркие предметы украшения.",
+        "При недостаточной толщине стен помещения сильно охлаждались и углы его промерзали.",
+        "боковая его поверхность, выходящая на главный фасад здания, является продолжением побеленной стены фасада",
+        "является продолжением побеленной стены фасада."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0003",
+        "B2_TSAPENKO_RULES_1967_CH0007",
+        "B2_TSAPENKO_RULES_1967_CH0012",
+        "B2_TSAPENKO_RULES_1967_CH0013",
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM060",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "роспись",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Стены, ограничивающие спальный угол и не имеющие оконных отверстий, покрываются росписью"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM061",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "шероховатая поверхность",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "обработка стены достигается имитацией шероховатой поверхности"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0018"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM062",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "DECORATED_WITH",
+      "object": "wooden наличники",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Wooden trim around window openings."
+      ],
+      "evidence": [
+        "обрамление оконных проемов наличниками имеет большое значение."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM063",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "MADE_OF",
+      "object": "wood",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Windows are made of wood."
+      ],
+      "evidence": [
+        "деревянные наличники имеют не только архитектурное, но и конструк­ тивное значение."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM064",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "SURFACE_FINISH",
+      "object": "single glazing",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Windows have single glazing."
+      ],
+      "evidence": [
+        "Вследствие одинарного остекления проемов."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM065",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WOVEN_TEXTILE",
+      "relation": "DECORATED_WITH",
+      "object": "straw mats",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Textiles used to cover windows."
+      ],
+      "evidence": [
+        "окно прикрывалось или соломенными матами."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM001",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "HAS_HEIGHT",
+      "object": "1,7—1,9 м",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Двери были высотой 1,7—1,9 м и всегда без фрамуг."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM002",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "1 : 1 до 1 : 1,5",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Отношение высоты стены к высоте крыши."
+      ],
+      "evidence": [
+        "отношение высоты стены к высоте крыши колеблется от 1 : 1 до 1 : 1,5"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0003"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM003",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "20—25 см",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "высота брусьев"
+      ],
+      "evidence": [
+        "в лесо-степной полосе стену рубят из брусьев шириной 12 —18 см и высотой 20—25 см..."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0009"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM004",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "низкая и удлиненная форма",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Пропорции фасада хаты."
+      ],
+      "evidence": [
+        "Пропорции фасада хаты характеризуются низкой и удлиненной формой стен"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0003"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM005",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "оригинальную форму",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "крыша"
+      ],
+      "evidence": [
+        "в карпатских областях Украины этот прием встречается чаще, чем в других местах. Здесь вся крыша расчленена сильными горизонтальными уступами, придающими ей оригинальную форму."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM006",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "не указано",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "Толщина стен не указана."
+      ],
+      "evidence": [
+        "при этой длине не требуется поперечных стен"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0003"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM007",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "тонким слоем",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "покрывается"
+      ],
+      "evidence": [
+        "южнее — сруб покрывается тонким слоем обмазки."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM008",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "12—18 см",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "ширина брусьев"
+      ],
+      "evidence": [
+        "в лесо-степной полосе стену рубят из брусьев шириной 12 —18 см..."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0009"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM009",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "5—6 m",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Ширина здания ограничена конструктивными соображениями."
+      ],
+      "evidence": [
+        "ширина в 5—6 м соразмерна длине венца сруба"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0003"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM010",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "прямоугольный в плане",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "тип хаты"
+      ],
+      "evidence": [
+        "Простейший тип хаты отличается предельной лаконичностью и ску­ постью архитектурных элементов. Прямоугольный в плане объем."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM011",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "HAS_THICKNESS",
+      "object": "significant thickness",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "При таком решении жилья и при обычных внешних размерах хаты получались слишком малые."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM012",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_HEIGHT",
+      "object": "not specified",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "Height of the stove is not specified."
+      ],
+      "evidence": [
+        "Печи примитивной конструкции, встречающиеся еще в Полесье, имеют небольшую высоту."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM013",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_HEIGHT",
+      "object": "небольшую высоту",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "имеют небольшую высоту"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM014",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_THICKNESS",
+      "object": "простые обломы",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "карнизом из простых обломов"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM015",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_WIDTH",
+      "object": "significant area",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Сразу же при входе в помещение поставлена большая „варистая“ печь, которая занимает значительную площадь жилого помещения."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM016",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_WIDTH",
+      "object": "значительную площадь",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "stove occupies significant area"
+      ],
+      "evidence": [
+        "Сразу же при входе в помещение поставлена большая „варистая“ печь, которая занимает значительную площадь."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0006"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM017",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "HAS_THICKNESS",
+      "object": "большого веса",
+      "region": "Podillia",
+      "certainty_max": 0.9,
+      "notes_samples": [],
+      "evidence": [
+        "вследствие ее большого веса и сложности техники ее устройства"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM018",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "HAS_THICKNESS",
+      "object": "значительно отличается",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "форма крыши"
+      ],
+      "evidence": [
+        "крыша соломенная или черепичная, причем ее форма значительно отличается от формы крыш лесных районов."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0005"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM019",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "ROOF_PITCH",
+      "object": "небольшим уклоном",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "перекрывались крышей на два ската с небольшим уклоном земляной кровли."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0012"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM020",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "HAS_HEIGHT",
+      "object": "low, under 2 m",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [],
+      "evidence": [
+        "Однако эти условия сами по себе были настолько неблагоприятны, что в результате жилье все-таки было тесно, антигигиенично."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM021",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "HAS_WIDTH",
+      "object": "large size",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "Сравнительно большие размеры сеней вызваны тем, что они являются не только переходом к теплому помещению."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM022",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "HAS_WIDTH",
+      "object": "большие",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "vestibule is relatively large"
+      ],
+      "evidence": [
+        "Самый простой тип хаты имеет два помещения: холодные, сравнительно большие сени"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0006"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM023",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "HAS_THICKNESS",
+      "object": "2—3 бруса",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Поверх столбов кладут верхнюю обвязку в 2—3 бруса."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM024",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "HAS_THICKNESS",
+      "object": "различным",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Отношение ширины пролета между столбиками к высоте их бывает различным."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM025",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "недостаточной толщине",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "При недостаточной толщине стен помещения сильно охлаждались"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM026",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "недостаточной толщине стен",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "При недостаточной толщине стен помещения сильно охлаждались и углы его промерзали."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0012"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM027",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "сложными в постройке",
+      "region": "Podillia",
+      "certainty_max": 0.9,
+      "notes_samples": [],
+      "evidence": [
+        "глиняные стены являются наиболее сложными в постройке"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0013"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM028",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "толщина стены",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "длину комка берут несколько больше толщины стены"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0010"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM029",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "тонкие потолки",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Тонкие потолки приходилось также утеплять соломой, сеном или мякиной."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0012"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM030",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "широкие возможности",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "широкие возможности для живописных композиций"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM031",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_WIDTH",
+      "object": "разные тона",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "различие между служебными и жилыми помещениями достигается окраской стен в разные тона"
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0016"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM032",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "HAS_HEIGHT",
+      "object": "not specified",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "Height of the window is not specified."
+      ],
+      "evidence": [
+        "окна с закругленной формой перемычки."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM033",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "HAS_HEIGHT",
+      "object": "небольшими размерами",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "поэтому двери и окна хаты отличались предельно малыми размерами."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM034",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "HAS_WIDTH",
+      "object": "1:1,25 to 1:1,5",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Proportions of window openings vary."
+      ],
+      "evidence": [
+        "Пропор­ ция проема колеблется от 1:1,25 до 1:1,5."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0015"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM035",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "HAS_WIDTH",
+      "object": "1:1,25 до 1:1,5",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Пропорция проема колеблется от 1:1,25 до 1:1,5."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM036",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "HAS_WIDTH",
+      "object": "very small size",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "Если же здесь иногда и делается окно, то очень небольших размеров."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0007"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM037",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "HAS_WIDTH",
+      "object": "разных размеров",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "иногда окна разных размеров."
+      ],
+      "provenance_chunk_ids": [
+        "B2_TSAPENKO_RULES_1967_CH0014"
+      ],
+      "book_id": "B2_TSAPENKO_RULES_1967",
+      "frequency_mode": "always"
+    }
+  ]
+}

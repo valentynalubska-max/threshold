@@ -24,6 +24,14 @@ const CAT_COLORS = {
 
 const CATS = ['SPATIAL', 'MATERIAL', 'RITUAL', 'COSMO', 'SEMANT', 'PROPO'];
 
+// ── Book registry ─────────────────────────────────────────────────────
+const BOOKS = [
+  { id:'B1', label:'Kosmina',          year:'2008', coverPath:'/data/Book 1/COVER 1.pdf', kgPath:'/data/Book 1/triplebase.json',                        valPath:null,                                         fmt:'triplebase' },
+  { id:'B2', label:'Gurzhiy & Tsaruk', year:'2008', coverPath:'/data/Book 2/COVER 2.pdf', kgPath:'/data/Book 2/triplebase.json',                        valPath:null,                                         fmt:'triplebase' },
+  { id:'B3', label:'Tsapenko',         year:'1967', coverPath:'/data/Book 3/COVER 3.pdf', kgPath:'/data/Book 3/triplebase.json',                        valPath:null,                                         fmt:'triplebase' },
+  { id:'B4', label:'Masnenko',         year:'2012', coverPath:'/data/Book 4/COVER 4.pdf', kgPath:'/data/Book 4/B4_MASNENKO_2012_kg_merged.json',        valPath:'/data/Book 4/validation_results.json',       fmt:'kg'         },
+];
+
 const MAX_RULE_DOTS = 14; // cap rule dots drawn per entity on canvas (panel still lists all)
 const SWIRL_DIST_STEP = 3; // outward distance increment per rule dot
 const SWIRL_FAN = 2.3; // angular spread (radians) of the rule-dot fan, facing away from center
@@ -48,34 +56,19 @@ let _ro       = null;
 let _cam       = { scale: 1, x: 0, y: 0 };  // current rendered camera
 let _camTarget = { scale: 1, x: 0, y: 0 };  // target camera
 let _camRAF    = null;
-let _pendingSearch = null; // entity query set before explore finished initialising
+let _pendingSearch  = null;   // entity query set before explore finished initialising
+let _currentBook    = null;   // selected BOOKS entry (null = on landing)
+let _viewMode       = 'all';  // 'all' | 'validated'
+let _graphBound     = false;  // controls wired once per DOM lifetime
+let _landingBound   = false;
 
 // ── Entry ─────────────────────────────────────────────────────────────
 
 export function initExplore() {
-  if (_ready) { _onShow(); return; }
+  if (_currentBook && _ready) { _onShow(); return; }
   if (_loading) return;
-  _loading = true;
-
-  const c = document.getElementById('explore-svg-container');
-  if (c) c.innerHTML = '<div class="explore-loading"><span class="ln-en">Building graph…</span><span class="ln-uk">Побудова графу…</span></div>';
-
-  _fetchData()
-    .then(() => {
-      _setupCanvas();
-      _buildLayout();
-      _draw();
-      _ready = true;
-      if (_pendingSearch) {
-        const q = _pendingSearch; _pendingSearch = null;
-        selectEntityByQuery(q);
-      }
-    })
-    .catch(err => {
-      console.error('Explore error', err);
-      const c2 = document.getElementById('explore-svg-container');
-      if (c2) c2.innerHTML = '<div class="explore-loading">Failed to load graph.</div>';
-    });
+  _showLanding();
+  if (!_landingBound) { _bindLanding(); _landingBound = true; }
 }
 
 function _onShow() {
@@ -84,16 +77,132 @@ function _onShow() {
   _draw();
 }
 
+// ── Landing ───────────────────────────────────────────────────────────
+
+function _showLanding() {
+  _currentBook = null;
+  _nodes = []; _edges = []; _elemNodes = []; _ruleNodes = [];
+  _selElem = -1; _selRule = -1; _hovElem = -1; _hovRule = -1;
+  document.getElementById('explore-landing').style.display = 'flex';
+  document.getElementById('explore-graph-view').style.display = 'none';
+  _renderAllCovers();
+}
+
+function _enterBook(book, mode) {
+  if (_loading) return;
+  _currentBook = book; _viewMode = mode;
+  _ready = false; _loading = true;
+  _nodes = []; _edges = []; _elemNodes = []; _ruleNodes = [];
+  _selElem = -1; _selRule = -1; _hovElem = -1; _hovRule = -1;
+  _filter = 'ALL';
+  document.getElementById('explore-landing').style.display = 'none';
+  document.getElementById('explore-graph-view').style.display = 'flex';
+  const title = document.getElementById('explore-book-title');
+  if (title) title.textContent = `${book.id} · ${book.label} ${book.year}` +
+    (mode === 'validated' ? ' — Validated' : '');
+  document.querySelectorAll('.exp-pill').forEach(b =>
+    b.classList.toggle('active', b.dataset.filter === 'ALL'));
+  const c = document.getElementById('explore-svg-container');
+  if (c) c.innerHTML = '<div class="explore-loading"><span class="ln-en">Building graph…</span><span class="ln-uk">Побудова графу…</span></div>';
+  _fetchData(book, mode)
+    .then(() => {
+      _setupCanvas();
+      _buildLayout();
+      _draw();
+      _ready = true; _loading = false;
+      if (_pendingSearch) {
+        const q = _pendingSearch; _pendingSearch = null;
+        selectEntityByQuery(q);
+      }
+    })
+    .catch(err => {
+      console.error('Explore error', err); _loading = false;
+      const c2 = document.getElementById('explore-svg-container');
+      if (c2) c2.innerHTML = '<div class="explore-loading">Failed to load graph.</div>';
+    });
+}
+
+async function _renderCoverPDF(canvas, pdfUrl) {
+  const lib = window.pdfjsLib;
+  if (!lib) return;
+  lib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  try {
+    const pdf  = await lib.getDocument(pdfUrl).promise;
+    const page = await pdf.getPage(1);
+    const w    = canvas.clientWidth || 200;
+    const vp   = page.getViewport({ scale: w / page.getViewport({ scale: 1 }).width });
+    canvas.width  = Math.round(vp.width);
+    canvas.height = Math.round(vp.height);
+    await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+    canvas.style.display = 'block';
+    const fb = canvas.parentElement?.querySelector('.book-card-fallback');
+    if (fb) fb.style.display = 'none';
+  } catch (err) {
+    console.warn('PDF render failed:', pdfUrl, err);
+  }
+}
+
+function _renderAllCovers() {
+  document.querySelectorAll('.explore-book-card').forEach((card, i) => {
+    const canvas = card.querySelector('.book-card-canvas');
+    if (canvas && !canvas.dataset.rendered) {
+      canvas.dataset.rendered = '1';
+      _renderCoverPDF(canvas, BOOKS[i].coverPath);
+    }
+  });
+}
+
+function _bindLanding() {
+  let _landingMode = 'all';
+  document.querySelectorAll('.exp-mode-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      _landingMode = btn.dataset.mode;
+      document.querySelectorAll('.exp-mode-btn').forEach(b =>
+        b.classList.toggle('active', b === btn));
+      document.querySelectorAll('.explore-book-card').forEach((card, i) =>
+        card.classList.toggle('unavailable', _landingMode === 'validated' && i < 3));
+    });
+  });
+  document.getElementById('explore-landing')?.addEventListener('click', e => {
+    const card = e.target.closest('.explore-book-card');
+    if (!card || card.classList.contains('unavailable')) return;
+    _enterBook(BOOKS[+card.dataset.bookIdx], _landingMode);
+  });
+  document.getElementById('explore-back-btn')?.addEventListener('click', _showLanding);
+}
+
 // ── Data ──────────────────────────────────────────────────────────────
 
-async function _fetchData() {
-  const [kg, lex, val] = await Promise.all([
-    fetch('/data/B4_MASNENKO_2012_kg_merged.json').then(r => r.json()),
-    fetch('/data/entities_lexicon.json').then(r => r.json()),
-    fetch('/data/validation_results.json').then(r => r.json()),
-  ]);
+function _normalizeEdges(data, fmt) {
+  const T = { SPATI:'SPATIAL', MATER:'MATERIAL', RITUA:'RITUAL', COSMO:'COSMO', SEMAN:'SEMANT' };
+  const raw = fmt === 'triplebase' ? (data.triples || []) : (data.edges || []);
+  return raw.map(e => ({
+    subject:           e.subject,
+    relation:          e.relation || '',
+    object:            e.object,
+    relation_category: e.relation_category || T[e.triple_type] || 'SPATIAL',
+    evidence:          Array.isArray(e.evidence) ? e.evidence : (e.evidence ? [e.evidence] : []),
+  }));
+}
 
-  const validation = val.per_subject || {};
+async function _fetchData(book, mode) {
+  const fetches = [
+    fetch(book.kgPath).then(r => r.json()),
+    fetch('/data/entities_lexicon.json').then(r => r.json()),
+  ];
+  if (book.valPath) fetches.push(fetch(book.valPath).then(r => r.json()));
+  const [kg, lex, val] = await Promise.all(fetches);
+
+  const validation = (val && val.per_subject) || {};
+  let edges = _normalizeEdges(kg, book.fmt);
+
+  if (mode === 'validated' && Object.keys(validation).length) {
+    const validIds = new Set(
+      Object.entries(validation).filter(([, v]) => (v.TRUE || 0) > 0).map(([id]) => id)
+    );
+    edges = edges.filter(e => validIds.has(e.subject));
+  }
   const entityKeys = new Set(Object.keys(lex).filter(k => k !== '_meta'));
 
   const nodeMap = new Map();
@@ -114,7 +223,7 @@ async function _fetchData() {
   });
 
   // Collect ALL rules per entity (object need not be a lexicon key)
-  kg.edges.filter(e => entityKeys.has(e.subject)).forEach(e => {
+  edges.filter(e => entityKeys.has(e.subject)).forEach(e => {
     const node = nodeMap.get(e.subject);
     if (!node) return;
     const ev = Array.isArray(e.evidence) ? (e.evidence[0] || '') : (e.evidence || '');
@@ -127,7 +236,7 @@ async function _fetchData() {
   });
 
   // Entity-entity edges (constellation spokes)
-  const filteredEdges = kg.edges.filter(
+  const filteredEdges = edges.filter(
     e => entityKeys.has(e.subject) && entityKeys.has(e.object) && e.subject !== e.object
   );
 
@@ -174,8 +283,7 @@ function _setupCanvas() {
 
   _resizeCanvas();
   _bindEvents();
-  _bindControls();
-  _buildLegend();
+  if (!_graphBound) { _bindControls(); _buildLegend(); _graphBound = true; }
 
   if (_ro) _ro.disconnect();
   _ro = new ResizeObserver(() => { _resizeCanvas(); _buildLayout(); _draw(); });
@@ -559,7 +667,7 @@ function _draw() {
     ctx.font         = '400 6.5px NAMU, sans-serif';
     ctx.textAlign    = 'center';
     ctx.textBaseline = 'top';
-    ctx.fillText('B4 Masnenko 2012', sx, sy);
+    ctx.fillText(_currentBook ? `${_currentBook.id} ${_currentBook.label} ${_currentBook.year}` : '', sx, sy);
     ctx.restore();
   }
 }
@@ -795,7 +903,11 @@ function _bindControls() {
 export function selectEntityByQuery(q) {
   if (!q) return;
   const ql = q.toLowerCase();
-  if (!_ready) { _pendingSearch = ql; return; }
+  if (!_ready) {
+    _pendingSearch = ql;
+    if (!_currentBook && !_loading) _enterBook(BOOKS[3], 'all');
+    return;
+  }
   const idx = _nodes.findIndex(n =>
     n.label_uk.toLowerCase().includes(ql) ||
     n.label_en.toLowerCase().includes(ql) ||

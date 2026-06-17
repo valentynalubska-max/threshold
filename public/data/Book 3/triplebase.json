@@ -1,0 +1,2122 @@
+{
+  "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+  "region": "Podillia",
+  "triple_count_raw": 115,
+  "triple_count_unique": 105,
+  "parse_errors": 0,
+  "triples": [
+    {
+      "triple_id": "SPM001",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "ENTRANCE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "входу в будинок особливо парадного і навіть урочистого вигляду."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM002",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "KOMORA_PANTRY",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "common layout feature"
+      ],
+      "evidence": [
+        "використання комори як приміщення, де в теплу пору року спали окремі члени родини"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM003",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "common layout feature"
+      ],
+      "evidence": [
+        "обидва житлові приміщення розташовуються по один бік сіней"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM004",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "ADJACENT_TO",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "common layout feature"
+      ],
+      "evidence": [
+        "друга кімната з'єднується з основним житловим приміщенням"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM005",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "part of the house structure"
+      ],
+      "evidence": [
+        "комора виконувала функції житлового приміщення"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM006",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "ADJACENT_TO",
+      "object": "KOMORA_PANTRY",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Іноді замість комори влаштовували невеличку кухню."
+      ],
+      "evidence": [
+        "Іноді замість комори влаштовували невеличку кухню, з'єднану з іншими приміщеннями."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "SPM007",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "ADJACENT_TO",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "common layout feature"
+      ],
+      "evidence": [
+        "обидва житлові приміщення розташовуються по один бік сіней"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM008",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "SEPARATES",
+      "object": "BED_SLEEPING_PLATFORM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Житлова кімната розділяється на дві частини."
+      ],
+      "evidence": [
+        "спільна кімната розділялася грубою на два нерівних за площею приміщення."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM009",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "ADJACENT_TO",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "З'єднане з кухнею"
+      ],
+      "evidence": [
+        "Житло цього типу має одне житлове приміщення (з'єднане з кухнею) та сіни"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0003"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM010",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "ADJACENT_TO",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Сини з'єднуються з житловими приміщеннями."
+      ],
+      "evidence": [
+        "в яких житлові приміщення з'єднувались через сіни."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM011",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Характерним було рішення інтер'єру гуцульського житла."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM012",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "ADJACENT_TO",
+      "object": "PICH_STOVE",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "стін з глини, в тому числі із саману"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM013",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "ADJACENT_TO",
+      "object": "ROOF",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "стіни підтримують дах"
+      ],
+      "evidence": [
+        "Рівний, мірний ліс хвойних порід... давав можливість побудувати стіни із зрубу."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM014",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "ADJACENT_TO",
+      "object": "WINDOW",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "вікна вбудовані в стіни"
+      ],
+      "evidence": [
+        "вікна вбудовані в стіни"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM015",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DOMINANT_OVER",
+      "object": "EARTHEN_FLOOR",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "стіни розташовані над підлогою"
+      ],
+      "evidence": [
+        "стіни роблять із зрубу... в основному для народного будівництва України"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM016",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "стіни є частиною хати"
+      ],
+      "evidence": [
+        "стіни роблять із зрубу... в основному для народного будівництва України",
+        "характерною рисою архітектури українського народного житла є"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006",
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM017",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "LOCATED_IN",
+      "object": "KOMORA_PANTRY",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "стіни можуть бути частиною комори"
+      ],
+      "evidence": [
+        "можна виділити такі основні прийоми конструктивного рішення стін"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM001",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "DECORATED_WITH",
+      "object": "різьблення на хвіртці",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "оздобленню входу на піддашок, застосовуючи для цього традиційний елемент різьблення на хвіртці."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM002",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "DECORATED_WITH",
+      "object": "фігурна обшальовка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "прикрашали фасади сільського житла на Поділлі також наборні (цвяховані) двері, фігурна обшальовка."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM003",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "painted geometric ornament",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "decorative feature"
+      ],
+      "evidence": [
+        "декоративні системи"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM004",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "декоративного оздоблення",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "значною мірою декоративне оздоблення фасадів."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM005",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "різьблення",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "коли ці архітектурні деталі мали різьблення, вони ставали справжньою окрасою будинку."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM006",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "скромними елементами глухого різьблення",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "фронтони у західних районах Полісся, які прикрашалися скромними елементами глухого різьблення."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM007",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "wood and clay",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "common materials for construction"
+      ],
+      "evidence": [
+        "планування хат, у яких було одне житлове приміщення"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM008",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "глиняна і солом'яна",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "Типи однокамерного житла"
+      ],
+      "evidence": [
+        "такий тип планування був основною формою східнослов'янського житла"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0003"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM009",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "деревина",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "Стіни житлової частини"
+      ],
+      "evidence": [
+        "стіни житлової частини будинку"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0003"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM010",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "дерево",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Основний традиційний будівельний матеріал в цьому районі – дерево."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008",
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM011",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "міцних колод",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "чіткий ритм вінців, складених з міцних колод."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM012",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "декоративним розписом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...фарбуванням печей, іноді декоративним розписом..."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM013",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "кольоровими орнаментованими кахлями",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "та піччю, облицьованою кольоровими орнаментованими кахлями."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM014",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "пластичним оздобленням",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Specific to the interior."
+      ],
+      "evidence": [
+        "характерне рішення груби – у вигляді стіни, що прикрашалась пластичним оздобленням."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM015",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "кераміки",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...також застосуванням кераміки для печей, що мали рельєфну орнаментацію."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM016",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "солом'яним дахом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...пофарбованою глиною призьбою та чотирисхилим солом'яним дахом..."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM017",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "MADE_OF",
+      "object": "менш міцного і більш дешевого будівельного матеріалу",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "Стіни сіней"
+      ],
+      "evidence": [
+        "пережитком цього прийому, що зустрічався досить часто на Поліссі на початку XX ст., було таке конструктивне рішення"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0003"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM018",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "MADE_OF",
+      "object": "міцних брусів",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Головним компонентом архітектурно-художнього рішення будинку була дерев'яна арка, зроблена з міцних брусів."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM019",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "ornamental frieze",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "decorative feature"
+      ],
+      "evidence": [
+        "декоративні системи"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM020",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "барвистий розпис",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "також широко застосовується колір, а особливо декоративний розпис."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM021",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "настінним розписом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "прикрашеними подекуди настінним розписом нижньої частини стіни."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM022",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "різьбленням архітектурних деталей",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "і різьбленням архітектурних деталей."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM023",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "фарба",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "для покращення зовнішнього вигляду"
+      ],
+      "evidence": [
+        "обшивка фарбується у різні кольори."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM024",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "вапняк",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "на Поділлі та ряді західних районів – із щільного вапняка."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM025",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Використовували в лісостепових, менш багатих на ліс районах.",
+        "використовується в лісостепових районах"
+      ],
+      "evidence": [
+        "У лісостепових, менш багатих на ліс районах, крім дерева, використовували глину.",
+        "в лісостепових, менш багатих на ліс районах, крім дерева, використовували глину."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005",
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM026",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "глина і природний камінь",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Монолітні стіни з глини та природного каменю широко застосовувались"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM027",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "глинобитні, глинолитні, глиновалькові та саманні конструкції",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "В народному житлі застосовувались глинобитні, глинолитні, глиновалькові та саманні конструкції стін."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM028",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "глиносолом'яна маса",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "двійний плот, простір між яким забивався глиносолом'яною масою"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM029",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "глиняному чи вапняному розчині",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "кладка стін із природного каменю ведеться на глиняному чи вапняному розчині."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM030",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "дерев'яні колоди",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "для рублених стін"
+      ],
+      "evidence": [
+        "Рублені стіни будувались із дерев'яних колод (кругляк), пластин і брусків."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM031",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "дерево",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Основний будівельний матеріал для стін у північних, лісових районах.",
+        "основний матеріал для стін у північних районах"
+      ],
+      "evidence": [
+        "У північних, лісових районах України, а також гірських районах Карпат основним будівельним матеріалом для стін було дерево.",
+        "в північних, лісових районах України... основним будівельним матеріалом для стін було дерево."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005",
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM032",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "колоті або пиляні пластини",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "використовуються для економії деревини"
+      ],
+      "evidence": [
+        "рублені стіни будували також з колотих або пиляних пластин."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM033",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "крейда, мергель",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в південно-східних районах України для кладки стін використовують також крейду, мергель"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM034",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "очерет",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "для заповнення каркасу застосовуються в основному глиновальки, а також інші місцеві будівельні матеріали, зокрема очерет."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM035",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "природний камінь",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Використовували в південних, степових районах.",
+        "використовується в південних районах"
+      ],
+      "evidence": [
+        "В південних, степових районах, де ліс був в основному привізним, дефіцитним матеріалом, стіни будували переважно з глини або з природного каменю.",
+        "в південних, степових районах... стіни будували переважно з глини або з природного каменю."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005",
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM036",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "черепашник",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в південних районах житло споруджують здебільшого із черепашника"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM037",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "білий",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "а шви між вінцями у білий."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM038",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "білили",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...огорожі, що робилися тут або з каменю, або з глини, їх звичайно білили..."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM039",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "білих або ніжно голубих площинах",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Зовнішній вигляд хати значно збагачувався завдяки світотіні на білих або ніжно голубих площинах стін."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM040",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "глиною",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Стіни сільського житла, як правило, обмазуються глиною..."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM041",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "глиною і біляться",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "каркасні стіни, як правило, обмазують глиною і білять"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM042",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "глиняний чи вапняний розчин",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "для покращення якості стін"
+      ],
+      "evidence": [
+        "шви промазують або обмазують усю поверхню стіни глиняним чи вапняним розчином."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM043",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "настінним розписом та декоративними підводками",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...в поєднанні з настінним розписом та декоративними підводками."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM044",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "не штукатурились",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стіни якого також не штукатурились."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM045",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "побілка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "common finish for walls",
+        "Стіни часто обробляли побілкою.",
+        "стіни часто білять"
+      ],
+      "evidence": [
+        "стіни сіней робилися лише після того",
+        "У масовому селянському житлі цього періоду застосовувався такий прийом, коли спільна кімната розділялася грубою на два нерівних за площею приміщення.",
+        "обмазують усю поверхню стіни глиняним чи вапняним розчином.",
+        "декоративне оздоблення фасадів і в цілому архітектурне рішення.",
+        "Стіни сільського житла Полісся вирішувались, як правило, у відкритому зрубі, який у більшості випадків білили."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004",
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005",
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006",
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008",
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM046",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "пофарбування у жовті або жовтогарячі тони",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...яскравим пофарбуванням у жовті або жовтогарячі тони призьби, а часом і стін господарчих приміщень."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM047",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "природний колір дерева",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Only in northern regions.",
+        "Specific to utility spaces."
+      ],
+      "evidence": [
+        "лише в окремих районах північного Полісся він мав природний колір і фактуру дерева.",
+        "стіни господарчих приміщень (сіни, комора), що робились також із зрубу, завжди мали природний колір дерева."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM048",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "природний колір і фактуру дерева",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Поєднання стін, що мали природний колір і фактуру дерева."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM049",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "сажею чи кольоровими глинами",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...а нижню частину підводили сажею чи кольоровими глинами."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM050",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "фарбування напільної стіни глинами різноманітних відтінків",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Характерною ознакою житла цих районів, особливо на Правобережжі, є фарбування напільної стіни глинами різноманітних відтінків."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM051",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "фарбуються в яскраві сині тони",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "а подекуди фарбуються в яскраві сині тони."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM052",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "штукатурять",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в більшості випадків стіни з каменю штукатурять"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM053",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "інтенсивні цеглясто-червоні, жовтогарячі тони",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Напільні стіни фарбуються тут в інтенсивні цеглясто-червоні, жовтогарячі тони..."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM054",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "DECORATED_WITH",
+      "object": "геометричного різьблення по дереву",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Specific to eastern regions."
+      ],
+      "evidence": [
+        "завершення вікон у центральних і східних районах Полісся, що оздоблювались традиційними для українського народного декоративного мистецтва стародавніми мотивами геометричного різьблення по дереву."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM055",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WOODEN_VESSEL",
+      "relation": "DECORATED_WITH",
+      "object": "барвиста кераміка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Велику роль відігравали в інтер'єрі також барвиста кераміка і насамперед миски."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM056",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WOVEN_TEXTILE",
+      "relation": "DECORATED_WITH",
+      "object": "яскравими декоративними тканинами",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "з яскравими декоративними тканинами і традиційним різьбленням на одвірках."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM001",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "високі солом'яні дахи",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Специфічною ознакою бойківського житла була більш видовжена композиція будинку, високі солом'яні дахи."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM002",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "гранична простота",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "гранична простота і лаконічність об'ємно-просторової композиції."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM003",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "збільшення їх площі і висоти",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Поступове збільшення площі і висоти приміщень."
+      ],
+      "evidence": [
+        "Поступове збільшення їх площі і висоти дало можливість використовувати їх спочатку як літнє, а згодом і як постійне житлове приміщення."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM004",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "приблизно половину площі житлового приміщення",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "Площа сіней"
+      ],
+      "evidence": [
+        "коли площа сіней дорівнювала приблизно половині площі житлового приміщення"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0003"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM005",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "індивідуальні особливості",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "індивідуальні риси архітектурного рішення не лише в різних районах."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM006",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "thick walls",
+      "region": "Podillia",
+      "certainty_max": 0.9,
+      "notes_samples": [
+        "common construction feature"
+      ],
+      "evidence": [
+        "стіни сіней робилися лише після того, як було закінчено спорудження"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM007",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "більша товщина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Стіни в південних районах мають більшу товщину."
+      ],
+      "evidence": [
+        "Стіни, які тут роблять з глини, мають завжди більшу товщину."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM008",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "більше 1 м",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "Стіни житлової частини"
+      ],
+      "evidence": [
+        "стіни житлової частини будинку"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0003"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM009",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "значну роль",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "значну роль в архітектурі народного житла відіграють піддашки."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM010",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "м'які обриси",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Характерними ознаками народного житла центральної Буковини були м'які обриси високих дахів."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM011",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "міцних брусів",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Головним компонентом архітектурно-художнього рішення будинку була дерев'яна арка, зроблена з міцних брусів."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM012",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "простота конфігурації",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Простота об'ємно-просторової композиції народної архітектури зумовлюється значною мірою простотою конфігурації плану."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM013",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "товсті стіни",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Основним будівельним матеріалом Півдня України, як уже згадувалось вище, є глина і природний камінь, що значною мірою визначило своєрідність архітектури народного житла. Товсті стіни..."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0011"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM014",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "varies by region",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "width varies based on local conditions"
+      ],
+      "evidence": [
+        "мало багато локальних відмінностей у різних місцевостях"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM015",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "високі солом'яні дахи",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "високі солом'яні дахи та влаштування піддашків з чільної."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0010"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM016",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "дві частини",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Кожне житлове приміщення розділялось на дві частини."
+      ],
+      "evidence": [
+        "Кожне житлове приміщення розділялось у поздовжньому напрямку перегородками на дві частини."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM017",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "однокамерне, двокамерне, трикамерне",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "Типи житла"
+      ],
+      "evidence": [
+        "однокамерне, двокамерне, трикамерне житло"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0003"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM018",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "різноманітність архітектурного рішення",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "різноманітність архітектурного рішення в різних районах."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM019",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "широке застосування",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "характерною рисою його було широке застосування різноманітних місцевих матеріалів."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0008"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM020",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "широким корпусом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Хата на дві половини має більш широкий корпус."
+      ],
+      "evidence": [
+        "Основою планування таких будинків (домків) стає сільське житло типу 'хата на дві половини', з більш широким корпусом ніж звичайно."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0005"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM021",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "широкі площини рублених стін",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "сполучення високих, стрімких дахів, критих драницею, з великими площинами рублених стін."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0009"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM022",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "HAS_WIDTH",
+      "object": "smaller than living room",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "typical for pantry spaces"
+      ],
+      "evidence": [
+        "друга кімната, як правило, розміщується поряд з основною житловою кімнатою"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM023",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "HAS_HEIGHT",
+      "object": "standard ceiling height",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "typical for rural houses"
+      ],
+      "evidence": [
+        "житлове приміщення була більш стабільною"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM024",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "HAS_THICKNESS",
+      "object": "thick walls",
+      "region": "Podillia",
+      "certainty_max": 0.9,
+      "notes_samples": [
+        "common construction feature"
+      ],
+      "evidence": [
+        "стіни сіней робилися лише після того"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0004"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM025",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "HAS_THICKNESS",
+      "object": "менш міцного і більш дешевого будівельного матеріалу",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "Стіни сіней"
+      ],
+      "evidence": [
+        "стіни сіней з менш міцного і більш дешевого будівельного матеріалу"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0003"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM026",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_HEIGHT",
+      "object": "залежить від конструкції",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "висота стін залежить від типу"
+      ],
+      "evidence": [
+        "таке зонування конструкцій характерно в основному для народного будівництва України"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM027",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "велика усадка",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "недолік – велика усадка стін після висихання."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM028",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "до рівня вікон",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "іноді – лише нижню частину стіни (до рівня вікон)"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM029",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "досить швидко просихають",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "основною перевагою саманних стін перед іншими конструкціями із глини є те, що вони досить швидко просихають"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM030",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "залежить від довжини колод",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "товщина стін залежить від матеріалів"
+      ],
+      "evidence": [
+        "розмір будинку завжди пов'язувався з природною довжиною лісу, що застосовувався у будівництві."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM031",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "залежить від матеріалів",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "товщина стін залежить від матеріалів"
+      ],
+      "evidence": [
+        "конструктивне рішення стін і їх особливості в різних районах України."
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0006"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM032",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "небольшой товщини",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [],
+      "evidence": [
+        "укладається в опалубку шарами невеликої товщини"
+      ],
+      "provenance_chunk_ids": [
+        "B3_SAMOYLOVYCH_RULES_1971_CH0007"
+      ],
+      "book_id": "B3_SAMOYLOVYCH_RULES_1971",
+      "frequency_mode": "often"
+    }
+  ]
+}

@@ -6,6 +6,7 @@
 <title>Threshold — Ukrainian Vernacular Knowledge Archive</title>
 <meta name="description" content="A digital archive for Ukrainian vernacular architectural knowledge.">
   <link rel="stylesheet" href="/src/styles/threshold.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
 
@@ -665,43 +666,100 @@
 
 <!-- ═══════ EXPLORE ═══════ -->
 <div id="p-explore" class="page">
-  <div class="explore-topbar">
-    <button class="back-link explore-back" onclick="show('home')"><span class="ln-en">← Back</span><span class="ln-uk">← Назад</span></button>
-    <div class="explore-title-area">
-      <span class="ln-en">Knowledge Graph</span><span class="ln-uk">Граф знань</span>
-      <span class="explore-counts" id="explore-counts"></span>
-    </div>
-    <div class="explore-filters">
-      <button class="exp-pill active" data-filter="ALL"><span class="ln-en">All</span><span class="ln-uk">Усі</span></button>
-      <button class="exp-pill" data-filter="SPATIAL"><span class="ln-en">Spatial</span><span class="ln-uk">Просторові</span></button>
-      <button class="exp-pill" data-filter="MATERIAL"><span class="ln-en">Material</span><span class="ln-uk">Матеріальні</span></button>
-      <button class="exp-pill" data-filter="RITUAL"><span class="ln-en">Ritual</span><span class="ln-uk">Ритуальні</span></button>
-      <button class="exp-pill" data-filter="COSMO"><span class="ln-en">Cosmo</span><span class="ln-uk">Косм.</span></button>
-      <button class="exp-pill" data-filter="SEMANT"><span class="ln-en">Semantic</span><span class="ln-uk">Семантичні</span></button>
-    </div>
-    <div class="explore-search-wrap">
-      <input type="text" id="explore-search" placeholder="Search nodes…">
-    </div>
-    <div class="explore-zoom-btns">
-      <button id="explore-zoom-in" title="Zoom in">+</button>
-      <button id="explore-zoom-fit" title="Fit to screen">⊙</button>
-      <button id="explore-zoom-out" title="Zoom out">−</button>
-    </div>
-  </div>
-  <div class="explore-body">
-    <div class="explore-sidebar">
-      <p class="explore-desc">Every extracted rule is a connection between two things — an element and a property, a space and a practice, a material and a meaning. The graph maps all connections at once. Click any element to see its full rule set. Click a rule to read the original source sentence it came from.</p>
-      <div id="explore-legend" class="explore-legend"></div>
-    </div>
-    <div id="explore-svg-container" class="explore-canvas">
-      <div class="explore-loading"><span class="ln-en">Click "Explore" in the nav to load</span><span class="ln-uk">Натисніть "Граф" для завантаження</span></div>
-    </div>
-    <aside id="explore-panel" class="explore-panel">
-      <div id="explore-panel-content" class="explore-panel-inner">
-        <p class="explore-hint"><span class="ln-en">Click a node to explore</span><span class="ln-uk">Натисніть вузол для перегляду</span></p>
+
+  <!-- LANDING: book covers + mode toggle -->
+  <div id="explore-landing" class="explore-landing">
+    <div class="explore-landing-header">
+      <button class="back-link" onclick="show('home')"><span class="ln-en">← Back</span><span class="ln-uk">← Назад</span></button>
+      <span class="explore-landing-title"><span class="ln-en">Knowledge Graph</span><span class="ln-uk">Граф знань</span></span>
+      <div class="explore-mode-toggle">
+        <button class="exp-mode-btn active" data-mode="all"><span class="ln-en">All Data</span><span class="ln-uk">Усі дані</span></button>
+        <button class="exp-mode-btn" data-mode="validated"><span class="ln-en">Validated</span><span class="ln-uk">Валідовані</span></button>
       </div>
-    </aside>
+    </div>
+    <div class="explore-covers">
+      <div class="explore-book-card" data-book-idx="0">
+        <div class="book-card-cover-wrap">
+          <canvas class="book-card-canvas"></canvas>
+          <div class="book-card-fallback">B1</div>
+        </div>
+        <div class="book-card-meta">
+          <span class="book-card-author">Kosmina</span>
+          <span class="book-card-year">2008</span>
+        </div>
+      </div>
+      <div class="explore-book-card" data-book-idx="1">
+        <div class="book-card-cover-wrap">
+          <canvas class="book-card-canvas"></canvas>
+          <div class="book-card-fallback">B2</div>
+        </div>
+        <div class="book-card-meta">
+          <span class="book-card-author">Gurzhiy & Tsaruk</span>
+          <span class="book-card-year">2008</span>
+        </div>
+      </div>
+      <div class="explore-book-card" data-book-idx="2">
+        <div class="book-card-cover-wrap">
+          <canvas class="book-card-canvas"></canvas>
+          <div class="book-card-fallback">B3</div>
+        </div>
+        <div class="book-card-meta">
+          <span class="book-card-author">Tsapenko</span>
+          <span class="book-card-year">1967</span>
+        </div>
+      </div>
+      <div class="explore-book-card" data-book-idx="3">
+        <div class="book-card-cover-wrap">
+          <canvas class="book-card-canvas"></canvas>
+          <div class="book-card-fallback">B4</div>
+        </div>
+        <div class="book-card-meta">
+          <span class="book-card-author">Masnenko</span>
+          <span class="book-card-year">2012</span>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- GRAPH VIEW (hidden until a book is selected) -->
+  <div id="explore-graph-view" class="explore-graph-view" style="display:none">
+    <div class="explore-topbar">
+      <button id="explore-back-btn" class="back-link explore-back"><span class="ln-en">← Books</span><span class="ln-uk">← Книги</span></button>
+      <div class="explore-title-area">
+        <span id="explore-book-title">Knowledge Graph</span>
+        <span class="explore-counts" id="explore-counts"></span>
+      </div>
+      <div class="explore-filters">
+        <button class="exp-pill active" data-filter="ALL"><span class="ln-en">All</span><span class="ln-uk">Усі</span></button>
+        <button class="exp-pill" data-filter="SPATIAL"><span class="ln-en">Spatial</span><span class="ln-uk">Просторові</span></button>
+        <button class="exp-pill" data-filter="MATERIAL"><span class="ln-en">Material</span><span class="ln-uk">Матеріальні</span></button>
+        <button class="exp-pill" data-filter="RITUAL"><span class="ln-en">Ritual</span><span class="ln-uk">Ритуальні</span></button>
+        <button class="exp-pill" data-filter="COSMO"><span class="ln-en">Cosmo</span><span class="ln-uk">Косм.</span></button>
+        <button class="exp-pill" data-filter="SEMANT"><span class="ln-en">Semantic</span><span class="ln-uk">Семантичні</span></button>
+      </div>
+      <div class="explore-search-wrap">
+        <input type="text" id="explore-search" placeholder="Search nodes…">
+      </div>
+      <div class="explore-zoom-btns">
+        <button id="explore-zoom-in" title="Zoom in">+</button>
+        <button id="explore-zoom-fit" title="Fit to screen">⊙</button>
+        <button id="explore-zoom-out" title="Zoom out">−</button>
+      </div>
+    </div>
+    <div class="explore-body">
+      <div class="explore-sidebar">
+        <p class="explore-desc">Every extracted rule is a connection between two things — an element and a property, a space and a practice, a material and a meaning. The graph maps all connections at once. Click any element to see its full rule set. Click a rule to read the original source sentence it came from.</p>
+        <div id="explore-legend" class="explore-legend"></div>
+      </div>
+      <div id="explore-svg-container" class="explore-canvas"></div>
+      <aside id="explore-panel" class="explore-panel">
+        <div id="explore-panel-content" class="explore-panel-inner">
+          <p class="explore-hint"><span class="ln-en">Click a node to explore</span><span class="ln-uk">Натисніть вузол для перегляду</span></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
   <div id="explore-sheet" class="explore-sheet">
     <div class="explore-sheet-handle">
       <span><span class="ln-en">Node Details</span><span class="ln-uk">Деталі вузла</span></span>

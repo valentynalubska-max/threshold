@@ -1,0 +1,5211 @@
+{
+  "book_id": "B1_KOSMINA_PODILLIA_2008",
+  "region": "Podillia",
+  "triple_count_raw": 330,
+  "triple_count_unique": 258,
+  "parse_errors": 0,
+  "triples": [
+    {
+      "triple_id": "SPM001",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "BED_SLEEPING_PLATFORM",
+      "relation": "ADJACENT_TO",
+      "object": "PICH_STOVE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "ліжко встановлювали вздовж тильної стіни"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM002",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "BED_SLEEPING_PLATFORM",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Beds are part of the house interior."
+      ],
+      "evidence": [
+        "Зміни у конструкції лав та ліжок характеризують інтер'єр житла всієї України."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0055"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM003",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "BED_SLEEPING_PLATFORM",
+      "relation": "NEAR",
+      "object": "TABLE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "між столом і ліжком — скриню."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0053"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM004",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "CEILING_BEAMS",
+      "relation": "DOMINANT_OVER",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Конструктивні типи влаштування стелі значною мірою обумовлені наявністю будівельного матеріалу..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM005",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "LOCATED_AT",
+      "object": "ENTRANCE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "прикрасити вхід до житла",
+        "вхідних дверей"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043",
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM006",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "LOCATED_AT",
+      "object": "PICH_STOVE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "заслонкою печі та дверцятами груби, на яких робилась квітка."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM007",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "LOCATED_AT",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "Entrance location."
+      ],
+      "evidence": [
+        "Вхід до неї завжди влаштовували з боку житлової камери."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM008",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "LOCATED_AT",
+      "object": "THRESHOLD",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "двері..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM009",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "BED_SLEEPING_PLATFORM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "тут ставили ліжко, перетворюючи це приміщення в спальню."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0022"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM010",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "EARTHEN_FLOOR",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "earthen floor often found in proximity"
+      ],
+      "evidence": [
+        "клуня, розташована на складному рельєфі та об’єднана з хлівом або коморою"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "SPM011",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "ENTRANCE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "виносні елементи розташовані над вхідними дверима"
+      ],
+      "evidence": [
+        "«п'ятнарі»... встановлювали по рогах хати над вхідними дверима.",
+        "житловій споруді своєрідного світло-тіньового ефекту"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0019",
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM012",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "KOMORA_PANTRY",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "often combined with pantry"
+      ],
+      "evidence": [
+        "над коморою теж вкладали стелю по сволоку.",
+        "північних районах побутував варіант комора 4- сіни 4- хата",
+        "споруда клуні, об’єднана спільним дахом з коморою або хлівом",
+        "стіни комори та сіней при хаті"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014",
+        "B1_KOSMINA_PODILLIA_2008_CH0022",
+        "B1_KOSMINA_PODILLIA_2008_CH0035",
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM013",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 0.6,
+      "notes_samples": [
+        "господарські будівлі прибудовуються до коротких стін"
+      ],
+      "evidence": [
+        "в новому сучасному житлі цих районів до його коротких стін прибудовуються господарські будівлі"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0019"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "SPM014",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "PICH_STOVE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "піч розташована в житлі",
+        "stove often found in proximity"
+      ],
+      "evidence": [
+        "Типи печей у житлі залежно від способів виводу диму.",
+        "перетворюючи це приміщення в спальню.",
+        "клуня, розташована на складному рельєфі та об’єднана з хлівом або коморою"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0019",
+        "B1_KOSMINA_PODILLIA_2008_CH0022",
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "SPM015",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "ADJACENT_TO",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "входи в сіни",
+        "vestibule often adjacent to the house"
+      ],
+      "evidence": [
+        "дим виводиться через димар у сінях",
+        "хата 4- сіни 4- хата; сіни 4- -І- хата 4- хата 4- сіни і хата 4- сіни 4- хата 4- сіни.",
+        "клуня, розташована на складному рельєфі та об’єднана з хлівом або коморою",
+        "стіни комори та сіней при хаті",
+        "входу із сіней до хати"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0019",
+        "B1_KOSMINA_PODILLIA_2008_CH0022",
+        "B1_KOSMINA_PODILLIA_2008_CH0035",
+        "B1_KOSMINA_PODILLIA_2008_CH0039",
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "SPM016",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DOMINANT_OVER",
+      "object": "ROOF",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "дахи домінують в архітектурі житла",
+        "dominance of roof in vertical proportions"
+      ],
+      "evidence": [
+        "Хати з «притулами» створюють враження суцільного даху, який домінує в архітектурі житла.",
+        "у пропорційному членуванні подільського народного житла по вертикалі перевага належала дахові"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0019",
+        "B1_KOSMINA_PODILLIA_2008_CH0040"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM017",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DOMINANT_OVER",
+      "object": "WALL",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Гармонійна врівноваженість усіх складових елементів (планових та конструктивних)"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM018",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "LOCATED_AT",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "хата 4- сіни 4- хата; сіни 4- -І- хата 4- хата 4- сіни і хата 4- сіни 4- хата 4- сіни."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0022"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM019",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "LOCATED_IN",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "хата 4- сіни 4- хата; сіни 4- -І- хата 4- хата 4- сіни і хата 4- сіни 4- хата 4- сіни."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0022"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM020",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "ADJACENT_TO",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "комори, об'єднані спільним дахом з іншими господарськими спорудами двору."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0036"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM021",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "ADJACENT_TO",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "Position of the pantry."
+      ],
+      "evidence": [
+        "...виділення в сінях — шляхом постановки переділки — комірчини або комори."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "SPM022",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Хата, сіни і комора зводились в ідентич­ них конструкціях"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM023",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "LOCATED_IN",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "Location of the pantry."
+      ],
+      "evidence": [
+        "...комірчини або комори, а інколи комори і комірчини одноразово."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "SPM024",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "VISIBLE_FROM",
+      "object": "WINDOW",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "щоб її було видно із вікон хати."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0036"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM025",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "ADJACENT_TO",
+      "object": "DOOR",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "житло української шляхти в цей період"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM026",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "ADJACENT_TO",
+      "object": "SINY_VESTIBULE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "інтер’єр сіней"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM027",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "DOMINANT_OVER",
+      "object": "BED_SLEEPING_PLATFORM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "зона для сну — піч, піл та лави"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM028",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "LOCATED_AT",
+      "object": "CENTER",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "житло української шляхти в цей період поповнюється купованими меблями"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM029",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "LOCATED_AT",
+      "object": "NE_CORNER",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "житло української шляхти в цей період"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM030",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "житлового приміщення хати був усталено поділений на зони"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM031",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "ADJACENT_TO",
+      "object": "CHELIUSTI",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "перетворення конструктивної необхідності у художню виразність",
+        "підвісного комина над припічком перед самими челюстями"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043",
+        "B1_KOSMINA_PODILLIA_2008_CH0056"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM032",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "ADJACENT_TO",
+      "object": "DOOR",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "У кутку між дверима та піччю було місце для кочерг."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0053"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM033",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "ADJACENT_TO",
+      "object": "ENTRANCE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Піч завжди ставили в хаті збоку від входу."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0027"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM034",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "ADJACENT_TO",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "Inferred adjacency based on typical layout."
+      ],
+      "evidence": [
+        "в художньому оформленні народного житла Поділля"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "SPM035",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "ADJACENT_TO",
+      "object": "TABLE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "робоча зона — біля печі та вільний простір"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM036",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DOMINANT_OVER",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Inferred dominance based on typical layout."
+      ],
+      "evidence": [
+        "усередині хати головна увага зосереджувалась на декорі печі",
+        "акцентація зорової уваги на певних елементах екстер'єру або інтер'єра (вхід, піч, покуть тощо)",
+        "в художньому оформленні народного житла Поділля",
+        "Піч була важливим елементом у весільному обряді"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043",
+        "B1_KOSMINA_PODILLIA_2008_CH0044",
+        "B1_KOSMINA_PODILLIA_2008_CH0050",
+        "B1_KOSMINA_PODILLIA_2008_CH0056"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM037",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "LOCATED_AT",
+      "object": "POKUT_ICON_CORNER",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Покуть була тим місцем, де на стінах і стелі розташовували декоративний розпис"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM038",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "LOCATED_AT",
+      "object": "corner",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "розташовувалась піч, по другий — мисник для посуду."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0053"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM039",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Піч завжди знаходилася в хаті.",
+        "глина, крейда, вапно, гіпс спонукало народ застосовувати",
+        "піч завжди розташовується в кутку біля входу із сіней до хати",
+        "локальні риси в обсягово-планувальному вирішенні подільського інтер'єра"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0027",
+        "B1_KOSMINA_PODILLIA_2008_CH0041",
+        "B1_KOSMINA_PODILLIA_2008_CH0052",
+        "B1_KOSMINA_PODILLIA_2008_CH0056"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM040",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "LOCATED_IN",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "піч розташована в кімнаті",
+        "Position of the stove in the house."
+      ],
+      "evidence": [
+        "піч...",
+        "піч (дим виводиться через комин)",
+        "...вариста піч... повертається челюстями в сіни.",
+        "усередині хати головна увага зосереджувалась на декорі печі"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015",
+        "B1_KOSMINA_PODILLIA_2008_CH0019",
+        "B1_KOSMINA_PODILLIA_2008_CH0020",
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM041",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "ORIENTED_TOWARD",
+      "object": "WALL",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "повернута устям до чільної стіни"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM042",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "PIDDUVALO",
+      "relation": "LOCATED_AT",
+      "object": "CHELIUSTI",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "піддувало під челюстями."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM043",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "POKUT_ICON_CORNER",
+      "relation": "ADJACENT_TO",
+      "object": "TABLE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "зона для сну — піч, піл та лави; святкова, або парадна, зона — покуть, стіл"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM044",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "POKUT_ICON_CORNER",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "покуть знаходиться по діагоналі від печі у дальньому від входу кутку"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM045",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "POKUT_ICON_CORNER",
+      "relation": "LOCATED_IN",
+      "object": "corner",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "вішались образи, а під ними вздовж причілкової та чільної стін хати йшли лави."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0053"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM046",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "LOCATED_AT",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "чотирисхилого солом'яного даху"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM047",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "ADJACENT_TO",
+      "object": "ENTRANCE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "сіни..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM048",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "ADJACENT_TO",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Typical layout of the house."
+      ],
+      "evidence": [
+        "...двокамерне житло складається лише з хати і сіней.",
+        "Трикамерне житло (хата + сіни 4- хата) з високими порогом та призьбою."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020",
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM049",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "LOCATED_AT",
+      "object": "ENTRANCE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "біля входу в хату із сіней по один бік у кутку"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM050",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "LOCATED_AT",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Над сіньми ж у переважній більшості районів Поділля в кінці XIX ст. стелі не було.",
+        "...вхід до житла, і одночасно декорують фасад будинку."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014",
+        "B1_KOSMINA_PODILLIA_2008_CH0027"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM051",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Трикамерне житло (хата + сіни 4- хата) з високими порогом та призьбою.",
+        "розписувались не лише стіни в хаті, а й стеля з її елементами (сволок, балки), долівка і навіть стіни та стеля в сінях.",
+        "в житлі російського населення Поділля."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041",
+        "B1_KOSMINA_PODILLIA_2008_CH0044",
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM052",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в народному житлі Поділля переважав спосіб укладання настилу поверх сволоків."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM053",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "ADJACENT_TO",
+      "object": "CEILING_BEAMS",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стеля лежить на поперечних балках.",
+        "розписувались не лише стіни в хаті, а й стеля з її елементами (сволок, балки)"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014",
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM054",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "ADJACENT_TO",
+      "object": "DOOR",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "стіни мають дверні отвори"
+      ],
+      "evidence": [
+        "У місцях дверних та віконних отворів встановлювалась дерев'яна обв'язка",
+        "На чільній стіні вертикально обрамлявся розписом отвір входу."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012",
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM055",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "ADJACENT_TO",
+      "object": "PICH_STOVE",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "може бути поряд з піччю"
+      ],
+      "evidence": [
+        "У народному житлі природний камінь використовувався переважно для огорож"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "SPM056",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "ADJACENT_TO",
+      "object": "WINDOW",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "стіни мають віконні отвори"
+      ],
+      "evidence": [
+        "У місцях дверних та віконних отворів встановлювалась дерев'яна обв'язка",
+        "декором обрамлення вікон та інших елементів хати"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012",
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM057",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "LOCATED_AT",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "стіни є частиною житла",
+        "частина конструкції",
+        "стіни є частиною хати"
+      ],
+      "evidence": [
+        "У сільському житловому будівництві цеглу не застосовували.",
+        "стіни та призьбу від опадів"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012",
+        "B1_KOSMINA_PODILLIA_2008_CH0019"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM058",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "LOCATED_AT",
+      "object": "THRESHOLD",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "біла стіна з'єднувалась із призьбою"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM059",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "LOCATED_IN",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "стіни є частиною житла"
+      ],
+      "evidence": [
+        "У народному житлі природний камінь використовувався переважно для огорож",
+        "Стіни жител білилися і мали червоні прикраси п.",
+        "в художньому оформленні народного житла Поділля"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012",
+        "B1_KOSMINA_PODILLIA_2008_CH0041",
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM060",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "VISIBLE_FROM",
+      "object": "ENTRANCE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в художньому оформленні народного житла Поділля"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "SPM061",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "ADJACENT_TO",
+      "object": "WALL",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "на тильній — круглий віконний отвір."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM062",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "LOCATED_AT",
+      "object": "KHATA_HOUSE",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "найчастіше, як і зокола хати, робили так званий карниз у вигляді суцільної смуги, що розташовувалась над вікнами"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "SPM063",
+      "triple_type": "SPATI",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "VISIBLE_FROM",
+      "object": "LIVING_ROOM",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Visibility of the window."
+      ],
+      "evidence": [
+        "вікно...",
+        "...на що це оринням його обклали? Аж дивишся — і курить, і комин стирчить."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015",
+        "B1_KOSMINA_PODILLIA_2008_CH0020"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM001",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "BED_SLEEPING_PLATFORM",
+      "relation": "MADE_OF",
+      "object": "wood with carved details",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Describes the material of beds."
+      ],
+      "evidence": [
+        "Спинки їх були глухими і прикрашались барельєфною різьбою."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0055"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM002",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "BED_SLEEPING_PLATFORM",
+      "relation": "MADE_OF",
+      "object": "грубих дубових дощок",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Конструкція спального місця — полу. Його робили з грубих дубових дощок"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM003",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "BENCH",
+      "relation": "MADE_OF",
+      "object": "широких дубових дощок",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Нерухомі лави робили з широких (50—60 см) дубових дощок"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM004",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "CEILING_BEAMS",
+      "relation": "DECORATED_WITH",
+      "object": "орнамент",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "зміни також у схемі несучих конструкцій стелі."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM005",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "CEILING_BEAMS",
+      "relation": "MADE_OF",
+      "object": "дерево",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стеля трималася на поздовжній балці.",
+        "Сволок, а пізніше балки були тими її елементами..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014",
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM006",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "CEILING_BEAMS",
+      "relation": "SURFACE_FINISH",
+      "object": "побілка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стеля має «розвинутий профіль»."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM007",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "CEILING_BEAMS",
+      "relation": "SURFACE_FINISH",
+      "object": "розписними орнаментами",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "їхня поверхня оздоблювалась інколи різьбленими, а частіше — розписними орнаментами."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM008",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "MADE_OF",
+      "object": "три-чотири дубових дощок",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Полотно їх у кінці XIX — на початку XX ст. робили переважно з трьох-чотирьох дубових дощок."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM009",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "MADE_OF",
+      "object": "три-чотирьох дубових дощок",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Полотно їх у кінці XIX — на початку XX ст. робили переважно з трьох-чотирьох дубових дощок"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM010",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "EARTHEN_FLOOR",
+      "relation": "MADE_OF",
+      "object": "clay",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Поверх дощок настилали шар глини, який утрамбовували і згладжували."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0013"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM011",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "EARTHEN_FLOOR",
+      "relation": "MADE_OF",
+      "object": "thick layer of straw",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "селянин обкладав зокола стіни своєї хати, товстим ша­ ром мерви або гречаною соломою."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0053"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM012",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "EARTHEN_FLOOR",
+      "relation": "MADE_OF",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "долівка і навіть стіни та стеля в сінях."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM013",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "geometric ornament",
+      "region": "Podillia",
+      "certainty_max": 0.6,
+      "notes_samples": [
+        "способів декоративного оформлення загорож"
+      ],
+      "evidence": [
+        "вибору місця, великими розмірами, а особливо висотою"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0034"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM014",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "геометричний орнамент",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "декор стін"
+      ],
+      "evidence": [
+        "декор стін з геометричним орнаментом"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0024"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM015",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "орнаменту",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "decorative features above entrance"
+      ],
+      "evidence": [
+        "вхід у житло акцентувався викладенням орнаменту в тій частині гладко пошитого схилу даху, який знаходився над вхідними дверима"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0040"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM016",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "побілка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "побутував варіант комора 4- сіни 4- хата"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0022"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM017",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "поліхромною штукатуркою",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "decorative finish of modern houses"
+      ],
+      "evidence": [
+        "Декоративне оформлення сучасного житла поліхромною штукатуркою (с. Саранчуки Бережанського р-ну Тернопільської обл.)."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0040"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM018",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "DECORATED_WITH",
+      "object": "хрест",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "decorative feature above entrance"
+      ],
+      "evidence": [
+        "в цьому місці викладали із снопів хрест."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0040"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM019",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "straw",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "використовували для покриття дахів"
+      ],
+      "evidence": [
+        "використовували для покриття дахів"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0034"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM020",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "wood and clay",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "історично виниклих прийомів",
+        "common material for traditional houses"
+      ],
+      "evidence": [
+        "застосування та розвиток історично виниклих прийомів і навиків",
+        "Стіни клунь у переважній більшості районів Поділля... робилися на стовпах у закидку..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0034",
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM021",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "основними засобаміі декорування були фактура та колір матеріалів, які людині давала безпосередньо природа"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM022",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "глина у різних її поєднаннях з деревом та соломою",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "для масового житлового будівництва — глина у різних її поєднаннях з деревом та соломою"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM023",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "глиняні та солом'яні",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "традиційні матеріали"
+      ],
+      "evidence": [
+        "традиційні: земляночного та напівземляночного типу (одно-, дво-, трикамерні)"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0024"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM024",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "дерев'яний каркас, обмазаний зокола глиною",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Хата, сіни і комора зводились в ідентич­ них конструкціях — дерев'яний каркас, обмазаний зокола глиною."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM025",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "дерево",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "основний матеріал"
+      ],
+      "evidence": [
+        "основний матеріал — дерево",
+        "хоча на Поділлі й будували хати із суцільного дерева"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0024",
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM026",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "дерево і камінь",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "для замкових та культових споруд Поділля, а також житла панівних класів переважаючим стіновим матеріалом було дерево і камінь"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM027",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "земля і глина",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "Materials used in traditional housing."
+      ],
+      "evidence": [
+        "...найбідніших верств сільського населення... одно- та двокамерних земляночних і напівзем- ляночних жител."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM028",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "MADE_OF",
+      "object": "сучасні будівельні матеріали",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в зв'язку з впровадженням сучасних будівельних матеріалів"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM029",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "SURFACE_FINISH",
+      "object": "lime",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "стін клунь у переважній більшості районів"
+      ],
+      "evidence": [
+        "стіни клунь у переважній більшості районів Поділля, як і на Поліссі, Волині, в Карпатах"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0034"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM030",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "SURFACE_FINISH",
+      "object": "not specified",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "finish not detailed in the text"
+      ],
+      "evidence": [
+        "обезземелення селян... обумовило зменшення розмірів усіх господарських будівель"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM031",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "SURFACE_FINISH",
+      "object": "побілка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "стін хати"
+      ],
+      "evidence": [
+        "побілка стін хати"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0024"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM032",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "MADE_OF",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в коморі вживали матеріал гіршої якості.",
+        "стіни комір зводили безпосередньо на землі з глини."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014",
+        "B1_KOSMINA_PODILLIA_2008_CH0036"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM033",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "MADE_OF",
+      "object": "зруб",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "У заможних господарствах стіни комори зводили в зруб."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0036"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM034",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "MADE_OF",
+      "object": "найкращого лісоматеріалу",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Оскільки комора була ознакою заможності господарів, то її ставили з найкращого лісоматеріалу."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0036"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM035",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "SURFACE_FINISH",
+      "object": "не обмащували і не білили",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Зруб ніколи не обмащували і не білили."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0036"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM036",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "SURFACE_FINISH",
+      "object": "підлогу",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "вона завжди має підлогу."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0036"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM037",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "DECORATED_WITH",
+      "object": "барельєфною різьбою",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Спинки їх були глухими і прикрашались барельєфною різьбою"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM038",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "DECORATED_WITH",
+      "object": "виробами народного мистецтва",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "мали ще й інше призначення — прикрасити кімнату виробами народного мистецтва"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM039",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "DECORATED_WITH",
+      "object": "декоративним оформленням",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Російське населення Поділля великого значення надавало декоративному оформленню лав"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM040",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ORNAMENTAL_FRIEZE",
+      "relation": "DECORATED_WITH",
+      "object": "вишиті китицями",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "вишиті китицями роги СОЛОМ’ЯНОГО даху."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM041",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ORNAMENTAL_FRIEZE",
+      "relation": "DECORATED_WITH",
+      "object": "мотиви «вазона», «розетки», «букета»",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "В їх побудові переважають мотиви «вазона», «розетки», «букета»"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM042",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "вариста піч",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...і є «вариста піч»;"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0027"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM043",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "квітка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "на яких робилась квітка"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM044",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "мальовничими композиціями",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "В цьому проявились давні традиції і та роль, яку вона відігравала в сімейно-побутових обрядах"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM045",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "мальовничо-декоративними розписами",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Вони прикрашалися відповідними мальовничо-декоративними розписами;"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM046",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "орнаментований розпис",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "на його орнаментованому тлі непомітними були плями та шпари."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM047",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "плетену трубу",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "вмазували змащену глиною плетену трубу"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0028"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM048",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "соломою",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "«Каблуки» переплітали соломою, а зверху обмащували глиною."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0028"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM049",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "DECORATED_WITH",
+      "object": "фігурними цвяхаками",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Вгорі набиті фігурними цвяхаками смуги"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0056"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM050",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "clay and straw",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "економічна і соціальна нерівність різних прошарків селянства, яка обумови­ ла застосування в житлі заможних верств якісніших будівельних матеріалів."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0053"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM051",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Material composition of the stove."
+      ],
+      "evidence": [
+        "...вариста піч...",
+        "Піч у переважній більшості робили з глини.",
+        "Коли під печі був готовий, його по верху змащували тонким шаром глини.",
+        "глина, крейда, вапно, гіпс спонукало народ застосовувати",
+        "обмазаний зокола глиною",
+        "піч була важливим елементом"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020",
+        "B1_KOSMINA_PODILLIA_2008_CH0027",
+        "B1_KOSMINA_PODILLIA_2008_CH0028",
+        "B1_KOSMINA_PODILLIA_2008_CH0041",
+        "B1_KOSMINA_PODILLIA_2008_CH0050",
+        "B1_KOSMINA_PODILLIA_2008_CH0056"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM052",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "груба",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "друга хата «розташовується на тому місці, де завжди влаштовують місце точно таке саме, де живе або одружений син господаря"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0022"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM053",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "дерев'яні патики",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "куди закладали дерев'яні патики для утворення чотирикутної рами"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0028"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM054",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "цегла",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "піч..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM055",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "MADE_OF",
+      "object": "цеглу",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "при виведенні печі почали застосовувати цеглу"
+      ],
+      "evidence": [
+        "На початку XX ст. при виведенні печі почали застосовувати цеглу."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0028"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM056",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "SURFACE_FINISH",
+      "object": "білили й орнаментували",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Її декілька разів на рік, переважно до свят та урочистих сімейних подій, білили й орнаментували"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM057",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "SURFACE_FINISH",
+      "object": "гладко фарбували",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "гзимсом, що його або вкривали дрібними квіточками чи цілою гірляндою, або просто гладко фарбували більш-менш темною фарбою;"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM058",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "SURFACE_FINISH",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Surface finish of the stove."
+      ],
+      "evidence": [
+        "...вариста піч...",
+        "Специфічність об'ємно-пластичної побудови подільської печі"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020",
+        "B1_KOSMINA_PODILLIA_2008_CH0056"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM059",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "SURFACE_FINISH",
+      "object": "глиною",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "потім її щільно вистру­ гують заступом та вимащують глиною"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0028"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM060",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "SURFACE_FINISH",
+      "object": "побілка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "піч покрита побілкою"
+      ],
+      "evidence": [
+        "піч (дим виводиться через димар у сінях)",
+        "побілений"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0019",
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM061",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "SURFACE_FINISH",
+      "object": "тонким шаром глини",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...по верху змащували тонким шаром глини."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0027"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM062",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "DECORATED_WITH",
+      "object": "гладке пошиття",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "Used in southern regions."
+      ],
+      "evidence": [
+        "У південних районах Поділля переважало гладке пошиття «плескачами»."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0016"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM063",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "DECORATED_WITH",
+      "object": "сніпками",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Used for thatching."
+      ],
+      "evidence": [
+        "два способи влаштування солом'яного даху — розстеленою соломою та зв'язаними сніпками."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0016"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM064",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "DECORATED_WITH",
+      "object": "солом'яних стріх з подвійними уступами",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "decorative features of roofs"
+      ],
+      "evidence": [
+        "максимально насиченої декоративної пластики пишних солом'яних стріх з подвійними уступами по низу"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0040"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "MAM065",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "DECORATED_WITH",
+      "object": "яскравий декоративний ефект",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "декоративний ефект залежить від стрімкості даху"
+      ],
+      "evidence": [
+        "Традиційні способи створювали яскравий декоративний ефект припіднятості кінців даху."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0019"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM066",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "wood",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "roof typically made of wood"
+      ],
+      "evidence": [
+        "дах опирається безпосередньо на землю"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM067",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "дерево",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Used by wealthier households."
+      ],
+      "evidence": [
+        "дах на кроквах, врубаних у верхній вінець зрубу або у платви;",
+        "Дерево як покрівельний матеріал застосовувалось у житлі заможної частини російського населення Поділля."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015",
+        "B1_KOSMINA_PODILLIA_2008_CH0016"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM068",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "дранка, солома, очерет, черепиця, бляха",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "матеріали покриття даху"
+      ],
+      "evidence": [
+        "Матеріали покриття даху (кінець XIX — початок XX ст.): 1 — дранка; 2 — солома; 3 — очерет; 4 — черепиця; 5 — бляха."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0019"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM069",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "очерет",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Used in southern regions."
+      ],
+      "evidence": [
+        "У південних районах Поділля, крім соломи, використовували для покриття очерет."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0016"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM070",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "солома",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "дах сільського житла і господарських будівель двору переважно покривали соломою.",
+        "чотирисхилого солом'яного даху"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0016",
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM071",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "солом’яний дах",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Комбіноване пошиття солом’яного даху сніпками."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM072",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "MADE_OF",
+      "object": "черепиця, шифер",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "замість соломи — черепиця, шифер та ін."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM073",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "SURFACE_FINISH",
+      "object": "побілка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "сіни..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM074",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "DECORATED_WITH",
+      "object": "carved date and owner's name",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "на гранях нерідко вирізь­ блювалася дата будівництва, прізвище господаря хати."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0013"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM075",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "DECORATED_WITH",
+      "object": "painted ornament",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "декорували різьбленим або мальованим орнаментом."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0013"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM076",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "MADE_OF",
+      "object": "monolithic oak wood",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "На сволок вибирали переважно монолітне дубове дерево."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0013"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM077",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "MADE_OF",
+      "object": "дерево",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "сволоки виготовлені з дерева"
+      ],
+      "evidence": [
+        "основ­ ні несучі елементи — «сволоки», «сволочки» — традиційними.",
+        "сволоки заби­ вали дерев'яні кілочки"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014",
+        "B1_KOSMINA_PODILLIA_2008_CH0019"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM078",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "SURFACE_FINISH",
+      "object": "decorated with carved or painted ornament",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Поверхні гра­ ней декорували різьбленим або мальованим орнаментом."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0013"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM079",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "SURFACE_FINISH",
+      "object": "oil",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "дошки стелі та сволок змащували олією."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0013"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM080",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "декоративне оформлення кольором, підводками та розписом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Декоративне оформлення кольором, підводками та розписом чільного фасаду житла."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM081",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "декоративними розписами",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "але вона збагачувалась деко­ ративними розписами."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM082",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "декоративні елементи",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "можуть бути присутні"
+      ],
+      "evidence": [
+        "перев'язкою швів після просушки блоків на повітрі"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM083",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "декором обрамлення вікон",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Художнє оформлення призьби не було відірваним, самодостатнім, а органічно поєднувалося з декором обрамлення вікон та інших елементів хати."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM084",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "колористично-мальовничим засобам",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "У прийомах художнього оформлення останніх перевага надавалась колористично-мальовничим засобам"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM085",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "кольорові підводки",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "переважали кольорові підводки."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM086",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "кольорові штукатурки",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в сучасному будівництві все ширшого розмаху набувають кольорові штукатурки"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM087",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "мальований фриз",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Мальований фриз, як правило, огинав хату."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM088",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "мальовані пластичні оздоби",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "влаштування профільних карнизів, розташування над вікнами та дверима замість мальованих пластичних оздоб"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM089",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "мальовниче заповнення поверхні стіни рослинним орнаментом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "мальовниче заповнення поверхні стіни рослинним орнаментом («вазоном»);"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM090",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "мальовничо-колористичних засобів",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "гладкої поверхні обмазаної та побіленої стіни давала великі можливості для розвитку саме мальовничо-колористичних засобів"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM091",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "орнамент",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "можуть мати декоративні елементи",
+        "Decoration on the wall."
+      ],
+      "evidence": [
+        "перев'язкою швів після просушки блоків на повітрі",
+        "декоративного оформлення її елементів в інтер'єрі...",
+        "...навіть вікон не видно."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012",
+        "B1_KOSMINA_PODILLIA_2008_CH0015",
+        "B1_KOSMINA_PODILLIA_2008_CH0020"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM092",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "орнаментальний малюнок",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Орнамен­ тальний- малюнок на ній формувався переважно з крапок."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM093",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "орнаментальну смугу",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "також робили орнаментальну смугу, звичайно, менш декоративно оформлену, ніж фриз.",
+        "також робили орнаментальну смугу"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042",
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM094",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "орнаментом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "хоча зустрічається крапкове оконтурювання більш складних елементів."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM095",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "пластична обробка стін",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "пластична обробка стін, офактурювання різноколірними матеріалами"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM096",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "поліхромним розписом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Зовні всі стіни моделі вкриті поліхромним розписом."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM097",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "простим ритмічним орнаментом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "мастилися і розписувалися сінешні стеля та стіни, що закурю­ вались од «кагли», але простим ритмічним орнаментом."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM098",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "темною кольоровою смугою з крапками",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Від площі стіни хати фриз відділяли темною кольоровою сму­ гою з крапками."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM099",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "фактурним тисненням стін",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Декоративне оформлення кольором, підводками та фактурним тисненням стін житла."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM100",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "фризів",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "орнаментальна розробка карнизів була значно складніша, ніж фризів зокола хати."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM101",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "DECORATED_WITH",
+      "object": "чорним монохромним розписом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Стіни з внутрішнього боку, долівка, поріг та передній виступ основи орнаментувалися чорним монохромним розписом."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM102",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "wood",
+      "region": "Podillia",
+      "certainty_max": 0.6,
+      "notes_samples": [
+        "walls often constructed from wood"
+      ],
+      "evidence": [
+        "стіни клунь... інколи плетені"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM103",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "глина",
+      "region": "Podillia",
+      "certainty_max": 0.9,
+      "notes_samples": [
+        "традиційний будівельний матеріал",
+        "традиційний матеріал"
+      ],
+      "evidence": [
+        "У кінці XIX ст. їх зводили з традиційного будівельного матеріалу — глини."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM104",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "глина, крейда, вапно, гіпс",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "наявність досить нетривких щодо кліматичних умов матеріалів (глина, крейда, вапно, гіпс) спонукало народ застосовувати віками апробовані прийоми."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM105",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "глиняними цеглинами",
+      "region": "Podillia",
+      "certainty_max": 0.9,
+      "notes_samples": [
+        "використовуються для заповнення стін"
+      ],
+      "evidence": [
+        "відстань між «слупами» заповнюється «саманом» — глиняними цеглинами"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM106",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "природний камінь",
+      "region": "Podillia",
+      "certainty_max": 0.4,
+      "notes_samples": [
+        "використовується для огорож"
+      ],
+      "evidence": [
+        "У народному житлі природний камінь використовувався переважно для огорож"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "rare"
+    },
+    {
+      "triple_id": "MAM107",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "MADE_OF",
+      "object": "цегла",
+      "region": "Podillia",
+      "certainty_max": 0.6,
+      "notes_samples": [
+        "використовується в нових конструкціях"
+      ],
+      "evidence": [
+        "викладення стін з матеріалів промислового виробництва (цегли)"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "MAM108",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "cement plaster",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "на зовнішню поверхню такої стіни наносився шар цементної штукатурки."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0013"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM109",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "lime wash",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "common finish for walls"
+      ],
+      "evidence": [
+        "Лише на крайньому півдні Поділля... клуні не мають стін..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM110",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "жовтими і червоними глинами",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стіни житла, орієнтовані на північ та захід, фарбували жовтими і червоними глинами."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0042"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "MAM111",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "не мастились",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стіни комори та сіней при хаті не мастились"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM112",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "побілені",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стіни хати обов'язково були обмазані та побілені"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM113",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "SURFACE_FINISH",
+      "object": "побілка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "часто використовується для обробки стін",
+        "стіни покриті побілкою",
+        "Finish applied to the walls.",
+        "finish of walls"
+      ],
+      "evidence": [
+        "У сільському житловому будівництві цеглу не застосовували.",
+        "Стеля в українському житлі завжди білилась...",
+        "побілка на стінах",
+        "...житло відбивало процес класової диференціації селянства.",
+        "стіни мали лише один невеликий поздовжній виступаючий елемент — призьбу.",
+        "Стіни жител білилися і мали червоні прикраси п."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012",
+        "B1_KOSMINA_PODILLIA_2008_CH0015",
+        "B1_KOSMINA_PODILLIA_2008_CH0019",
+        "B1_KOSMINA_PODILLIA_2008_CH0020",
+        "B1_KOSMINA_PODILLIA_2008_CH0040",
+        "B1_KOSMINA_PODILLIA_2008_CH0041",
+        "B1_KOSMINA_PODILLIA_2008_CH0043",
+        "B1_KOSMINA_PODILLIA_2008_CH0044",
+        "B1_KOSMINA_PODILLIA_2008_CH0050",
+        "B1_KOSMINA_PODILLIA_2008_CH0052",
+        "B1_KOSMINA_PODILLIA_2008_CH0053",
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM114",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "DECORATED_WITH",
+      "object": "декоративними розписами",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "вікна, простінки вікон, обрамлення дверей, пілястри."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM115",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "DECORATED_WITH",
+      "object": "тоновані обводки",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Переважали тоновані обводки, оконтурювання"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "MAM116",
+      "triple_type": "MATER",
+      "rule_type": "main",
+      "subject": "WOVEN_TEXTILE",
+      "relation": "DECORATED_WITH",
+      "object": "вишивкою",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "вишитий орнамент подільських рушників."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM001",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "BED_SLEEPING_PLATFORM",
+      "relation": "HAS_THICKNESS",
+      "object": "грубі",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "з грубих дубових дощок"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM002",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "BENCH",
+      "relation": "HAS_WIDTH",
+      "object": "50—60 см",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "широких (50—60 см) дубових дощок"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM003",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "CEILING_BEAMS",
+      "relation": "HAS_THICKNESS",
+      "object": "зменшення кількості дерева",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "зміна в народному житлі Поділля кінця XIX — початку XX ст. йшла в напрямі зменшення кількості дерева..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM004",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "HAS_HEIGHT",
+      "object": "високими порогом",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "з високими порогом та призьбою."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM005",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "DOOR",
+      "relation": "HAS_HEIGHT",
+      "object": "висота дверей",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "двері..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM006",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "1—2 сажні",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "одне велике житлове приміщення довжиною 1—2 сажні"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0022"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM007",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "2.5–3.0 m",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "висота даху і розміри в'їзних воріт до клуні"
+      ],
+      "evidence": [
+        "Висота даху і розміри в'їзних воріт до клуні («брами») досягали 2,5—3,0 м"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0034"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM008",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "40—60 cm",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "height of призьба"
+      ],
+      "evidence": [
+        "висота його досягла 40—60 см при ширині ЗО—35 см."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0040"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM009",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "not specified",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "height not detailed in the text"
+      ],
+      "evidence": [
+        "обезземелення селян... обумовило зменшення розмірів усіх господарських будівель"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM010",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "variable",
+      "region": "Podillia",
+      "certainty_max": 0.6,
+      "notes_samples": [
+        "залежно від необхідних розмірів"
+      ],
+      "evidence": [
+        "залежно від необхідних розмірів"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0034"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM011",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "від 1 : 1,5 до 1 : 2 і навіть 1 : 3",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "в пропорційному співвідношенні по вертикалі основних елементів (стіни, дах) подільської хати (від 1 : 1,5 до 1 : 2 і навіть 1 : 3)"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM012",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "до 2,5 м",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "висота стелі"
+      ],
+      "evidence": [
+        "висота стелі до 2,5 м"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0024"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM013",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "не зазначено",
+      "region": "Podillia",
+      "certainty_max": 0.0,
+      "notes_samples": [
+        "Height not specified in the text"
+      ],
+      "evidence": [],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM014",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_HEIGHT",
+      "object": "під 2 м",
+      "region": "Podillia",
+      "certainty_max": 0.6,
+      "notes_samples": [
+        "Height of the house."
+      ],
+      "evidence": [
+        "...житло пройшло шлях дальших перетворень-ускладнень."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM015",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "1 : 1.5 to 1 : 2 and even 1 : 3",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "proportional relationship of elements"
+      ],
+      "evidence": [
+        "у пропорційному співвідношенні по вертикалі основних елементів (стіни, дах) подільської хати (від 1 : 1,5 до 1 : 2 і навіть 1 : 3)"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0040"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM016",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "1:1.2",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "modern proportional relationship"
+      ],
+      "evidence": [
+        "в пропорційному членуванні сучасного народного житла... переважає пропорція 1:1, 1,2 : 1"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0040"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM017",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "not specified",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "thickness not detailed in the text"
+      ],
+      "evidence": [
+        "обезземелення селян... обумовило зменшення розмірів усіх господарських будівель"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM018",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "significant",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "висота даху і розміри"
+      ],
+      "evidence": [
+        "висота даху і розміри в'їзних воріт до клуні"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0034"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM019",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "високою брамою",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "відокремлював двір"
+      ],
+      "evidence": [
+        "Від вулиці двір відокремлювався високою брамою з дашком"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0024"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM020",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "грубі дерев'яні гіл­ ки",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "гілки використовуються для виносів"
+      ],
+      "evidence": [
+        "заокруглені досить грубі дерев'яні гіл­ ки"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0019"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM021",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "до 1 м",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "товщина стін"
+      ],
+      "evidence": [
+        "товщина стін до 1 м"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0024"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM022",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "не зазначено",
+      "region": "Podillia",
+      "certainty_max": 0.0,
+      "notes_samples": [
+        "Thickness not specified in the text"
+      ],
+      "evidence": [],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM023",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "переважно 40%",
+      "region": "Podillia",
+      "certainty_max": 0.6,
+      "notes_samples": [
+        "Thickness of walls."
+      ],
+      "evidence": [
+        "...клас сільської буржуазії — куркульство — зосередило в своїх руках близько 40% надільних і приватних селянських земель."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM024",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_THICKNESS",
+      "object": "примітивні архаїчні типи",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "Describes the thickness of walls."
+      ],
+      "evidence": [
+        "...найбільш примітивні архаїчні типи житла."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM025",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "0.2 ha",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "на поливних землях"
+      ],
+      "evidence": [
+        "а на поливних землях — 0,2 га"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0034"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM026",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "0.5 ha",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "розміри нових присадибних ділянок регламентуються Статутом колгоспу"
+      ],
+      "evidence": [
+        "Розміри нових присадибних ділянок регламентуються Статутом колгоспу залежно від рішення загальних зборів і становлять 0,5 га"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0034"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM027",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "1 сажень",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "шириною 1 сажень"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0022"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM028",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "3 m",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "чиста хата має приблизно 3 м ширини."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0022"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM029",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "30—35 cm",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "width of призьба"
+      ],
+      "evidence": [
+        "висота його досягла 40—60 см при ширині ЗО—35 см."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0040"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM030",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "four to eight сохах",
+      "region": "Podillia",
+      "certainty_max": 0.8,
+      "notes_samples": [
+        "width varies based on design"
+      ],
+      "evidence": [
+        "найдавніші клуні... були з дахом на чотирьох — шести — восьми сохах"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM031",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "not specified",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "width not detailed in the text"
+      ],
+      "evidence": [
+        "обезземелення селян... обумовило зменшення розмірів усіх господарських будівель"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0035"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM032",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "всю його ширину",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "крамниці розташовувались з короткого боку"
+      ],
+      "evidence": [
+        "Крамниці розташовувались з короткого боку будинку, займаючи всю його ширину"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0024"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM033",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "до 2,5—3 м",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "широкий коридор у заїзді"
+      ],
+      "evidence": [
+        "по центру влаштовувався широкий (до 2,5—3 м) коридор"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0024"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM034",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "не зазначено",
+      "region": "Podillia",
+      "certainty_max": 0.0,
+      "notes_samples": [
+        "Width not specified in the text"
+      ],
+      "evidence": [],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0052"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "unspecified"
+    },
+    {
+      "triple_id": "PRM035",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "тридцять ступнів",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "Width of the house."
+      ],
+      "evidence": [
+        "...ступнів тридцять в долину."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0020"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "rare"
+    },
+    {
+      "triple_id": "PRM036",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KHATA_HOUSE",
+      "relation": "HAS_WIDTH",
+      "object": "трикамерне житло",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Трикамерне житло (хата + сіни 4- хата) з високими порогом та призьбою."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM037",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "HAS_HEIGHT",
+      "object": "чотирикутна, наближена до квадрату",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Як правило, це чотирикутна, наближена до квадрату або дещо видовжена в плані споруда."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0036"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM038",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "HAS_THICKNESS",
+      "object": "міцністю",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "то комора — міцністю."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0036"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM039",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "KOMORA_PANTRY",
+      "relation": "HAS_WIDTH",
+      "object": "вузький",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "влаштовували вузький піддашок для зберігання соломи та паші."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0036"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM040",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "HAS_HEIGHT",
+      "object": "2.25 m",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "висоті приміщення лише 2,25 м."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0053"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM041",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "HAS_HEIGHT",
+      "object": "високий",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "житло української шляхти в цей період"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0054"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM042",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "HAS_WIDTH",
+      "object": "17.8 m2",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Житлова площа, яка в середньому по Україні становила 17,8 м2."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0053"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM043",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "LIVING_ROOM",
+      "relation": "HAS_WIDTH",
+      "object": "3.8 m2 per person",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "на душу населення припадало лише 3,8 м2."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0053"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM044",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_HEIGHT",
+      "object": "близько 1 м",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...платформа для печі («під») — близько 1 м заввишки і 1,5 м завширшки."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0027"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM045",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_HEIGHT",
+      "object": "висока",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Специфічність об'ємно-пластичної побудови подільської печі"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0056"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM046",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_HEIGHT",
+      "object": "висота печі",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "перетворення конструктивної необхідності у художню виразність"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM047",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_HEIGHT",
+      "object": "піднімали по відношенню до задньої стінки",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Скле­ піння («піднебіння») дещо піднімали по відношенню до задньої стінки печі"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0028"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM048",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_THICKNESS",
+      "object": "майже третю частину житлової площі",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Печі були дуже масивними, займаючи майже третю частину і без того малої житлової площі хати"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0028"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM049",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_THICKNESS",
+      "object": "опускали",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "дно печі («черінь»), навпаки, опускали."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0028"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM050",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_THICKNESS",
+      "object": "підвісний комин",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "димом, що виходив через підвісний комин у сіни"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM051",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_THICKNESS",
+      "object": "скромніша орнаментальна розробка",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "прикраси інших елементів, які мали скромнішу орнаментальну розробку."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM052",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_WIDTH",
+      "object": "1,5 м",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "...платформа для печі («під») — близько 1 м заввишки і 1,5 м завширшки."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0027"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM053",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_WIDTH",
+      "object": "ширина пічки",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "піч..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM054",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "PICH_STOVE",
+      "relation": "HAS_WIDTH",
+      "object": "широкий",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Специфічність об'ємно-пластичної побудови подільської печі"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0056"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM055",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "HAS_HEIGHT",
+      "object": "висота стелі",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стеля на комбінованих сволоках;"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM056",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "HAS_THICKNESS",
+      "object": "1 : 1.5 — 1 : 2",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "відповідним співвідношенням стіни і даху (1 : 1,5 — 1 : 2)"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM057",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "HAS_THICKNESS",
+      "object": "два конструктивні типи",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Two types of roof construction."
+      ],
+      "evidence": [
+        "дають уже два конструктивні типи даху: більш старі, з відсутньою стелею,— «на сохах» і новіші, зі стелею,— «на кроквах»."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0016"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM058",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "HAS_THICKNESS",
+      "object": "подвійна стріха",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Подвійна стріха та подвійний гребінь солом’яного даху."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM059",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "HAS_THICKNESS",
+      "object": "шаром землі",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [
+        "Covered with earth."
+      ],
+      "evidence": [
+        "їх потім засипали шаром землі чи обкладали дерном."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0016"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM060",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "OVERHANG_DEPTH",
+      "object": "до 1,5—1,8 м",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "глибокі виноси солом'яного даху (іноді до 1,5—1,8 м)"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0039"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM061",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "ROOF",
+      "relation": "ROOF_PITCH",
+      "object": "чим стрімкішим був дах",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "підвищення виносів даху залежить від стрімкості"
+      ],
+      "evidence": [
+        "тим більший, чим стрімкішим був дах."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0019"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM062",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SINY_VESTIBULE",
+      "relation": "HAS_WIDTH",
+      "object": "ширина сіни",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "сіни..."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0015"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM063",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "HAS_HEIGHT",
+      "object": "less than 2 m",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "стеля на одному поздовжньому сволоку, поверх якого укладали колоте дерево."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0013"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM064",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "HAS_HEIGHT",
+      "object": "виступає з площі стелі",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "весь сволок виступав з площі стелі в хату."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM065",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "HAS_HEIGHT",
+      "object": "виступає у середину приміщення",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "висота, що виступає у середину приміщення, дещо зменшується."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM066",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "HAS_THICKNESS",
+      "object": "30 X 20 cm or 30 X 30 cm",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "прямокутної (30 X 20 см) або квадратної (30 X 30 см) форми."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0013"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM067",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "HAS_THICKNESS",
+      "object": "shorter and smaller cross-section",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "сволоки, як несучий елемент, замінюють балками — коротшими і меншого перетину."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0013"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM068",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "HAS_THICKNESS",
+      "object": "мінімальним",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "виступ балок у цьому випадку стає мінімальним."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM069",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "HAS_THICKNESS",
+      "object": "перевищує товщину планок",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "якщо тов­ щина елементів настилу перевищує товщину планок."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM070",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "SVOLOK",
+      "relation": "HAS_WIDTH",
+      "object": "широкі",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "зміни також у схемі несучих конструкцій стелі."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0014"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM071",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_HEIGHT",
+      "object": "одноповерховий",
+      "region": "Podillia",
+      "certainty_max": 0.7,
+      "notes_samples": [
+        "більшість житлових будинків"
+      ],
+      "evidence": [
+        "житловий будинок одноповерховий"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM072",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "1 : 2",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "Співвідношення стіни і даху становило 1:2."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0050"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM073",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "6—8 років",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "зберігався 6—8 років і його можна було не поновлювати"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0041"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM074",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "залежить від конструкції",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "може варіюватися"
+      ],
+      "evidence": [
+        "перев'язкою швів після просушки блоків на повітрі"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM075",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WALL",
+      "relation": "HAS_THICKNESS",
+      "object": "перев'язкою швів",
+      "region": "Podillia",
+      "certainty_max": 0.5,
+      "notes_samples": [
+        "залежить від конструкції"
+      ],
+      "evidence": [
+        "Суцільна кладка стін з саману ведеться за принципом цегляної кладки"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0012"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "sometimes"
+    },
+    {
+      "triple_id": "PRM076",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "HAS_HEIGHT",
+      "object": "1/3, 1/2 чи навіть на всю висоту",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "шпалерної смуги, що спускалась на 1/3, 1/2 чи навіть на всю висоту вікна."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM077",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "HAS_HEIGHT",
+      "object": "висота вікна",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "що спускалась на 1/3, 1/2 чи навіть на всю висоту вікна."
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    },
+    {
+      "triple_id": "PRM078",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "HAS_WIDTH",
+      "object": "складалися з чотирьох—шести, рідше — восьми шибок",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "вікна, які ще на початку XX ст. складалися з чотирьох—шести, рідше — восьми шибок"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0043"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "always"
+    },
+    {
+      "triple_id": "PRM079",
+      "triple_type": "PROPO",
+      "rule_type": "main",
+      "subject": "WINDOW",
+      "relation": "HAS_WIDTH",
+      "object": "суцільної смуги",
+      "region": "Podillia",
+      "certainty_max": 1.0,
+      "notes_samples": [],
+      "evidence": [
+        "так званий карниз у вигляді суцільної смуги, що розташовувалась над вікнами"
+      ],
+      "provenance_chunk_ids": [
+        "B1_KOSMINA_PODILLIA_2008_CH0044"
+      ],
+      "book_id": "B1_KOSMINA_PODILLIA_2008",
+      "frequency_mode": "often"
+    }
+  ]
+}
